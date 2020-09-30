@@ -38,9 +38,18 @@ const Layout = ({ children }) => {
         <main>{children}</main>
         <footer
           style={{
-            marginTop: `5rem`,
+            marginTop: `15rem`,
           }}
         >
+          <hr />
+          <div
+            style={{
+              color: `LightGray`,
+              textDecoration: `bold`,
+            }}
+          >
+            Спасибо. Хорошего дня!
+          </div>
           © {new Date().getFullYear()}, Built with
           {` `}
           <a

@@ -1,5 +1,6 @@
 module.exports = {
   siteMetadata: {
+    siteUrl: `https://lattepapa.netlify.app`,
     title: `dlog`,
     description: `hope for the best, prepare for the worst`,
     author: `@lattepapa`,

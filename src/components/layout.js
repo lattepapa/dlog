@@ -31,14 +31,14 @@ const Layout = ({ children }) => {
           color: `DarkSlateGray`,
           textDecoration: `none`,
           margin: `0 auto`,
-          maxWidth: 850,
+          maxWidth: 800,
           padding: `0 1.0875rem 1.45rem`,
         }}
       >
         <main>{children}</main>
         <footer
           style={{
-            marginTop: `2rem`,
+            marginTop: `5rem`,
           }}
         >
           © {new Date().getFullYear()}, Built with

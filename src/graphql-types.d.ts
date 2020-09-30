@@ -701,6 +701,7 @@ export type FileFieldsEnum =
   | 'internal___type'
   | 'childMarkdownRemark___id'
   | 'childMarkdownRemark___frontmatter___title'
+  | 'childMarkdownRemark___frontmatter___category'
   | 'childMarkdownRemark___frontmatter___path'
   | 'childMarkdownRemark___frontmatter___date'
   | 'childMarkdownRemark___excerpt'
@@ -1483,6 +1484,7 @@ export type MarkdownRemarkEdge = {
 export type MarkdownRemarkFieldsEnum = 
   | 'id'
   | 'frontmatter___title'
+  | 'frontmatter___category'
   | 'frontmatter___path'
   | 'frontmatter___date'
   | 'excerpt'
@@ -1607,6 +1609,7 @@ export type MarkdownRemarkFilterInput = {
 export type MarkdownRemarkFrontmatter = {
   __typename?: 'MarkdownRemarkFrontmatter';
   title?: Maybe<Scalars['String']>;
+  category?: Maybe<Scalars['String']>;
   path?: Maybe<Scalars['String']>;
   date?: Maybe<Scalars['Date']>;
 };
@@ -1621,6 +1624,7 @@ export type MarkdownRemarkFrontmatterDateArgs = {
 
 export type MarkdownRemarkFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
+  category?: Maybe<StringQueryOperatorInput>;
   path?: Maybe<StringQueryOperatorInput>;
   date?: Maybe<DateQueryOperatorInput>;
 };

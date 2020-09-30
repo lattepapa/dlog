@@ -74,12 +74,12 @@ dfn {
 h1 {
   margin-left: 0;
   margin-right: 0;
-  margin-top: 0;
+  margin-top: 2.45;
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 2.45rem;
   color: inherit;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -151,7 +151,7 @@ hr {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: calc(1.45rem - 1px);
-  background: hsla(0, 0%, 0%, 0.2);
+  background: hsla(0, 0%, 0%, 0.1);
   border: none;
   height: 1px;
 }
@@ -253,12 +253,12 @@ textarea {
 h2 {
   margin-left: 0;
   margin-right: 0;
-  margin-top: 0;
+  margin-top: 2.45rem;
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 2.45rem;
   color: inherit;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -270,7 +270,7 @@ h2 {
 h3 {
   margin-left: 0;
   margin-right: 0;
-  margin-top: 0;
+  margin-top: 3rem;
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
@@ -287,12 +287,12 @@ h3 {
 h4 {
   margin-left: 0;
   margin-right: 0;
-  margin-top: 0;
+  margin-top: 1.45rem;
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 0.45rem;
   color: inherit;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -309,7 +309,7 @@ h5 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 0;
   color: inherit;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -326,7 +326,7 @@ h6 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 0;
   color: inherit;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -413,11 +413,13 @@ p {
   padding-top: 0;
   margin-bottom: 1.45rem;
 }
+
+/* 코드 스니펫  */
 pre {
   margin-left: 0;
   margin-right: 0;
-  margin-top: 0;
-  margin-bottom: 1.45rem;
+  margin-top: -1rem;
+  margin-bottom: 2rem;
   font-size: 0.85rem;
   line-height: 1.42;
   background: hsla(0, 0%, 0%, 0.04);
@@ -535,15 +537,15 @@ li > p {
 }
 code {
   font-size: 0.7rem;
-  line-height: 1.2rem;
+  line-height: 1.8rem;
 }
 kbd {
   font-size: 0.7rem;
-  line-height: 1.2rem;
+  line-height: 1.8rem;
 }
 samp {
   font-size: 0.7rem;
-  line-height: 1.2rem;
+  line-height: 1.8rem;
 }
 abbr {
   border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
@@ -584,12 +586,12 @@ code {
   font-family: "SFMono-Regular", Consolas, "Roboto Mono", "Droid Sans Mono",
     "Liberation Mono", Menlo, Courier, monospace;
   padding: 0;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
 }
 pre code {
   background: none;
-  line-height: 1.2;
+  line-height: 1.8em;
 }
 code:before,
 code:after,

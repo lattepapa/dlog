@@ -11,7 +11,7 @@ const LatestPostListQuery = graphql`
     allMarkdownRemark(sort: { order: DESC, fields: frontmatter___date }) {
       edges {
         node {
-          excerpt(truncate: true, pruneLength: 155)
+          excerpt(truncate: true, pruneLength: 137)
           frontmatter {
             title
             path
@@ -31,14 +31,28 @@ const IndexPage: React.FC = () => {
     <Layout>
       <SEO title="Home" />
       <h3>최근 게시글</h3>
+      <br />
       <ul>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <li key={node.id}>
             <h3>
-              <Link to={node.frontmatter.title}>{node.frontmatter.title}</Link>
+              <Link
+                style={{
+                  color: `DarkSlateGray`,
+                  textDecoration: `none`,
+                }}
+                to={node.frontmatter.title}
+              >
+                {node.frontmatter.title}
+              </Link>
             </h3>
             <p>{node.excerpt}</p>
-            <p>
+            <p
+              style={{
+                color: `LightGray`,
+                textDecoration: `none`,
+              }}
+            >
               posted on{` `}
               {node.frontmatter.date}
             </p>

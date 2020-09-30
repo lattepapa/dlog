@@ -28,8 +28,10 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div
         style={{
+          color: `DarkSlateGray`,
+          textDecoration: `none`,
           margin: `0 auto`,
-          maxWidth: 960,
+          maxWidth: 850,
           padding: `0 1.0875rem 1.45rem`,
         }}
       >
@@ -41,9 +43,26 @@ const Layout = ({ children }) => {
         >
           © {new Date().getFullYear()}, Built with
           {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>,{` `} Posted by
+          <a
+            style={{
+              color: `Coral`,
+              textDecoration: `none`,
+            }}
+            href="https://www.gatsbyjs.com"
+          >
+            Gatsby
+          </a>
+          ,{` `} Posted by
           {` `}
-          <a href="https://github.com/lattepapa">lattepapa</a>
+          <a
+            style={{
+              color: `Coral`,
+              textDecoration: `none`,
+            }}
+            href="https://github.com/lattepapa"
+          >
+            lattepapa
+          </a>
         </footer>
       </div>
     </>

@@ -13,9 +13,24 @@ const PostTemplate: React.FC<IPostTemplateProps> = React.memo((props) => {
   const { title, date, html } = props.pageContext;
   return (
     <Layout>
-      <h2>{title}</h2>
-      <h4>{date}</h4>
-      <hr />
+      <h1
+        style={{
+          color: `DarkSlateGray`,
+          textDecoration: `none`,
+        }}
+      >
+        {title}
+      </h1>
+      <p
+        style={{
+          color: `LightGray`,
+          textDecoration: `none`,
+        }}
+      >
+        posted by lattepapa
+      </p>
+      {/* <h4>{date}</h4> */}
+
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
   );

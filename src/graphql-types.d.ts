@@ -2499,6 +2499,15 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___name'
   | 'pluginCreator___pluginOptions___path'
   | 'pluginCreator___pluginOptions___strict'
+  | 'pluginCreator___pluginOptions___classPrefix'
+  | 'pluginCreator___pluginOptions___showLineNumbers'
+  | 'pluginCreator___pluginOptions___noInlineHighlight'
+  | 'pluginCreator___pluginOptions___languageExtensions'
+  | 'pluginCreator___pluginOptions___languageExtensions___language'
+  | 'pluginCreator___pluginOptions___languageExtensions___extend'
+  | 'pluginCreator___pluginOptions___prompt___user'
+  | 'pluginCreator___pluginOptions___prompt___host'
+  | 'pluginCreator___pluginOptions___prompt___global'
   | 'pluginCreator___pluginOptions___dest'
   | 'pluginCreator___pluginOptions___short_name'
   | 'pluginCreator___pluginOptions___start_url'
@@ -2709,10 +2718,23 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___plugins___name'
   | 'pluginOptions___plugins___version'
   | 'pluginOptions___plugins___pluginOptions___strict'
+  | 'pluginOptions___plugins___pluginOptions___classPrefix'
+  | 'pluginOptions___plugins___pluginOptions___showLineNumbers'
+  | 'pluginOptions___plugins___pluginOptions___noInlineHighlight'
+  | 'pluginOptions___plugins___pluginOptions___languageExtensions'
   | 'pluginOptions___plugins___pluginFilepath'
   | 'pluginOptions___name'
   | 'pluginOptions___path'
   | 'pluginOptions___strict'
+  | 'pluginOptions___classPrefix'
+  | 'pluginOptions___showLineNumbers'
+  | 'pluginOptions___noInlineHighlight'
+  | 'pluginOptions___languageExtensions'
+  | 'pluginOptions___languageExtensions___language'
+  | 'pluginOptions___languageExtensions___extend'
+  | 'pluginOptions___prompt___user'
+  | 'pluginOptions___prompt___host'
+  | 'pluginOptions___prompt___global'
   | 'pluginOptions___dest'
   | 'pluginOptions___short_name'
   | 'pluginOptions___start_url'
@@ -2851,6 +2873,11 @@ export type SitePluginPluginOptions = {
   name?: Maybe<Scalars['String']>;
   path?: Maybe<Scalars['String']>;
   strict?: Maybe<Scalars['String']>;
+  classPrefix?: Maybe<Scalars['String']>;
+  showLineNumbers?: Maybe<Scalars['Boolean']>;
+  noInlineHighlight?: Maybe<Scalars['Boolean']>;
+  languageExtensions?: Maybe<Array<Maybe<SitePluginPluginOptionsLanguageExtensions>>>;
+  prompt?: Maybe<SitePluginPluginOptionsPrompt>;
   dest?: Maybe<Scalars['String']>;
   short_name?: Maybe<Scalars['String']>;
   start_url?: Maybe<Scalars['String']>;
@@ -2871,6 +2898,11 @@ export type SitePluginPluginOptionsFilterInput = {
   name?: Maybe<StringQueryOperatorInput>;
   path?: Maybe<StringQueryOperatorInput>;
   strict?: Maybe<StringQueryOperatorInput>;
+  classPrefix?: Maybe<StringQueryOperatorInput>;
+  showLineNumbers?: Maybe<BooleanQueryOperatorInput>;
+  noInlineHighlight?: Maybe<BooleanQueryOperatorInput>;
+  languageExtensions?: Maybe<SitePluginPluginOptionsLanguageExtensionsFilterListInput>;
+  prompt?: Maybe<SitePluginPluginOptionsPromptFilterInput>;
   dest?: Maybe<StringQueryOperatorInput>;
   short_name?: Maybe<StringQueryOperatorInput>;
   start_url?: Maybe<StringQueryOperatorInput>;
@@ -2884,6 +2916,21 @@ export type SitePluginPluginOptionsFilterInput = {
   theme_color_in_head?: Maybe<BooleanQueryOperatorInput>;
   cacheDigest?: Maybe<StringQueryOperatorInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
+};
+
+export type SitePluginPluginOptionsLanguageExtensions = {
+  __typename?: 'SitePluginPluginOptionsLanguageExtensions';
+  language?: Maybe<Scalars['String']>;
+  extend?: Maybe<Scalars['String']>;
+};
+
+export type SitePluginPluginOptionsLanguageExtensionsFilterInput = {
+  language?: Maybe<StringQueryOperatorInput>;
+  extend?: Maybe<StringQueryOperatorInput>;
+};
+
+export type SitePluginPluginOptionsLanguageExtensionsFilterListInput = {
+  elemMatch?: Maybe<SitePluginPluginOptionsLanguageExtensionsFilterInput>;
 };
 
 export type SitePluginPluginOptionsPlugins = {
@@ -2912,10 +2959,61 @@ export type SitePluginPluginOptionsPluginsFilterListInput = {
 export type SitePluginPluginOptionsPluginsPluginOptions = {
   __typename?: 'SitePluginPluginOptionsPluginsPluginOptions';
   strict?: Maybe<Scalars['String']>;
+  classPrefix?: Maybe<Scalars['String']>;
+  showLineNumbers?: Maybe<Scalars['Boolean']>;
+  noInlineHighlight?: Maybe<Scalars['Boolean']>;
+  languageExtensions?: Maybe<Array<Maybe<SitePluginPluginOptionsPluginsPluginOptionsLanguageExtensions>>>;
+  prompt?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsPrompt>;
 };
 
 export type SitePluginPluginOptionsPluginsPluginOptionsFilterInput = {
   strict?: Maybe<StringQueryOperatorInput>;
+  classPrefix?: Maybe<StringQueryOperatorInput>;
+  showLineNumbers?: Maybe<BooleanQueryOperatorInput>;
+  noInlineHighlight?: Maybe<BooleanQueryOperatorInput>;
+  languageExtensions?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsLanguageExtensionsFilterListInput>;
+  prompt?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsPromptFilterInput>;
+};
+
+export type SitePluginPluginOptionsPluginsPluginOptionsLanguageExtensions = {
+  __typename?: 'SitePluginPluginOptionsPluginsPluginOptionsLanguageExtensions';
+  language?: Maybe<Scalars['String']>;
+  extend?: Maybe<Scalars['String']>;
+};
+
+export type SitePluginPluginOptionsPluginsPluginOptionsLanguageExtensionsFilterInput = {
+  language?: Maybe<StringQueryOperatorInput>;
+  extend?: Maybe<StringQueryOperatorInput>;
+};
+
+export type SitePluginPluginOptionsPluginsPluginOptionsLanguageExtensionsFilterListInput = {
+  elemMatch?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsLanguageExtensionsFilterInput>;
+};
+
+export type SitePluginPluginOptionsPluginsPluginOptionsPrompt = {
+  __typename?: 'SitePluginPluginOptionsPluginsPluginOptionsPrompt';
+  user?: Maybe<Scalars['String']>;
+  host?: Maybe<Scalars['String']>;
+  global?: Maybe<Scalars['Boolean']>;
+};
+
+export type SitePluginPluginOptionsPluginsPluginOptionsPromptFilterInput = {
+  user?: Maybe<StringQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
+  global?: Maybe<BooleanQueryOperatorInput>;
+};
+
+export type SitePluginPluginOptionsPrompt = {
+  __typename?: 'SitePluginPluginOptionsPrompt';
+  user?: Maybe<Scalars['String']>;
+  host?: Maybe<Scalars['String']>;
+  global?: Maybe<Scalars['Boolean']>;
+};
+
+export type SitePluginPluginOptionsPromptFilterInput = {
+  user?: Maybe<StringQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
+  global?: Maybe<BooleanQueryOperatorInput>;
 };
 
 export type SitePluginSortInput = {

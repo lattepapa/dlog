@@ -5,3 +5,7 @@
  */
 
 // You can delete this file if you're not using it
+// require("prismjs/themes/prism-solarizedlight.css");
+require("prismjs/themes/prism-coy.css");
+require("prismjs/plugins/line-numbers/prism-line-numbers.css");
+require("prismjs/plugins/command-line/prism-command-line.css");

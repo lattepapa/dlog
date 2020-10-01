@@ -45,10 +45,10 @@ const Layout = ({ children }) => {
         </main>
         <footer
           style={{
-            marginTop: `15rem`,
+            marginTop: `5rem`,
           }}
         >
-          <hr />
+          {/* <hr /> */}
           <div
             style={{
               color: `LightGray`,

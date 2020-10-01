@@ -17,6 +17,9 @@ const PostTemplate: React.FC<IPostTemplateProps> = React.memo((props) => {
         style={{
           color: `DarkSlateGray`,
           textDecoration: `none`,
+          textAlign: `center`,
+          marginTop: `4rem`,
+          marginBottom: `0.5rem`,
         }}
       >
         {title}
@@ -25,6 +28,8 @@ const PostTemplate: React.FC<IPostTemplateProps> = React.memo((props) => {
         style={{
           color: `LightGray`,
           textDecoration: `none`,
+          textAlign: `center`,
+          marginBottom: `3.5rem`,
         }}
       >
         posted by lattepapa

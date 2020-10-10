@@ -1,11 +1,9 @@
 ---
-title: map,filter
+title: "map과 filter"
 category: javascript
 path: /mil06
-date: 2020-10-10 00:00:00
+date: 2020-10-10 00:00:05
 ---
-
-last Month what I Learned, 그 여섯번째.
 
 ### map 메소드
 
@@ -132,7 +130,7 @@ arr.filter(function(car) {
 
 #### 1. 아래 힌트와 같이 Netfix 시청 현황정보가 주어졌다. 주어진 정보를 토대로 30대 남성이 가장 좋아하는 장르를 알고자 한다.
 
-<span style="color:#088A68">**힌트**
+<span style="color:#088A68">**힌트** </span>
 
 ```
 let list = [
@@ -146,44 +144,44 @@ let list = [
 ]
 ```
 
-</span>
 <br>
-  
+
 ```js
 // [더이상 쪼갤 수 없는 것] 30대
-let temp = list.filter(man => {
+let temp = list.filter((man) => {
   return Math.floor(Number(man.a) / 10) === 3;
 });
 
 // [로직1] 30대 시청현황 배열에서 장르요소(g)만 산출
 let arr = [];
-temp.forEach(genre => {
-arr.push(genre.g);
+temp.forEach((genre) => {
+  arr.push(genre.g);
 });
 
 // [로직2] arr 배열 내 요소들이 각각 얼마나 반복되는 지 확인
-let obj = { mostGenre: '', mostCnt: 0 };
+let obj = { mostGenre: "", mostCnt: 0 };
 for (let i = 0; i < arr.length; i++) {
-// obj에 정의되지 않았다면 key와 value를 만들어주고
-if (obj[arr[i]] === undefined) {
-obj[arr[i]] = 1;
-}
-// key가 존재한다면 value에 1을 더해주는데,
-obj[arr[i]] += 1;
+  // obj에 정의되지 않았다면 key와 value를 만들어주고
+  if (obj[arr[i]] === undefined) {
+    obj[arr[i]] = 1;
+  }
+  // key가 존재한다면 value에 1을 더해주는데,
+  obj[arr[i]] += 1;
 
-// 만약 obj의 mostCnt key의 value보다 크다면 각각 모스트 key로 대입됨!
-if (obj[arr[i]] > obj['mostCnt']) {
-obj['mostCnt'] = obj[arr[i]];
-obj['mostGenre'] = arr[i];
-}
+  // 만약 obj의 mostCnt key의 value보다 크다면 각각 모스트 key로 대입됨!
+  if (obj[arr[i]] > obj["mostCnt"]) {
+    obj["mostCnt"] = obj[arr[i]];
+    obj["mostGenre"] = arr[i];
+  }
 }
 
 // 최종값 확인
 // obj.['mostGenre'];
 obj;
-
 ```
+
 <span style="color:#088A68">
 <table style="border-color:#088A68">
   <tr><td>{ mostGenre: "action", mostCnt: 3, action: 3, comic: 2, horor: 2 }</td></tr>
-```
+  </table>
+</span>

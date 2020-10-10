@@ -1,11 +1,9 @@
 ---
-title: scope
+title: "scope와 block"
 category: javascript
 path: /mil08
-date: 2020-10-10 00:00:00
+date: 2020-10-10 00:00:07
 ---
-
-last Month what I Learned, 그 여덟번째.
 
 ### 함수의 범위(Scope)
 
@@ -43,6 +41,14 @@ function seqLet() {
   }
   console.log("final i: ", i);
 }
+
+// seqLet()
+// 0
+// 1
+// 2
+// 3
+// 4
+// Uncaught ReferenceError: i is not defined at seqLet ...
 ```
 
 ```js
@@ -52,6 +58,14 @@ function seqVar() {
   }
   console.log("final i: ", i);
 }
+
+// seqLet()
+// 0
+// 1
+// 2
+// 3
+// 4
+// final i : 5
 ```
 
 ```js
@@ -63,12 +77,15 @@ function seqVar2() {
     console.log("final i: ", i);
   }
 }
-```
 
-각각의 결과는 다음과 같이 출력된다.
-![](https://images.velog.io/images/lattepapa/post/512a7edb-1e99-4a6a-b6dc-6b56205cf722/seqLet.png)
-![](https://images.velog.io/images/lattepapa/post/d72037dc-a205-4a41-9b0b-e74fc4a55605/seqVar.png)
-![](https://images.velog.io/images/lattepapa/post/8db9ee20-e83f-486c-84e5-d2726586155a/seqVar2.png)
+// seqLet()
+// 0
+// 1
+// 2
+// 3
+// 4
+// final i : 5
+```
 
 여기서 다음의 사실을 알 수 있다.
 

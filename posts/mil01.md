@@ -5,14 +5,13 @@ path: /mil01
 date: 2020-10-10 00:00:00
 ---
 
-last Month what I Learned, 그 첫번째.
-<br>
-
 ### Pseudocode
 
 > _"**Pseudocode** refers to code-like syntax that is generally used to **indicate to humans how some code syntax works**, or illustrate the design of an item of code architecture. It won't work if you try to run it as code."_ - [**MDN**](https://developer.mozilla.org/en-US/docs/Glossary/Pseudocode)
 
 의사코드란, 프로그램이 코드로 구현될 방향을 인간의 언어로 미리 설명한 것이다. 딱 봐도 의사코드로 기초방향성을 잘 설계해두어야 하지 않을까?
+<br>
+<br>
 <br>
 
 #### 1. 미시경제학 교수님이 1학기 중간고사 성적을 A+(~100점), A(95점), A-(~94점), B+(~89점), B(85점),..., F(0 ~ 59점)까지 학점을 자동화하여 출력하고자 한다. 단, 100점을 초과하는 점수나 0점 미만의 점수가 입력될 경우 에러 메시지를 보여줘야 하며, 모든 점수는 정수형이다.

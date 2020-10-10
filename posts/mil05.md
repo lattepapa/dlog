@@ -1,11 +1,9 @@
 ---
-title: for-each
+title: "forEach"
 category: javascript
 path: /mil05
-date: 2020-10-10 00:00:00
+date: 2020-10-10 00:00:04
 ---
-
-last Month what I Learned, 그 다섯번째.
 
 ### forEach 메소드
 
@@ -197,9 +195,8 @@ orders.forEach(function (orderUser) {
   <tr><td>Tony에게 아이스아메리카노 전달완료</td></tr>
 </table>
 <br>
-
-이때 **forEach 메소드** 부분은 아래와 같이도 쓸 수 있다.  
 </span>
+이때 **forEach 메소드** 부분은 아래와 같이도 쓸 수 있다.
 
 ```js
 orders.forEach((orderUser) => {

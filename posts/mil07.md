@@ -1,11 +1,9 @@
 ---
-title: reduce
+title: "reduce"
 category: javascript
 path: /mil07
-date: 2020-10-10 00:00:00
+date: 2020-10-10 00:00:06
 ---
-
-last Month what I Learned, 그 일곱번째.
 
 ### reduce 메소드
 
@@ -139,7 +137,7 @@ arr.reduce(sortByNation, {});
 
 #### 1. 학생의 정보가 담긴 객체를 요소로 갖는 배열을 입력받아 여학생들의 경우에만 평균 점수(정수)를 계산하여 해당 결과를 배열로 리턴하고자 한다.
 
-<span style="color:#088A68">**힌트**
+<span style="color:#088A68">**힌트**</span>
 
 ```
 let studentList = [
@@ -165,17 +163,17 @@ let studentList = [
     grades: [4, 5, 5],
   },
 ];
-이면 결과는
+
+// result
 [
   { name: 'Wanda', gender: 'f', grades: 2 },
   { name: 'Natasha', gender: 'f', grades: 5 },
 ];
-로 나와야 함.
+
 ```
 
-</span>
 <br>
-  
+
 ```js
 function filterGirlsGrade(students) {
   // [더이상 쪼갤 수 없는 것] 여자
@@ -183,29 +181,24 @@ function filterGirlsGrade(students) {
     return someone.gender === "f";
   });
 
-// [로직1] girls 배열에 담긴 요소들 중 grades key를 평균으로 reduce해야 함
-return girls.map((el) => {
-let sum = el.grades.reduce((acc, cur) => {
-return acc + cur;
-}, 0);
-let avg = sum / el.grades.length;
+  // [로직1] girls 배열에 담긴 요소들 중 grades key를 평균으로 reduce해야 함
+  return girls.map((el) => {
+    let sum = el.grades.reduce((acc, cur) => {
+      return acc + cur;
+    }, 0);
+    let avg = sum / el.grades.length;
 
     el.grades = avg;
     return el;
-
-});
+  });
 }
+```
 
-````
-
+<br>
+<br>
 <br>
 
 #### 2. 배열을 입력받아 배열에서 가장 짧은 길이를 가진 문자열 요소를 리턴하고자 한다.
-
-<span style="color:#088A68">**힌트**
-`[ 4, 'two', 2, 'three' ]`를 입력 받는다면 `two`가 리턴되어야 한다.
-</span>
-<br>
 
 ```js
 function whatIsTheShortestLetter(arr) {
@@ -224,16 +217,13 @@ function whatIsTheShortestLetter(arr) {
     }
   }, 0);
 }
-````
+```
 
+<br>
+<br>
 <br>
 
 #### 3. 어떤 형태의 배열이든, 배열들의 요소를 모두 담고 있는 단일 배열을 리턴하고자 한다.
-
-<span style="color:#088A68">**힌트**
-`[ [1, 4], [true, false], ['x', 'y'] ]`를 입력 받는다면 `[ 1, 4, true, false, 'x', 'y' ]`가 리턴되어야 한다.
-</span>
-<br>
 
 ```js
 function arrayFlatten(arr) {

@@ -1,7 +1,7 @@
 ---
 title: BigO
-category: javascript
-path: /js01
+category: algorithm
+path: /algorithm01
 date: 2020-07-28 00:00:00
 ---
 

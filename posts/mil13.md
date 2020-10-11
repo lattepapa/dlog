@@ -2,30 +2,46 @@
 title: "Linked List와 Hash Table"
 category: javascript
 path: /mil13
-date: 2020-10-10 00:00:12
+date: 2020-09-07 23:00:12
 ---
-
-# Data Structure(2)
 
 ### Linked List
 
-- Linked List : data와 **pointer**로 구성된 node가 선형(linear) **연결**을 구성함으로써 데이터 구조를 만든 것
-- 장점 : 배열에 비해 data의 추가나 삭제가 매우 빠르고 메모리를 운용하는 방식은 상대적으로 효율적이다.
-- 단점 : 배열에 비해 탐색과 정렬에 매우 느리고, 기본적으로 pointer만큼의 추가 메모리 소모가 있다.
-- 예시 : FAT32 파일시스템, 지하철 운행(이번역은... 다음역은 ...), Ctrl+Z의 사용(실행취소), 이미지뷰어 등
-- 원하는 node를 찾으려면 앞에서부터 순차탐색 해야하기 때문에, 각 노드의 탐색 속도는 자신의 순서와 같다. 따라서 탐색 시간 복잡도는 O(n)이다. 한편, 첫번째 node의 추가/삭제는 O(1)의 시간복잡도를 갖지만, 이후의 임의 node의 추가/삭제 시간복잡도도 O(n)에 근접한다.
-- 메소드 : .addToTail(data), .remove(data), .indexOf(data), .contains(data), .getNodeAt(index) 등
-- 구조 : (head) → (node) → (node) → ... → (node) → (tail) → Null
+data와 **pointer**로 구성된 node가 선형(linear) **연결**을 구성함으로써 데이터 구조를 만든 것
 
-1. head : 첫번째 node를 가리키는 순수 pointer이다. 빈 List라면 head가 바로 Null을 가리키게 된다.
-2. node : data를 갖으면서 다음 node를 가리키는 pointer도 함께 갖는다.
-3. tail : Time Complex를 줄여서 node별 data들을 잘 CRUD하기 위한 일종의 편의개념이다.
+#### 장점
 
-- 종류
+배열에 비해 data의 추가나 삭제가 매우 빠르고 메모리를 운용하는 방식은 상대적으로 효율적이다.
 
-1. Singly Linked List : 각 node에 pointer가 1개 → previous node 확인 불가
-2. Doubly Linked List : 각 node에 pointer가 2개 → next, previous node 모두 확인 가능
-3. Circular Linked List : 마지막 node가 Null이 아니라 첫번째 node를 가리키도록 하여 Loop 형성
+#### 단점
+
+배열에 비해 탐색과 정렬에 매우 느리고, 기본적으로 pointer만큼의 추가 메모리 소모가 있다.
+
+#### 예시
+
+FAT32 파일시스템, 지하철 운행(이번역은... 다음역은 ...), Ctrl+Z의 사용(실행취소), 이미지뷰어 등
+
+#### 시간복잡도
+
+원하는 node를 찾으려면 앞에서부터 순차탐색 해야하기 때문에, 각 노드의 탐색 속도는 자신의 순서와 같다. 따라서 탐색 시간 복잡도는 $O(n)$이다. 한편, 첫번째 node의 추가/삭제는 $O(1)$의 시간복잡도를 갖지만, 이후의 임의 node의 추가/삭제 시간복잡도는 $O(n)$에 근접하게 된다.
+
+#### 주요 구조
+
+(head) → (node) → (node) → ... → (node) → (tail) → Null
+
+[1] head : 첫번째 node를 가리키는 순수 pointer이다. 빈 List라면 head가 바로 Null을 가리키게 된다.  
+[2] node : data를 갖으면서 다음 node를 가리키는 pointer도 함께 갖는다.  
+[3] tail : Time Complex를 줄여서 node별 data들을 잘 CRUD하기 위한 일종의 편의개념이다.
+
+#### 종류
+
+[1] Singly Linked List : 각 node에 pointer가 1개 → previous node 확인 불가  
+[2] Doubly Linked List : 각 node에 pointer가 2개 → next, previous node 모두 확인 가능  
+[3] Circular Linked List : 마지막 node가 Null이 아니라 첫번째 node를 가리키도록 하여 Loop 형성
+
+#### 주요 메소드
+
+.addToTail(data), .remove(data), .indexOf(data), .contains(data), .getNodeAt(index) 등
 
 ```jsx
 // Node 생성 클래스
@@ -130,32 +146,59 @@ LinkedList.prototype.indexOf = function (data) {
 };
 ```
 
+<br>
+<br>
+<br>
+
 ### Hash Table
 
-- Hashing : 특정 data(=key)를 고정된 형식의 data(=index)로 변환하여 bucket에 연결하는 것
-- bucket : index에 연결된 일종의 객체로, { key: value(난수와 같은 주소정보) } 로 생각하면 된다.
-- tuple : 배열과 동일하나, 배열과 달리 element를 수정할 수 없는 것을 의미
-- 장점 : hashing된 키를 바탕으로 인덱스를 검색하기 때문에 data의 추가, 삭제 및 탐색이 아주 쉽고 빠르다.
+#### Hashing
 
-* Load Factor : 해시테이블 크기의 25 ~ 75%를 최적상태로 하며, 자동으로 크기가 조절되도록 할 수 있다.
+특정 data(=key)를 고정된 형식의 data(=index)로 변환하여 bucket에 연결하는 것
 
-- 단점 : 해시함수 사용을 위한 추가 연산 필요, 해시테이블 크기 유한(공간효율성낮음), 해시충돌 리스크 상존
-  또한, 해시 충돌에 연결 리스트를 사용하는 방식으로 대응한다면 캐시 효율이 떨어진다.
-- 예시 : 전화번호부, 암호화(MD5, SHA256 등), 블록체인, DNS resolution(즉, V8엔진에 URL 주소입력 시)
-- 충돌이 없다면 추가/삭제의 시간복잡도는 O(1)이지만, 충돌이 많아질수록 O(n)에 수렴하게 된다.
-- 충돌(Collision)을 극복하는 방법:
+#### bucket
 
-1. Open Addressing : { key: value }를 넣고자 하는 인덱스에 이미 값이 있다면 회피하는 방법
+index에 연결된 일종의 객체로, { key: value(난수와 같은 주소정보) } 로 생각하면 된다.
+
+#### tuple
+
+배열과 동일하나, 배열과 달리 element를 수정할 수 없는 것을 의미
+
+#### 장점
+
+hashing된 키를 바탕으로 인덱스를 검색하기 때문에 data의 추가, 삭제 및 탐색이 아주 쉽고 빠르다. 특히, Load Factor를 통해 해시테이블 크기의 25 ~ 75%를 최적상태로 하여, 자동으로 크기가 조절되도록 할 수 있다.
+
+#### 단점
+
+해시함수 사용을 위한 추가 연산 필요, 해시테이블 크기 유한(공간효율성낮음), 해시충돌 리스크 상존한다. 또한, 해시 충돌에 연결 리스트를 사용하는 방식으로 대응한다면 캐시 효율이 떨어진다.
+
+#### 예시
+
+전화번호부, 암호화(MD5, SHA256 등), 블록체인, DNS resolution(즉, V8엔진에 URL 주소입력 시)
+
+#### 시간복잡도
+
+충돌이 없다면 추가/삭제의 시간복잡도는 $O(1)$이지만, 충돌이 많아질수록 $O(n)$에 수렴하게 된다.
+
+#### 충돌(Collision)을 극복하는 방법:
+
+[1] Open Addressing : { key: value }를 넣고자 하는 인덱스에 이미 값이 있다면 회피하는 방법
 
 - 선형탐사 : n번 인덱스에 넣어야 하는데 이미 값이 있다면 n+1번 인덱스가 비었는지 확인
 - 이중해시 : 해시함수를 2개 만들어놓고 평소에는 한개만 사용하다가, 충돌 시 남은 한개로 새 인덱스 도출
 
-2. Close Addressing : 인덱스에 이미 값이 있더라도 해당 인덱스에 저장하는 방법
+[2] Close Addressing : 인덱스에 이미 값이 있더라도 해당 인덱스에 저장하는 방법
 
 - Bucket : 해당 인덱스가 다시 여러 인덱스를 갖는 배열이 되어(Matrix), 충돌된 것을 거기에 쌓는다.
-- Chaining : 해당 인덱스에 충돌된 것들을 Linked List로 연결하여 구현한다!!
-- 메소드 : .insert(key, value), .retrieve(key), .remove(key), .resize(newLimit) 등
-- 구조 : key("Adam Smith") → (hash function) → bucket([ { "Adam Smith" : 031-2134 }, { }, ...]) → (hash table)
+- Chaining : 해당 인덱스에 충돌된 것들을 Linked List로 연결하여 구현한다.
+
+#### 구조
+
+key("Adam Smith") → (hash function) → bucket([ { "Adam Smith" : 031-2134 }, { }, ...]) → (hash table)
+
+#### 주요 메소드
+
+.insert(key, value), .retrieve(key), .remove(key), .resize(newLimit) 등
 
 ```jsx
 // 해시값(hash value) 생성함수
@@ -291,9 +334,13 @@ HashTable.prototype._resize = function (newLimit) {
 };
 ```
 
+<br>
+<br>
+<br>
+
 ### Stack과 Linked List가 섞인 문제
 
-- (head) 1 → 2 → 3 → 4 → 5 → 6 (tail)과 같이 저장된 Linked List가 있다. 주어진 함수가 아래와 같을 때, `alternatePrint(head)`의 결과는?
+#### (head) 1 → 2 → 3 → 4 → 5 → 6 (tail)과 같이 저장된 Linked List가 있다. 주어진 함수가 아래와 같을 때, `alternatePrint(head)`의 결과는?
 
 ```jsx
 function alternatePrint(node) {

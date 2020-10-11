@@ -11,7 +11,7 @@ const LatestPostListQuery = graphql`
     allMarkdownRemark(sort: { order: DESC, fields: frontmatter___date }) {
       edges {
         node {
-          excerpt(truncate: true, pruneLength: 130)
+          excerpt(truncate: false, pruneLength: 180)
           frontmatter {
             title
             path
@@ -46,7 +46,14 @@ const IndexPage: React.FC = () => {
                 {node.frontmatter.title}
               </Link>
             </h3>
-            <p>{node.excerpt}</p>
+            <p
+              style={{
+                color: `Gray`,
+                fontSize: `small`,
+              }}
+            >
+              {node.excerpt}
+            </p>
             <p
               style={{
                 color: `LightGray`,

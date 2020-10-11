@@ -2,7 +2,7 @@
 title: "scope와 block"
 category: javascript
 path: /mil08
-date: 2020-10-10 00:00:07
+date: 2020-08-19 23:00:07
 ---
 
 ### 함수의 범위(Scope)

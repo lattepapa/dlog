@@ -2,7 +2,7 @@
 title: "reduce"
 category: javascript
 path: /mil07
-date: 2020-10-10 00:00:06
+date: 2020-08-17 23:00:06
 ---
 
 ### reduce 메소드

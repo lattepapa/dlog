@@ -2,35 +2,29 @@
 title: "Object Oriented Programming"
 category: javascript
 path: /mil16
-date: 2020-10-10 00:00:15
+date: 2020-09-10 23:00:15
 ---
-
-# Object Oriented Programming
 
 ### 객체지향 프로그래밍
 
-- 의미 : 사람이 세계를 보고 이해한 것을 컴퓨터 프로그래밍으로 흉내낸 것
-- 컴퓨터 프로그래밍 언어에 대한 짧은 고찰
-
-1. _Machinery Language_ : 0과 1로만 조합
-2. _Assembly Language_ : 만들어진 변수(r1 ~ r10), 정해진 규칙(swperm, xor, sieve 등)으로만 조합
-3. _High-level Language_ : 인간의 의사표현과 거의 유사
-
-- _Procedural Language_(절차지향언어) : C, COBOL, Fortran, LISP, Perl, HTML, VBScript 등 →
-- _Object Oriented Language_(객체지향언어)
-  — class 지향언어 : JAVA, C++, C#, Python, (Perl,) PHP 등
-  — prototype 지향언어 : javascript 등
+사람이 세계를 보고 이해한 것을 컴퓨터 프로그래밍으로 흉내낸 것을 의미한다.  
+[1] _Machinery Language_ : 0과 1로만 조합  
+[2] _Assembly Language_ : 만들어진 변수(r1 ~ r10), 정해진 규칙(swperm, xor, sieve 등)으로만 조합  
+[3] _High-level Language_ : 인간의 의사표현과 거의 유사  
+[3-1] _Procedural Language_(절차지향언어) : C, COBOL, Fortran, LISP, Perl, HTML, VBScript 등  
+[3-2] _Object Oriented Language_(객체지향언어)  
+[3-2-1] class 지향언어 : JAVA, C++, C#, Python, (Perl,) PHP 등  
+[3-2-2] prototype 지향언어 : javascript 등
 
 ### Class
 
-- 의미 : 같은 종류의 '것'들이 가져야 할 속성, 기능 등을 정의하는 일종의 범주를 의미
+같은 종류의 '것'들이 가져야 할 속성, 기능 등을 정의하는 일종의 범주를 의미
 
-* _Object_(객체) : *Class*의 *instance*이자, '객체다움'의 속성과 기능을 처음으로 가진 조상님\_
+#### Object(객체)
 
-- 실제 : 속성(_property_; _attribute_)을 정하는 `constructor`와, 기능들을 정하는 `method`로 구성
-  → 특히, *constructor*는 실행컨텍스트 `this`를 통해 보다 더 구체화된다!!!
+클래스의 인스턴스이자, '객체다움'의 속성과 기능을 처음으로 가진 조상님을 의미하며, 속성(= property 또는 attribute)을 정하는 **constructor**와, 기능들을 정하는 메소드로 구성된다. 특히, **constructor**는 실행컨텍스트 **this**를 통해 보다 더 구체화된다!!!
 
-```jsx
+```js
 // Linked List와 Node, 그리고 이것들에 대한 methods를 정의하는 class 예시
 class Node {
   constructor(data) {
@@ -62,21 +56,29 @@ class LinkedList {
 
 ### 객체지향 프로그래밍의 4가지 특성
 
-- **Encapsulation** : 속성(=_data_)은 _constructor_, 기능(=_function_)은 *methods*로 묶여 정리되는 것
-  → 재사용성을 높여주고(=시간복잡도 경감), 정보를 _class_ 안에 은닉 가능
-- **Inheritance** : *instance*가 *class*의 모든 속성을 상속받는 것으로 하되, 그 *key value*를 달리할 수 있는 것
-  → 캡슐화와 마찬가지로 재사용성을 높여주는 중요한 특성!!
-- **Abstraction** : 내부구조야 어떻든, 사용자 입장에서 편리하도록 *methods*들이 설계되는 것
-  → 이러한 추상화 특성도 마찬가지로 시간복잡도 경감시켜줌
-- **Polymorphism** : *instance*는 당연히 *prototype*의 *methods*를 쓸 수 있되, 결과의 다양성을 인정하는 것
-  (ex1) 모든 *tag*들의 부모인 `HTMLElement`는 DOM에서의 *instance*이므로, `TextBox, Select, CheckBox`와 같은 tag들은 `HTMLElement`가 쓸 수 있는 `.render()` *method*를 똑같이 쓸 수 있다. 만약 이러한 객체지향 프로그래밍의 Polymorphism이 허용되지 않는다면, 저 tag들은 해당 *method*를 쓰기 위해 비효율적으로 `switch case...`구문을 정의해야 할 것이다.
-  (ex2) 각기 다른 두 class(Human, Student)를 통해 만든 인스턴스들에게, 각각의 *prototype*으로부터 받은 `.sleep()`이라는 임의의 메소드 실행 결과를 다르게 해주는 것
+#### Encapsulation
+
+속성(= data)은 constructor, 기능(= function)은 메소드로 묶여 정리되는 것을 의미하며, 이러한 특성은 프로그램의 재사용성을 높여주고(= 시간복잡도 경감), 정보를 클래스 안에 은닉을 가능케 한다.
+
+#### Inheritance
+
+인스턴스가 클래스의 모든 속성을 상속받는 것으로 하되, 그 key value를 달리할 수 있는 것을 의미하며, 캡슐화와 마찬가지로 재사용성을 높여주는 중요한 특성이다.
+
+#### Abstraction
+
+내부구조야 어떻든, 사용자 입장에서 편리하도록 메소드들이 설계되는 것을 의미하며, 이러한 추상화 특성도 마찬가지로 시간복잡도 경감시켜준다.
+
+#### Polymorphism
+
+인스턴스는 당연히 프로토타입의 메소드를 쓸 수 있되, 결과의 다양성을 인정하는 것을 의미한다. 이러한 다형성의 대표적인 예시로는 모든 태그들의 부모인 **HTMLElement**는 DOM에서의 인스턴스이므로, **TextBox, Select, CheckBox**와 같은 태그들은 **HTMLElement**가 쓸 수 있는 **.render() 메소드**를 똑같이 쓸 수 있는 것이 있다. 만약 이러한 객체지향 프로그래밍의 Polymorphism이 허용되지 않는다면, 저 태그들은 해당 메소드를 쓰기 위해 비효율적으로 **switch case...**구문을 정의해야 할 것이다. 다형성의 또다른 예는 각기 다른 두 클래스(Human, Student)를 통해 만든 인스턴스들에게, 각각의 프로토타입으로부터 받은 **.sleep()**이라는 임의의 메소드 실행 결과를 다르게 해주는 것 등이 있다.
 
 ### Instantiation Patterns
 
-- **Functional Instantiation** : 모든 *instance*에 *class*의 *methods*가 자동으로 할당되므로 메모리효율은 낮음
+#### Functional Instantiation
 
-```jsx
+모든 인스턴스에 클래스의 메소드가 자동으로 할당되므로 메모리효율은 낮음
+
+```js
 let carClass = function (num) {
   let carInstance = {};
   carInstance.position = num; // 속성
@@ -91,9 +93,11 @@ let car1 = carClass(5);
 let car2 = carClass(10);
 ```
 
-- **Functional Shared Instantiation** : 사용이 필요한 *method*만 *instance*가 가져가므로 메모리효율이 좋음
+#### Functional Shared Instantiation
 
-```jsx
+사용이 필요한 메소드만 인스턴스가 가져가므로 메모리효율이 좋음
+
+```js
 let pickMethod = function (toInstance, methods) {
   for (let key in methods) {
     toInstance[key] = methods[key];
@@ -117,9 +121,11 @@ let car1 = carClass(5);
 let car2 = carClass(10);
 ```
 
-- **Prototypal Instantiation** : 실행컨텍스트 `this`와 `Object.create()` _method_ 활용
+#### Prototypal Instantiation
 
-```jsx
+실행컨텍스트 this와 Object.create() 메소드 활용
+
+```js
 let carMethods = {};
 carMethods.move = function () {
   this.positoin++;
@@ -135,9 +141,11 @@ let car1 = carClass(5);
 let car2 = carClass(10);
 ```
 
-- **Pseudoclassical Instantiation** : 가장 일반적인 _instance_ 생성 방법이(었)다!!!! `new` 키워드를 활용한다.
+#### Pseudoclassical Instantiation
 
-```jsx
+가장 일반적인 인스턴스 생성 방법이(었)다. new 키워드를 활용한다.
+
+```js
 let carClass = function (num) {
   this.position = num;
 };
@@ -150,51 +158,51 @@ let car1 = new carClass(5);
 let car2 = new carClass(10);
 ```
 
-# 상속
+<br>
+<br>
+<br>
 
 ### Prototype과 Prototype Chain
 
-- **Prototype** : 말 그대로 blue print, **원형 객체**를 의미한다. 자바스크립트는 프로토타입 언어이다!!
-- **constructor** : *instance*가 초기화될 때(=*class*로부터 만들때) 실행하는 생성자 함수를 의미
-- **this** : 함수가 실행될 때 해당 *scope*마다 생성되는 고유한 실행컨텍스트
-  → `new` 키워드로 *instance*를 생성 했을 때는 해당 *instance*가 바로 `this` 값이 된다!!!
-- **Prototype Object(원본속성 그자체)**
+#### Prototype
 
-1. 객체는 언제나 함수에 의해 생성된다.
-   → 엄밀히는, `Object`는 자바스크립트가 제공하는 고유함수이다.
-2. 모든 함수는 `constructor` 자격을 갖는다. 그렇기 때문에 함수는 `new` 키워드의 활용대상이 된다.
-3. `Human`이라는 *class*를 만들어보자. 그러면...
-   → `Human.prototype`이라고 하는 '자동 생성'된 속성에서 `constructor` 정보와 `__proto__`(_Prototype Link_) 정보를 확인할 수 있게된다.
-   → 이것이 바로 _Prototype Object_ 인 것이다!!!
-4. 여기서 `Human.prototype.eyes`라는 *method*를 만들자. 이 *method*는 항상 `2`를 리턴한다.
-   → 그러면 이 `eyes: 2`라는 _key-value_ 속성이 *Prototype Object*의 속성 중 하나로 삽입된다.
+말 그대로 blue print, **원형 객체**를 의미한다. 자바스크립트는 프로토타입 언어이다.
 
-- **Prototype Link(물려받은 원본속성)**
+#### constructor
 
-5. 계속 이어서 생각해보자. 저 `Human` *class*로부터 `smith`라는 *instance*를 만든다.
-6. 당연히 `smith`는 *prototype*이 아니기 때문에 _Prototype Object_ 정보가 존재하지 않는다.
-   그런데 `smith.eyes`로 *method*를 실행할 수도 있고, 결과값 `2`도 확인할 수 있다.
-7. 왜냐하면 이 `smith` *instance*의 `__proto__`(_Prototype Link_)에 자신의 *Prototype Object*가 명시(_link_)되어 있기 때문이다!!
-8. 이와 같이, 모든 객체는 반드시 `__proto__`(_Prototype Link_)를 가지며, 이는 자신의 _prototype_ 정보, 즉, **상속(유전)된 속성들을 항상 내장**하기 위함이다. 이를 **Prototype Chain**(또는 **[[Prototype]]**)이라고 부른다!!
+인스턴스가 초기화될 때(=클래스로부터 만들때) 실행하는 생성자 함수를 의미
+
+#### this
+
+함수가 실행될 때 해당 *scope*마다 생성되는 고유한 실행컨텍스트로, new 키워드로 인스턴스를 생성했을 때는 해당 인스턴스가 바로 this 값이 된다.
+
+#### Prototype Object(원본속성 그자체)
+
+[1] 객체는 언제나 함수에 의해 생성된다.(엄밀히는, 'Object'는 자바스크립트가 제공하는 고유함수이다.)  
+[2] 모든 함수는 **constructor** 자격을 갖는다. 그렇기 때문에 함수는 new 키워드의 활용대상이 된다.  
+[3] 'Human'이라는 클래스를 만들어보자. 그러면... 'Human.prototype'이라고 하는 자동 생성된 속성에서 constructor 정보와 \_\_proto\_\_(\_Prototype Link\_) 정보를 확인할 수 있게된다. 이것이 바로 Prototype Object 인 것이다.  
+[4] 여기서 'Human.prototype.eyes'라는 메소드를 만들자. 이 메소드는 항상 2를 리턴한다. 그러면 이 { eyes: 2 }라는 key-value 속성이 Prototype Object의 속성 중 하나로 삽입된다.
+
+#### Prototype Link(물려받은 원본속성)
+
+[5] 계속 이어서 생각해보자. 저 'Human' 클래스로부터 'smith'라는 인스턴스를 만든다.  
+[6] 당연히 'smith'는 프로토타입이 아니기 때문에 _Prototype Object_ 정보가 존재하지 않는다. 그런데 'smith.eyes'로 메소드를 실행할 수도 있고, 결과값 2도 확인할 수 있다.  
+[7] 왜냐하면 이 'smith' 인스턴스의 \_\_proto\_\_(\_Prototype Link\_)에 자신의 Prototype Object가 명시(link)되어 있기 때문이다.  
+[8] 이와 같이, 모든 객체는 반드시 \_\_proto\_\_(\_Prototype Link\_)를 가지며, 이는 자신의 prototype 정보, 즉, **상속(유전)된 속성들을 항상 내장**하기 위함이다. 이를 **Prototype Chain**(또는 **\[\[Prototype\]\]**)이라고 부른다.
 
 ### 간단한 Prototype 탐구
 
-- _HTML_ 환경에서
+#### HTML 환경에서
 
-1. `EventTarget`은 모든 HTML element들의 시조 *class*인 객체이다.
-   → 따라서 `.toString()` *method*를 쓸 수 있다.
-2. `Node`는 `EventTarget`를 통해 만들어진 *instance*이다.
-   → 따라서 `.toString()` *method*를 쓸 수 있다.
-   → 새롭게 `.append()` *method*를 만들었다.
-3. `Element`는 `Node`를 통해 만들어진 *instance*이다.
-   → 따라서 `.toString()`, `.append()` *method*를 쓸 수 있다.
-4. `HTMLElement`는 `Element`를 통해 만들어진 *instance*이다.
-   → 따라서 `.toString()`, `.append()` *method*를 쓸 수 있다.
-5. `div`는 `HTMLElement`를 통해 만들어진 *instance*이다. 따라서 ....
+[1] EventTarget은 모든 HTML element들의 시조 클래스인 객체이다. 따라서 .toString() 메소드를 쓸 수 있다.  
+[2] Node는 EventTarget를 통해 만들어진 인스턴스이다. 따라서 .toString() *method*를 쓸 수 있다. 여기서 새롭게 .append() 메소드를 만들었다.  
+[3] Element는 Node를 통해 만들어진 인스턴스이다. 따라서 .toString(), .append() 메소드를 쓸 수 있다.  
+[4] HTMLElement는 Element를 통해 만들어진 인스턴스이다. 따라서 .toString(), .append() 메소드를 쓸 수 있다.  
+[5] div는 HTMLElement를 통해 만들어진 인스턴스이다. 따라서 ....
 
-- **Pseudoclassical Legacy pattern**과 **ES6 pattern** 사이에서
+#### Pseudoclassical Legacy pattern과 ES6 pattern 사이에서
 
-```jsx
+```js
 // Human class와 method, instance 생성
 let Human = function (name) {
   this.name = name;
@@ -231,7 +239,7 @@ john.sleep(); // "학생이 잠이나 자나?"
 john.learn(); // "열공!"
 ```
 
-```jsx
+```js
 // Human class와 method, instance 생성
 class Human {
   constructor(name) {

@@ -2,7 +2,7 @@
 title: "map과 filter"
 category: javascript
 path: /mil06
-date: 2020-10-10 00:00:05
+date: 2020-08-14 23:00:05
 ---
 
 ### map 메소드

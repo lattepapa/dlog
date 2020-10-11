@@ -2,7 +2,7 @@
 title: "forEach"
 category: javascript
 path: /mil05
-date: 2020-10-10 00:00:04
+date: 2020-08-12 23:00:04
 ---
 
 ### forEach 메소드

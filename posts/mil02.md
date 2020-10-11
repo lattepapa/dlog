@@ -2,7 +2,7 @@
 title: "while loop"
 category: javascript
 path: /mil02
-date: 2020-10-10 00:00:01
+date: 2020-08-05 23:00:01
 ---
 
 ### while 반복문

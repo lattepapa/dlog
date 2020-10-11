@@ -2,7 +2,7 @@
 title: "for loop - part2"
 category: javascript
 path: /mil04
-date: 2020-10-10 00:00:03
+date: 2020-08-10 23:00:03
 ---
 
 ### 이중 for 반복문

@@ -76,10 +76,17 @@ $ git pull {아까 위에서 지칭한 pair 닉네임} {master}
 // 현재 작업 공간을 옮기고 싶을 때
 $ git checkout {옮기고 싶은 브랜치이름}
 
-// 새로운 브랜치를 만들어서 거기로 현재 작업 공간을 옮기고 싶을 때
-$ git checkout -b {만들고 싶은 브랜치이름}
+// 로컬저장소에서 새로운 브랜치를 만들어서 거기로 현재 작업 공간을 옮기고 싶을 때
+$ git checkout -b {새 브랜치명}
 
-// 원본을 토대로 새로운 브랜치를 만들어서 거기로 옮기고 싶을 때
+// 로컬저장소에서, 원본을 토대로 새로운 브랜치를 만들어서 거기로 옮기고 싶을 때
 $ git checkout origin
-$ git checkout -b newOne
+$ git checkout -b {새 브랜치명}
+
+// 로컬저장소의 브랜치를 삭제하고 싶을 때
+$ git checkout master
+$ git branch -D {삭제하고 싶은 브랜치명}
+
+// 원격저장소의 master 브랜치가 아닌 다른 브랜치를 로컬저장소로 가져오고(fetch) 싶을 때
+$ git checkout -t origin/{가져오고싶은 원격저장소의 브랜치명}
 ```

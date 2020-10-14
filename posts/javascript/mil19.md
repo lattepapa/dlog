@@ -1,7 +1,7 @@
 ---
 title: "알고리즘전략"
 category: javascript
-path: /javascript/mil18
+path: /javascript/mil19
 date: 2020-09-15 23:10:18
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "this, apply, call 그리고 bind"
 category: javascript
-path: /mil10
+path: /javascript/mil10
 date: 2020-09-02 23:00:09
 ---
 

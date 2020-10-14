@@ -1,7 +1,7 @@
 ---
 title: "ES6 vs Pseudoclassical"
 category: javascript
-path: /mil17
+path: /javascript/mil17
 date: 2020-09-14 23:00:16
 ---
 

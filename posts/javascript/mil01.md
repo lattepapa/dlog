@@ -1,7 +1,7 @@
 ---
 title: Pseudocoding
 category: javascript
-path: /mil01
+path: /javascript/mil01
 date: 2020-08-01 23:00:00
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Node.js 환경구축과 Git Workflow"
 category: javascript
-path: /mil09
+path: /javascript/mil09
 date: 2020-08-31 23:00:08
 ---
 

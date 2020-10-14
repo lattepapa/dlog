@@ -1,7 +1,7 @@
 ---
 title: "scope와 block"
 category: javascript
-path: /mil08
+path: /javascript/mil08
 date: 2020-08-19 23:00:07
 ---
 

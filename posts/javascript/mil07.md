@@ -1,7 +1,7 @@
 ---
 title: "reduce"
 category: javascript
-path: /mil07
+path: /javascript/mil07
 date: 2020-08-17 23:00:06
 ---
 

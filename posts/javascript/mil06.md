@@ -1,7 +1,7 @@
 ---
 title: "map과 filter"
 category: javascript
-path: /mil06
+path: /javascript/mil06
 date: 2020-08-14 23:00:05
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "while loop"
 category: javascript
-path: /mil02
+path: /javascript/mil02
 date: 2020-08-05 23:00:01
 ---
 

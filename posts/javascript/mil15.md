@@ -1,7 +1,7 @@
 ---
 title: "Time Complexity"
 category: javascript
-path: /mil15
+path: /javascript/mil15
 date: 2020-09-09 23:00:14
 ---
 

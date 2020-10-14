@@ -1,7 +1,7 @@
 ---
 title: "for loop - part2"
 category: javascript
-path: /mil04
+path: /javascript/mil04
 date: 2020-08-10 23:00:03
 ---
 

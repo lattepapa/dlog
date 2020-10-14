@@ -1,7 +1,7 @@
 ---
 title: "Graph, Tree 그리고 BST"
 category: javascript
-path: /mil14
+path: /javascript/mil14
 date: 2020-09-08 23:00:13
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Object Oriented Programming"
 category: javascript
-path: /mil16
+path: /javascript/mil16
 date: 2020-09-10 23:00:15
 ---
 

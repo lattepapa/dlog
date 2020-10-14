@@ -1,7 +1,7 @@
 ---
 title: "esLint"
 category: javascript
-path: /mil11
+path: /javascript/mil11
 date: 2020-09-03 23:00:10
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "forEach"
 category: javascript
-path: /mil05
+path: /javascript/mil05
 date: 2020-08-12 23:00:04
 ---
 

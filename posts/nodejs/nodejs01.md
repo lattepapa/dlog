@@ -1,7 +1,7 @@
 ---
 title: "Node.js란"
 category: nodejs
-path: /nodejs01
+path: /nodejs/nodejs01
 date: 2020-10-11 14:20:00
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "Object Oriented Programming"
+title: "[JS] Object Oriented Programming"
 category: javascript
 path: /javascript/mil16
 date: 2020-09-10 23:00:15
@@ -22,9 +22,9 @@ date: 2020-09-10 23:00:15
 
 #### Object(객체)
 
-클래스의 인스턴스이자, '객체다움'의 속성과 기능을 처음으로 가진 조상님을 의미하며, 속성(= property 또는 attribute)을 정하는 **constructor**와, 기능들을 정하는 메소드로 구성된다. 특히, **constructor**는 실행컨텍스트 **this**를 통해 보다 더 구체화된다!!!
+클래스의 인스턴스이자, '객체다움'의 속성과 기능을 처음으로 가진 조상님을 의미하며, 속성(= property 또는 attribute)을 정하는 **constructor**와, 기능들을 정하는 메소드로 구성된다. 특히, **constructor**는 실행컨텍스트 **this**를 통해 보다 더 구체화된다.
 
-```js
+```jsx
 // Linked List와 Node, 그리고 이것들에 대한 methods를 정의하는 class 예시
 class Node {
   constructor(data) {
@@ -54,6 +54,8 @@ class LinkedList {
 }
 ```
 
+<br>
+
 ### 객체지향 프로그래밍의 4가지 특성
 
 #### Encapsulation
@@ -78,7 +80,7 @@ class LinkedList {
 
 모든 인스턴스에 클래스의 메소드가 자동으로 할당되므로 메모리효율은 낮음
 
-```js
+```jsx
 let carClass = function (num) {
   let carInstance = {};
   carInstance.position = num; // 속성
@@ -93,11 +95,13 @@ let car1 = carClass(5);
 let car2 = carClass(10);
 ```
 
+<br>
+
 #### Functional Shared Instantiation
 
 사용이 필요한 메소드만 인스턴스가 가져가므로 메모리효율이 좋음
 
-```js
+```jsx
 let pickMethod = function (toInstance, methods) {
   for (let key in methods) {
     toInstance[key] = methods[key];
@@ -121,11 +125,13 @@ let car1 = carClass(5);
 let car2 = carClass(10);
 ```
 
+<br>
+
 #### Prototypal Instantiation
 
 실행컨텍스트 this와 Object.create() 메소드 활용
 
-```js
+```jsx
 let carMethods = {};
 carMethods.move = function () {
   this.positoin++;
@@ -141,11 +147,13 @@ let car1 = carClass(5);
 let car2 = carClass(10);
 ```
 
+<br>
+
 #### Pseudoclassical Instantiation
 
 가장 일반적인 인스턴스 생성 방법이(었)다. new 키워드를 활용한다.
 
-```js
+```jsx
 let carClass = function (num) {
   this.position = num;
 };
@@ -202,7 +210,7 @@ let car2 = new carClass(10);
 
 #### Pseudoclassical Legacy pattern과 ES6 pattern 사이에서
 
-```js
+```jsx
 // Human class와 method, instance 생성
 let Human = function (name) {
   this.name = name;
@@ -239,7 +247,7 @@ john.sleep(); // "학생이 잠이나 자나?"
 john.learn(); // "열공!"
 ```
 
-```js
+```jsx
 // Human class와 method, instance 생성
 class Human {
   constructor(name) {

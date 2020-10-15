@@ -1,5 +1,5 @@
 ---
-title: "map과 filter"
+title: "[JS] map과 filter"
 category: javascript
 path: /javascript/mil06
 date: 2020-08-14 23:00:05
@@ -7,11 +7,11 @@ date: 2020-08-14 23:00:05
 
 ### map 메소드
 
-> "_The **Map** object holds key-value pairs and **remembers the original** insertion order of the keys. Any value (both objects and primitive values) may be used as either a key or a value._" - [**MDN**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
+> _'The **Map** object holds key-value pairs and **remembers the original** insertion order of the keys. Any value (both objects and primitive values) may be used as either a key or a value.'_ - **MDN**
 
-**map 메소드**는 이전 포스팅인 forEach 메소드와 동일한 논리구조를 갖는다. 즉, 원본배열의 요소들에 대해 **주어진 함수**를 적용시키는 구조이다. 여기서 중요한 것은 **map 메소드**는 **immutable**(원본불변)의 성질을 갖는다는 것이다. **map 메소드**에 의해서는 원본배열은 수정되지 않으며, 마치 **slice 메소드**와 같이 새로운 배열이 도출된다. 예를 들어 아래와 같은 for 반복문이 먼저 있다고 하자.
+**map 메소드**는 이전 포스팅인 forEach 메소드와 동일한 논리구조를 갖는다. 즉, 원본배열의 엘리먼트들에 대해 **주어진 함수**를 적용시키는 구조이다. 여기서 중요한 것은 **map 메소드**는 **immutable**(원본불변)의 성질을 갖는다는 것이다. **map 메소드**에 의해서는 원본배열은 수정되지 않으며, 마치 **slice 메소드**와 같이 새로운 배열이 도출된다. 예를 들어 아래와 같은 for 반복문이 먼저 있다고 하자.
 
-```js
+```jsx
 let arr = [
   { brand: "BMW", model: "mini cooper" },
   { brand: "Mercedes", model: "CLA 250" },
@@ -29,12 +29,10 @@ for (let i = 0; i < arr.length; i++) {
   <tr><td>Name: volkswagen Golf TDI</td></tr>
 </table>
 <br>
-<br>
-<br>
 
-이것을 **map 메소드**를 활용하여 아래와 같이 바꿔서 표현할 수 있다. forEach 메소드에서의 경우와 마찬가지로, 위에서 `arr[i]`라고 썼던 arr의 요소들은 함수 `printCarName`에서 `car`라고 하는 임의의 **입력변수**로 대신 표현할 수 있게 된다.
+이것을 **map 메소드**를 활용하여 아래와 같이 바꿔서 표현할 수 있다. forEach 메소드에서의 경우와 마찬가지로, 위에서 arr[i]라고 썼던 arr의 엘리먼트들은 함수 printCarName에서 car라고 하는 임의의 **입력변수**로 대신 표현할 수 있게 된다.
 
-```js
+```jsx
 let arr = [
   { brand: "BMW", model: "mini cooper" },
   { brand: "Mercedes", model: "CLA 250" },
@@ -57,7 +55,7 @@ arr.map(printCarName);
 
 이처럼 **map 메소드**는 forEach 메소드와 동일한 결과물을 만들 수 있다. 한편, 위의 스크립트는 forEach처럼 반복나열 기능을 수행하도록 한 것이었는데 아래와 같이 **함수** 내용들을 바꾸면 다양한 변주가 가능하다.
 
-```js
+```jsx
 let arr = [
   { brand: "BMW", model: "mini cooper" },
   { brand: "Mercedes", model: "CLA 250" },
@@ -67,9 +65,13 @@ let arr = [
 arr.map(function (car) {
   return (car.brand = "Made in Germany, " + car.brand);
 });
+```
 
-/*
+<br>
+
 또는 다음과 같이 표현할 수도 있다.
+
+```jsx
 function nation(car) {
   return car.brand = 'Made in Germany, ' + car.brand;
 };
@@ -83,7 +85,7 @@ arr.map(nation);
 </table>
 <br>
 
-즉, **map 메소드**는 원본배열을 수정하지 않고 **주어진 함수**의 내용에 따라서, **원본배열의 길이**(원본배열의 요소개수)만큼 **새로운 배열을 리턴**한다.
+즉, **map 메소드**는 원본배열을 수정하지 않고 **주어진 함수**의 내용에 따라서, **원본배열의 길이**(원본배열의 엘리먼트 개수)만큼 **새로운 배열을 리턴**한다.
 <br>
 <br>
 <br>
@@ -92,9 +94,9 @@ arr.map(nation);
 
 > "_The **filter**() method creates a new array with all elements that **pass the test** implemented by the provided function._" - [**MDN**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
 
-**filter 메소드**도 map 메소드와 forEach 메소드처럼 원본배열의 요소들에 대해 **주어진 함수**를 적용하는 구조이다. 또한 **filter 메소드**도 마찬가지로 **immutable**(원본불변) 하다. 아래의 예를 통해 확인하자.
+**filter 메소드**도 map 메소드와 forEach 메소드처럼 원본배열의 엘리먼트들에 대해 **주어진 함수**를 적용하는 구조이다. 또한 **filter 메소드**도 마찬가지로 **immutable**(원본불변) 하다. 아래의 예를 통해 확인하자.
 
-```js
+```jsx
 let arr = [
   { brand: "BMW", model: "mini cooper" },
   { brand: "Mercedes", model: "CLA 250" },
@@ -106,9 +108,12 @@ function luxury(car) {
 }
 
 arr.filter(luxury);
+```
 
-/*
+<br>
 마찬가지로 다음과 같이 표현할 수 있다.
+
+```jsx
 arr.filter(function(car) {
   return car.brand.indexOf('M') !== -1;
 });
@@ -117,13 +122,13 @@ arr.filter(function(car) {
 
 <table>
   <tr><td>[ </td></tr>
-  <tr><td align= "center">{ brand: 'BMW', model: 'mini cooper' },</td></tr>
-  <tr><td align= "center">{ brand: 'Mercedes', model: 'CLA 250' }</td></tr>
+  <tr><td align= "center">&nbsp;&nbsp;&nbsp;&nbsp;{ brand: 'BMW', model: 'mini cooper' },</td></tr>
+  <tr><td align= "center">&nbsp;&nbsp;&nbsp;&nbsp;{ brand: 'Mercedes', model: 'CLA 250' }</td></tr>
   <tr><td> ]</td></tr>
 </table>
 <br>
 
-즉, **filter 메소드**는 원본배열을 수정하진 않지만 map 메소드와 달리 **주어진 함수**의 **내용(=조건)에 들어맞는 요소**들만 추려내어 **새로운 배열을 리턴**한다.
+즉, **filter 메소드**는 원본배열을 수정하진 않지만 map 메소드와 달리 **주어진 함수**의 **내용(=조건)에 들어맞는 엘리먼트**들만 추려내어 **새로운 배열을 리턴**한다.
 <br>
 <br>
 <br>
@@ -146,19 +151,19 @@ let list = [
 
 <br>
 
-```js
+```jsx
 // [더이상 쪼갤 수 없는 것] 30대
 let temp = list.filter((man) => {
   return Math.floor(Number(man.a) / 10) === 3;
 });
 
-// [로직1] 30대 시청현황 배열에서 장르요소(g)만 산출
+// [로직1] 30대 시청현황 배열에서 장르엘리먼트(g)만 산출
 let arr = [];
 temp.forEach((genre) => {
   arr.push(genre.g);
 });
 
-// [로직2] arr 배열 내 요소들이 각각 얼마나 반복되는 지 확인
+// [로직2] arr 배열 내 엘리먼트들이 각각 얼마나 반복되는 지 확인
 let obj = { mostGenre: "", mostCnt: 0 };
 for (let i = 0; i < arr.length; i++) {
   // obj에 정의되지 않았다면 key와 value를 만들어주고

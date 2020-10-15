@@ -1,5 +1,5 @@
 ---
-title: "HTTP"
+title: "[JS] HTTP"
 category: javascript
 path: /javascript/mil22
 date: 2020-09-23 23:14:21
@@ -132,6 +132,8 @@ xhr.onreadystatechange = function(){
 xhr.send(); // 요청 전송
 ```
 
+<br>
+
 보다시피 XHR은 간단한 구문도 조금 복잡해보이는 경향이 있다. 그렇기 때문에 이러한 메소드를 조금 더 간소화 시킨 라이브러리가 등장하게 되었다. 바로 **jQuery**이다.
 
 ```jsx
@@ -140,6 +142,8 @@ $.get("http://52.78.213.9:3000/messages", function (response) {
   // response: 서버로부터 온 응답
 });
 ```
+
+<br>
 
 그런데 이 jQuery도 인간의 관점에서 난해하다는 의견이 나오기 시작했다. 따라서 마치 javascript를 그대로 쓰는 것 같은 API가 나오게 되었다. 바로 **가독성**의 **fetch()** 구문이다.
 
@@ -150,6 +154,8 @@ fetch('http://52.78.213.9:3000/messages')
 	.then(json => // 서버로부터 json 형태로 전달받은 응답(즉, 콜백))
 	.catch(err => console.error(err));
 ```
+
+<br>
 
 #### AJAX
 

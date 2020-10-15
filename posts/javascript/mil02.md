@@ -1,22 +1,20 @@
 ---
-title: "while loop"
+title: "[JS] while 반복문"
 category: javascript
 path: /javascript/mil02
 date: 2020-08-05 23:00:01
 ---
 
-### while 반복문
+> _'The **while** statement creates a loop that executes a specified statement **as long as the test condition evaluates to true**.'_ - **MDN**
 
-> "The **while** statement creates a loop that executes a specified statement **as long as the test condition evaluates to true.**" - [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while)
-
-**반복문**(loop)은 반복의 조건(condition)이 true일 때까지만 특정명령(statement)을 반복적으로 실행한다. 반복문은 **for**, **while**라는 문법적 키워드를 사용하거나 **forEach**라고 하는 **함수형 구문**을 통해 구동한다. 특히, **while** 반복문은 2가지 이상의 변수를 고려해야 할 때 매우 심플하게 활용된다. 그리고 개인적으로 생각하기에, 반복의 조건이 **sementic**할 경우, for 반복문보다 while 반복문이 더 직관적인 것 같기도 하다.
+**반복문**(loop)은 반복의 조건(condition)이 true일 때까지만 특정명령(statement)을 반복적으로 실행한다. 반복문은 **for**, **while**라는 문법적 키워드를 사용하거나 **forEach**라고 하는 **함수형 구문**을 통해 구동한다. 특히, **while** 반복문은 2가지 이상의 변수를 고려해야 할 때 매우 심플하게 활용된다.
 <br>
 <br>
 <br>
 
 #### 1. 은행에서 연 고정금리로 운용하는 적금상품이 있다. 이 상품은 원금을 최초에 한 번 불입하면 추가로 적금을 넣을 수 없는 특이한 점이 있다. 이 적금상품에서 최초에 불입한 원금이 2배가 될 때까지 걸리는 시간(연)을 구하고자 한다.
 
-```js
+```jsx
 function doubledTime(rate) {
   // [더이상 쪼갤 수 없는 것] 원금을 불입한 당해년도는 원리금 계산 불가
   let account = 1;

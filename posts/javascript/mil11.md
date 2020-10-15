@@ -1,14 +1,13 @@
 ---
-title: "esLint"
+title: "[JS] esLint"
 category: javascript
 path: /javascript/mil11
 date: 2020-09-03 23:00:10
 ---
 
-### 설치
+### esLint 설치
 
-공홈에서 알려주는데로 차근차근 설치하면 된다.
-
+공홈에서 알려주는데로 차근차근 설치하면 된다.  
 [1] `npm install eslint --save-dev` (devDependencies에 추가하는 설치)  
 [2] `npx eslint --init` (검열 기초설정: CommonJS를 주로 볼 것인가, node 환경인가 등등)  
 [3] 생성된 eslintrc.js 파일에서 "env"와 "rules" 객체에다가 필요한 환경이나 검열규칙 추가하면 됨  
@@ -22,10 +21,9 @@ date: 2020-09-03 23:00:10
 [4] `npm install {모듈명}` (package.json의 "dependency" 객체 내 해당 모듈명 속성을 생성)  
 [5] `npm install {모듈명} --save-dev` (package.json의 "devDependency" 객체 내 해당 모듈명 속성을 생성)
 
-### 검열
+### esLint 검열
 
-문서 내에서 검열 스킵이 필요할 경우 :
-
+문서 내에서 검열 스킵이 필요할 경우  
 [1] `/*eslint-env node, mocha*/` 와 같은 주석을 하단에 추가하거나,  
 [2] eslintrc.js 파일에서 "env"에 node, mocha에 대한 'true' 속성 추가  
 [3] 일부 변수에 검열 스킵이 필요할 경우 : 윗줄에 `/*eslint-disable*/`, 아랫줄에 `/*eslint-enable*/` 주석 입력
@@ -34,11 +32,11 @@ date: 2020-09-03 23:00:10
 
 #### 왜 Global이 아닌 특정 프로젝트에 설치하는 것이 좋을까?
 
-모든 프로젝트가 동일한 esLint 버전과 동일한 테스트 기준에 적용 받는 것은 바람직하지 않음!
+모든 프로젝트가 동일한 esLint 버전과 동일한 테스트 기준에 적용 받는 것은 바람직하지 않다.
 
 #### "no-unused-vars"의 의미는?
 
-변수가 선언은 되었으나 사용된 적이 없는 경우를 의미
+변수가 선언은 되었으나 사용된 적이 없는 경우를 의미한다.
 
 #### "configuring rules" 운용 방법
 

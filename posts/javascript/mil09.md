@@ -1,40 +1,9 @@
 ---
-title: "Node.js 환경구축과 Git Workflow"
+title: "[JS] Git"
 category: javascript
 path: /javascript/mil09
 date: 2020-08-31 23:00:08
 ---
-
-### Immersive Course preOrientation
-
-[1] 나는 부트캠프에 온 것(learn swiftly)이지, 대학원에 온 것(study and analysis)이 아니다.  
-[2] 레퍼런스 보는 것을 주저하지 말자. 위의 말과 일맥상통하는 것!  
-[3] 개발자도 노트에 펜으로 필기를 해야 한다. 무엇을? 어떤 가설과 방법으로 문제를 해결할 지를  
-[4] 오직 모든 것은 어떻게 문제를 해결할 수 있을 지에 대한 고민에 집중하자.
-
-### Runtime
-
-어떤 프로그래밍 언어가 동작할 수 있는 프로그램을 의미한다. 쉽게 말해, javascript의 웹 런타임은 Chrome 웹 브라우저, 서버 런타임은 Node.js라고 표현할 수 있다.
-
-### Node.js
-
-#### NVM
-
-Node Version Manager, 즉, Node.js의 버전관리툴을 의미한다. NVM을 설치한 후 .zshrc에 환경변수를 등록해야하며, source .zshrc(재구동)이 필요하다.
-
-#### NPM
-
-Node Package Manager, 즉, 다른 사람들이 만들어놓은 Node.js 모듈 모음을 다운 받을 수 있게 하는 일종의 스토어를 의미한다.
-
-#### package.json
-
-프로그램 실행에 필요한 모듈 리스트를 제공  
-[1] dependencies : 반드시 필요한 모듈 리스트(`npm install --save {라이브러리명}`)  
-[2] devDependencies : 개발환경에 필요한 모듈 리스트(`npm install --save-dev {라이브러리명}`)  
-[3] scripts : 실행 명령어 안내
-<br>
-<br>
-<br>
 
 ### Git Workflow
 

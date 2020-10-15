@@ -1,5 +1,5 @@
 ---
-title: "promise"
+title: "[JS] promise"
 category: javascript
 path: /javascript/mil20
 date: 2020-09-21 23:04:19
@@ -33,6 +33,8 @@ const printAll = () => {
 
 printAll();
 ```
+
+<br>
 
 ### promise
 
@@ -79,6 +81,8 @@ const printAll = () => {
 
 printAll();
 ```
+
+<br>
 
 이때, 단순히 하나의 함수 안에서 setTimeout으로 비동기처리가 이뤄지는 것만 가능한 것이 아니다. 다음과 같이 **여러 함수들이 비동기적**으로 처리될 때에도 promise 구문을 사용할 수 있다.
 
@@ -136,6 +140,8 @@ wakeUp()
     console.log(data); // 4.1분대부터 식사하러 갓
   });
 ```
+
+<br>
 
 ### async await
 

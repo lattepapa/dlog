@@ -1,5 +1,5 @@
 ---
-title: "constructor"
+title: "[JS] constructor"
 category: javascript
 path: /javascript/mil18
 date: 2020-09-14 23:30:17
@@ -65,6 +65,8 @@ class DancerClass {
   }
 }
 ```
+
+<br>
 
 ### Class, prototype, instance의 모식도
 

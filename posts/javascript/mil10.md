@@ -1,5 +1,5 @@
 ---
-title: "this, apply, call 그리고 bind"
+title: "[JS] this, apply, call 그리고 bind"
 category: javascript
 path: /javascript/mil10
 date: 2020-09-02 23:00:09
@@ -9,7 +9,7 @@ date: 2020-09-02 23:00:09
 
 'function' 키워드를 화살표로 축약할 수 있다. 이때 return과 중괄호(curly brackets)도 생략한다. 이러한 화살표함수는 클로저(Closure)를 사용할 때 매우 유리하다.
 
-```js
+```jsx
 // 함수표현식에 의한 클로저 구현
 const adder = function (x) {
   return function (y) {
@@ -20,13 +20,14 @@ const adder = function (x) {
 adder(5)(7); // 12
 ```
 
-```js
+```jsx
 // 화살표함수에 의한 클로저 구현
 const adder = (x) => (y) => x + y;
 
 adder(5)(7); // 12
 ```
 
+<br>
 단, 화살표함수는 **.apply() 메소드**, **.call() 메소드**, **.bind() 메소드**에 사용할 수 없다. 왜냐하면 이러한 .apply, .call, .bind 메소드는 this에 **부모객체를 바인딩할 것을 전제**하는데 화살표함수는 애초에 **this**에 무엇이 바인딩 되었는지 결정짓지 않기 때문이다.
 
 ### this
@@ -42,7 +43,7 @@ adder(5)(7); // 12
 
 #### 메소드에서 this 호출 상세
 
-```js
+```jsx
 // 객체가 싱글톤(Singleton) 패턴인 경우
 let counter1 = {
   value: 0,
@@ -63,7 +64,7 @@ counter1.decrease(); // 1
 counter1.getValue(); // 1
 ```
 
-```js
+```jsx
 // 객체가 클로저(Closure) 패턴인 경우
 function makeCounter() {
   return {
@@ -91,9 +92,11 @@ counter2.decrease(); // 0
 counter2.getValue(); // 0
 ```
 
+<br>
+
 #### new 키워드에서 this 호출 상세
 
-```js
+```jsx
 class Counter {
   constructor() {
     this.value = 0;
@@ -132,7 +135,7 @@ this에 argument를 **명시적**으로 지정하고 싶을 때 사용
 
 #### .call()과 .apply()를 사용해야 하는 예시
 
-```js
+```jsx
 // Prototype 상속이 필요한 상황1("concat하겠다, array1과 array2를")
 const array1 = ["united", "states"];
 const array2 = ["president"];
@@ -145,7 +148,7 @@ Array.prototype.concat.apply(array1, [array2]); // [ 'united', 'states', 'presid
 "피,땀,사나이한목숨".split(","); // [ '피', '땀', '사나이한목숨' ]
 ```
 
-```js
+```jsx
 // 유사배열 상황1
 let divs = document.querySelectorAll("div");
 
@@ -170,7 +173,7 @@ Array.prototype.slice.apply(nodeList, [0, 1]); // [ 'div#target' ]
 Array.prototype.slice.call(nodeList, 0, 1); // [ 'div#target' ]
 ```
 
-```js
+```jsx
 // 객체지향프로그래밍 상황
 function Product(name, price) {
   this.name = name;
@@ -210,7 +213,7 @@ function handleClick() {
 }
 ```
 
-```js
+```jsx
 // setTimeout 상황
 class Rectangle {
   constructor(width, height) {

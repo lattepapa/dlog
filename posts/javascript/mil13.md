@@ -1,5 +1,5 @@
 ---
-title: "Linked List와 Hash Table"
+title: "[JS] Linked List와 Hash Table"
 category: javascript
 path: /javascript/mil13
 date: 2020-09-07 23:00:12
@@ -27,8 +27,7 @@ FAT32 파일시스템, 지하철 운행(이번역은... 다음역은 ...), Ctrl+
 
 #### 주요 구조
 
-(head) → (node) → (node) → ... → (node) → (tail) → Null
-
+(head) → (node) → (node) → ... → (node) → (tail) → Null  
 [1] head : 첫번째 node를 가리키는 순수 pointer이다. 빈 List라면 head가 바로 Null을 가리키게 된다.  
 [2] node : data를 갖으면서 다음 node를 가리키는 pointer도 함께 갖는다.  
 [3] tail : Time Complex를 줄여서 node별 data들을 잘 CRUD하기 위한 일종의 편의개념이다.

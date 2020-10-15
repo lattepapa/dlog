@@ -1,19 +1,19 @@
 ---
-title: "forEach"
+title: "[JS] forEach"
 category: javascript
 path: /javascript/mil05
 date: 2020-08-12 23:00:04
 ---
 
-### forEach 메소드
+> _'The **forEach() method executes a provided function** once for each array element.'_ - **MDN**
 
-while이나 for를 통해 반복문을 작성하는 방법 이외에도, **forEach**라고 하는 **메소드**(method)를 통한 반복문 실행의 방법이 존재한다. 자세히 말하자면 **forEach 메소드**가, 반복하기를 희망하는 **함수**(function)를 자신의 **변수**로 대입시키는 방법을 말한다. 먼저 **forEach**에 대한 MDN 레퍼런스를 확인하자.
+while이나 for 반복문 이외에도, **forEach 메소드**(method)를 통한 반복문 실행의 방법이 존재한다. 단, forEach는 **메소드**이기 때문에, 반복하기를 희망하는 '**함수**(function)'를 자신의 **변수**로 대입하는 형태로 작성한다.
 
-> "_The **forEach() method executes a provided function** once for each array element._" - [**MDN**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach) > <br>
+#### for반복문을 forEach 구문으로 표현하기
 
 예를 들어 아래와 같은 for 반복문이 먼저 있다고 하자.
 
-```js
+```jsx
 let arr = [
   { brand: "BMW", model: "mini cooper" },
   { brand: "Mercedes", model: "CLA 250" },
@@ -31,12 +31,10 @@ for (let i = 0; i < arr.length; i++) {
   <tr><td>Name: volkswagen Golf TDI</td></tr>
 </table>
 <br>
-<br>
-<br>
 
-이것을 **forEach 메소드**를 활용하여 아래와 같이 바꿔서 표현할 수 있다. 이때, 위에서 `arr[i]`라고 썼던 arr의 요소들은 함수 `printCarName`에서 `car`라고 하는 임의의 **입력변수**로 대신 표현할 수 있게 된다.
+이것을 **forEach 메소드**를 활용하여 아래와 같이 바꿔서 표현할 수 있다. 이때, 위에서 **arr[i]**라고 썼던 엘리먼트들은 함수 printCarName에서 car라고 하는 **임의의 입력변수**로 대신 표현할 수 있게 된다.
 
-```js
+```jsx
 let arr = [
   { brand: "BMW", model: "mini cooper" },
   { brand: "Mercedes", model: "CLA 250" },
@@ -56,12 +54,10 @@ arr.forEach(printCarName);
   <tr><td>Name: volkswagen Golf TDI</td></tr>
 </table>
 <br>
-<br>
-<br>
 
-즉, **forEach 메소드**는 자신이 적용될 배열에 대해 '**주어진 함수**'(`printCarName`)를 그 배열의 요소들에 차례대로 적용해준다는 것을 알 수 있다. 그렇기 때문에 메소드에 대입될 **변수**로는 함수값이 아니라 **함수 자체**(`printCarName`)이어야 한다. 만약 함수값(`printCarName(car)`)이 대입된다면 배열의 요소에 적용할 규칙이 없는 것이 되어버리기 때문이다. 이러한 사실을 활용하여 위의 구문을 다시 써보면 아래와 같이 할 수 있다.
+즉, **forEach 메소드**는 자신이 적용될 배열에 대해 '**주어진 함수**'(printCarName)를 그 배열의 엘리먼트들에 차례대로 적용해준다는 것을 알 수 있다. 그렇기 때문에 메소드에 대입될 **변수**로는 함수값이 아니라 **함수 자체**(printCarName)이어야 한다. 만약 함수값 printCarName(car)이 대입된다면 배열의 엘리먼트에 적용할 규칙이 없는 것이 되어버리기 때문이다. 이러한 사실을 활용하여 위의 구문을 다시 써보면 아래와 같이 할 수 있다.
 
-```js
+```jsx
 let arr = [
   { brand: "BMW", model: "mini cooper" },
   { brand: "Mercedes", model: "CLA 250" },
@@ -79,12 +75,10 @@ arr.forEach(function (car) {
   <tr><td>Name: volkswagen Golf TDI</td></tr>
 </table>
 <br>
-<br>
-<br>
 
 또는 아래와 같이도 바꿔서 쓸 수 있다.
 
-```js
+```jsx
 let arr = [
   { brand: "BMW", model: "mini cooper" },
   { brand: "Mercedes", model: "CLA 250" },
@@ -102,12 +96,10 @@ arr.forEach((car) => {
   <tr><td>Name: volkswagen Golf TDI</td></tr>
 </table>
 <br>
-<br>
-<br>
 
 이렇게 다양한 방식으로 작성할 수 있는데, 재차 반복해서 말하자면 **forEach**는 **Array.prototype의 메소드**이기 때문에 가능한 것이다. 한편, **forEach**는 이 포스팅의 가장 서두에서 MDN 레퍼런스로 인용하였듯이, 그 안에 **받을 수 있는 변수가 최대 3가지**(this 객체는 잠깐 잊어두자) 정도라고 생각할 수 있다. 조금 복잡하게 말하자면, **forEach**에 대입할 함수는 최대 3개의 **인자**(argument)를 받는다. 이때 인자의 첫번째는 배열의 요소, 두번째는 배열의 인덱스, 세번째는 배열 원본을 의미한다. 이는 아래와 같이 확인할 수 있다.
 
-```js
+```jsx
 let arr = [
   { brand: "BMW", model: "mini cooper" },
   { brand: "Mercedes", model: "CLA 250" },
@@ -126,7 +118,6 @@ arr.forEach(printCarName);
   <tr><td>Name: Mercedes CLA 250 (1번째 요소)</td></tr>
   <tr><td>Name: volkswagen Golf TDI (2번째 요소)</td></tr>
 </table>
-<br>
 <br>
 
 ```js
@@ -150,7 +141,7 @@ arr.forEach(printCarName);
 
 #### 1. 너구리 라면을 먹고 싶은 Jason과, 아이스아메리카노를 마시고 싶은 Tony가 있다. PC방 주문기계를 통해 이 두명의 주문을 '비동기적(asynchronously)'으로 처리하고자 한다. 주문 후 5초만에 전달에 이르는 로직을 생각해보자.
 
-```js
+```jsx
 // [더이상 쪼갤 수 없는 것] 주문 후 5초에는 전달이 완료되어야 함
 function delivery(callback, ms) {
   setTimeout(callback, ms);
@@ -198,7 +189,7 @@ orders.forEach(function (orderUser) {
 </span>
 이때 **forEach 메소드** 부분은 아래와 같이도 쓸 수 있다.
 
-```js
+```jsx
 orders.forEach((orderUser) => {
   process(orderUser.buy, (snack) => {
     result(orderUser.name, snack);

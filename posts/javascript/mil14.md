@@ -1,5 +1,5 @@
 ---
-title: "Graph, Tree 그리고 BST"
+title: "[JS] Graph, Tree 그리고 BST"
 category: javascript
 path: /javascript/mil14
 date: 2020-09-08 23:00:13
@@ -23,12 +23,12 @@ vertex(정점) 또는 node를 연결하는 edge(간선)으로 구성된 자료�
 [1] Adjacent vertex(인접node) : edge에 의해 직접 연결된 vertex를 의미  
 [2] degree(node차수) : UGraph에서, 인접한 vertex의 개수를 의미하며, 이때 다음을 만족한다.
 
-> > (모든 degree의 수) = (모든 edge의 수) \* 2
+> (모든 degree의 수) = (모든 edge의 수) \* 2
 
 [3] in-degree(진입차수) : DGraph에서, 외부에서 오는 edge의 개수를 의미  
 [4] out-degree(진출차수) : DGraph에서, 외부로 향하는 edge의 개수를 의미하며, 이때 다음을 만족한다.
 
-> > (모든 indegree의 수) = (모든 outdegree의 수) = (모든 edge의 수)
+> (모든 indegree의 수) = (모든 outdegree의 수) = (모든 edge의 수)
 
 [5] weight(가중치) : edge에 부여되는 일종의 인덱스  
 [6] path-length(경로길이) : 경로를 구성하는데 사용된 edge의 개수  
@@ -37,8 +37,7 @@ vertex(정점) 또는 node를 연결하는 edge(간선)으로 구성된 자료�
 
 #### 구현방식
 
-[1] Adjacent List(인접리스트) : vertex를 key로 하여 인접node들을 list에 저장하는 방식으로 공간복잡도는 V + E 이다. 즉, 인접리스트를 구현하려면 메모리가 최대 V + E 만큼 필요하다. 따라서 vertex의 추가, 삭제, 탐색에 유리하다.
-
+[1] Adjacent List(인접리스트) : vertex를 key로 하여 인접node들을 list에 저장하는 방식으로 공간복잡도는 V + E 이다. 즉, 인접리스트를 구현하려면 메모리가 최대 V + E 만큼 필요하다. 따라서 vertex의 추가, 삭제, 탐색에 유리하다.  
 [2] Adjacent Matrix(인접행렬) : 행렬의 각 element들이 두 vertex 간 연결을 나타내는 방식으로 공간복잡도는 V _ V 이다. 즉, 인접행렬을 구현하려면 메모리가 최대 V _ V 만큼 필요하다. 따라서 vertex의 '빈번한' 추가, 삭제, 탐색에 유리하다.
 
 #### 주요 메소드

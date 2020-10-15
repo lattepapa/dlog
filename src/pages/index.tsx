@@ -35,6 +35,7 @@ const IndexPage: React.FC = () => {
       <ul>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <li key={node.id}>
+            <span>
             <h3>
               <Link
                 style={{
@@ -46,25 +47,31 @@ const IndexPage: React.FC = () => {
                 {node.frontmatter.title}
               </Link>
             </h3>
-            <p
+            </span>
+            
+            {/* <p
               style={{
                 color: `Gray`,
                 fontSize: `small`,
               }}
             >
               {node.excerpt}
-            </p>
-            <p
+            </p> */}
+            
+            <span
               style={{
                 color: `LightGray`,
-                textDecoration: `none`,
+                fontSize: `small`
               }}
             >
               posted on{` `}
               {node.frontmatter.date}
-            </p>
+            </span>
+            <br />
+            <br />
             <hr />
           </li>
+          
         ))}
       </ul>
     </Layout>

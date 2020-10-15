@@ -36,18 +36,21 @@ printAll();
 
 ### promise
 
-#### promise 객체
-
 promise 객체는 연쇄적인 비동기적 처리를 콜백지옥 없이 도와주는 클래스라고 할 수 있다. 단, **.then(callback)** 메소드 상황에서 **반드시 'return'으로 다음 callback을 호출해야 한다.** 만약 'return' 구문없이 단순히 다음 상황을 호출한다면 이는 콜백지옥과 다를 바가 없어지게 된다.
 
-#### promise의 상태
+#### Pending 상태
 
-**Pending**(비동기처리 대기), **Fulfilled**(비동기처리 완료), **Rejected**(비동기처리 실패)의 3가지 상태로 구분된다.
-[1] Pending : **new Promise()**를 통해 promise 객체가 **막 선언된 상태**를 의미한다. pending 상태에서는 **resolve 메소드**와 **reject 메소드**를 콜백에 넘길 준비를 한다.  
-[2] Fulfilled : 콜백에 정상적으로 **resolve 메소드**가 전달된 상태를 의미한다. 이때 반드시 **then(() => {return 비동기처리함수 리턴})** 등으로 처리결과를 받아내야 한다.  
-[3] Reject : 콜백이 **reject(new Error("Request is failed"))** 등을 받을 수 있도록 한 상태를 의미한다. 위의 fulfilled 상태와 유사하게, 반드시 **then().catch(() ⇒ {new Error의 내용 리턴})** 등으로 처리결과를 받아내야 한다.
+**new Promise()**를 통해 promise 객체가 **막 선언된 상태**를 의미한다. pending 상태에서는 **resolve 메소드**와 **reject 메소드**를 콜백에 넘길 준비를 한다.
 
-#### 콜백구조를 promise 구조로 변환하기
+#### Fulfilled 상태
+
+콜백에 정상적으로 **resolve 메소드**가 전달된 상태를 의미한다. 이때 반드시 **then(() => {return 비동기처리함수 리턴})** 등으로 처리결과를 받아내야 한다.
+
+#### Reject 상태
+
+콜백이 **reject(new Error("Request is failed"))** 등을 받을 수 있도록 한 상태를 의미한다. 위의 fulfilled 상태와 유사하게, 반드시 **then().catch(() ⇒ {new Error의 내용 리턴})** 등으로 처리결과를 받아내야 한다.
+
+### 콜백구조를 promise 구조로 변환하기
 
 ```jsx
 const print = (string, callback) => {

@@ -1,5 +1,5 @@
 ---
-title: "[Node.js] Node.js 구동의 기본"
+title: "[Node.js] 기본구동"
 category: nodejs
 path: /nodejs/nodejs02
 date: 2020-10-12 21:30:00

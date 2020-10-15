@@ -1,5 +1,5 @@
 ---
-title: "BigO"
+title: "[Algorithm] BigO"
 category: algorithm
 path: /algorithm/algorithm01
 date: 2020-10-03 14:20:00

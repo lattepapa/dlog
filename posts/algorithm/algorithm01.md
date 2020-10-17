@@ -16,7 +16,7 @@ date: 2020-10-03 14:20:00
 ####두번째 BigO 케이스: $O(n)$
 일명 **선형시간**이라고 부른다. 알고리즘에 어떠한 입력이 수행될 때, 그 결과를 리턴하는데에는 주어진 데이터 n개를 모두 순회하는 시간만큼 소요된다. 가장 대표적인 예는 반복문을 사용하여 엘리먼트에 접근하는 경우이다. 또는 **Linked List**(연결리스트)에서의 조회, 탐색의 경우에도 선형시간이 소요된다.
 
-```js
+```jsx{numberLines: true}
 const linear = (n) => {
   for (let i = 0; i < n; i++) {
     console.log(i);
@@ -35,7 +35,7 @@ linear(100000);
 ####세번째 BigO 케이스: $O(n^2)$
 **2차 시간복잡도**는 주로 **이중 반복문** 상황에서 구현된다.
 
-```js
+```jsx{numberLines: true}
 const quadratic = (n) => {
   for (let i = 0; i < n; i++) {
     console.log(i);
@@ -62,7 +62,7 @@ quadratic(100000);
 ####네번째 BigO 케이스: $O(log{n})$
 **로그 시간복잡도**는 주로 제곱 또는 제곱근과 연관된 상황에서 발견할 수 있다. 또한, **BST**(이진트리)에서의 조회, 탐색, 추가, 삭제의 경우에도 로그 시간복잡도가 소요된다.
 
-```js
+```jsx{numberLines: true}
 const logarithmic = (n) => {
   for (let i = 2; i <= n; i = i * 2) {
     console.log(i);

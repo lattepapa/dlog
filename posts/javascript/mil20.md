@@ -13,7 +13,7 @@ date: 2020-09-21 23:04:19
 
 "김수" "안무" "거북이와" "두루미"를 차례대로 뱉어내는 함수는 다음과 같이 최초에 표현할 수 있다. 단, 함수는 비동기적이지만, 뱉어내는 동안 다른 작업이 없으므로 결과만 놓고 보면 다소 동기적인 상황이다. 그 뒷 구절이 붙을 때마다 후속 콜백함수의 호출을 위해 **curly brackets**이 뱀처럼 증가된다.
 
-```jsx
+```jsx{numberLines: true}
 const print = (string, callback) => {
   setTimeout(() => {
     console.log(string);
@@ -54,7 +54,7 @@ promise 객체는 연쇄적인 비동기적 처리를 콜백지옥 없이 도와
 
 ### 콜백구조를 promise 구조로 변환하기
 
-```jsx
+```jsx{numberLines: true}
 const print = (string, callback) => {
   // Promise 메소드를 호출한 상태에서 비동기적 처리의 내용을 실행한다!!
   return new Promise((resolve, reject) => {
@@ -68,9 +68,11 @@ const print = (string, callback) => {
 
 const printAll = () => {
   print("김수") // 후속 처리될 함수는 .then 메소드를 호출하여 그 안에서 '리턴'으로 처리한다!!
+    // highlight-start
     .then(() => {
       return print("안무");
     })
+    // highlight-end
     .then(() => {
       return print("거북이와");
     })
@@ -86,7 +88,7 @@ printAll();
 
 이때, 단순히 하나의 함수 안에서 setTimeout으로 비동기처리가 이뤄지는 것만 가능한 것이 아니다. 다음과 같이 **여러 함수들이 비동기적**으로 처리될 때에도 promise 구문을 사용할 수 있다.
 
-```jsx
+```jsx{numberLines: true}
 function wakeUp() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -147,7 +149,7 @@ wakeUp()
 
 **async ~ await** 구문을 통해 **.then 메소드**를 대체할 수도 있다! 이 때 **async()**는 비동기 실행의 총 프로세스를 담는 메소드가 되며, **await**는 실행될 콜백의 **resolve 메소드**의 데이터를 변수에 담아주는 역할을 수행하게 된다.
 
-```jsx
+```jsx{numberLines: true}
 function wakeUp() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {

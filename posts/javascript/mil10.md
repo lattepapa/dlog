@@ -28,7 +28,8 @@ adder(5)(7); // 12
 ```
 
 <br>
-단, 화살표함수는 **.apply() 메소드**, **.call() 메소드**, **.bind() 메소드**에 사용할 수 없다. 왜냐하면 이러한 .apply, .call, .bind 메소드는 this에 **부모객체를 바인딩할 것을 전제**하는데 화살표함수는 애초에 **this**에 무엇이 바인딩 되었는지 결정짓지 않기 때문이다.
+
+단, 화살표함수는 **.apply(), .call(), .bind() 메소드에 사용할 수 없다**. 왜냐하면 이러한 .apply, .call, .bind 메소드는 this에 **부모객체를 바인딩할 것을 전제**하는데 화살표함수는 애초에 **this**에 무엇이 바인딩 되었는지 결정짓지 않기 때문이다.
 
 ### this
 
@@ -43,7 +44,7 @@ adder(5)(7); // 12
 
 #### 메소드에서 this 호출 상세
 
-```jsx
+```jsx{numberLines: true}
 // 객체가 싱글톤(Singleton) 패턴인 경우
 let counter1 = {
   value: 0,
@@ -64,7 +65,7 @@ counter1.decrease(); // 1
 counter1.getValue(); // 1
 ```
 
-```jsx
+```jsx{numberLines: true}
 // 객체가 클로저(Closure) 패턴인 경우
 function makeCounter() {
   return {
@@ -96,11 +97,13 @@ counter2.getValue(); // 0
 
 #### new 키워드에서 this 호출 상세
 
-```jsx
+```jsx{numberLines: true}
 class Counter {
+  // highlight-start
   constructor() {
     this.value = 0;
   }
+  // highlight-end
   increase() {
     this.value++;
   }
@@ -135,7 +138,7 @@ this에 argument를 **명시적**으로 지정하고 싶을 때 사용
 
 #### .call()과 .apply()를 사용해야 하는 예시
 
-```jsx
+```jsx{numberLines: true}
 // Prototype 상속이 필요한 상황1("concat하겠다, array1과 array2를")
 const array1 = ["united", "states"];
 const array2 = ["president"];
@@ -148,7 +151,7 @@ Array.prototype.concat.apply(array1, [array2]); // [ 'united', 'states', 'presid
 "피,땀,사나이한목숨".split(","); // [ '피', '땀', '사나이한목숨' ]
 ```
 
-```jsx
+```jsx{numberLines: true}
 // 유사배열 상황1
 let divs = document.querySelectorAll("div");
 
@@ -173,12 +176,14 @@ Array.prototype.slice.apply(nodeList, [0, 1]); // [ 'div#target' ]
 Array.prototype.slice.call(nodeList, 0, 1); // [ 'div#target' ]
 ```
 
-```jsx
+```jsx{numberLines: true}
 // 객체지향프로그래밍 상황
+// highlight-start
 function Product(name, price) {
   this.name = name;
   this.price = price;
 }
+// highlight-end
 
 function FoodProduct(name, price) {
   Product.call(this, name, price); // 이때의 this는 바로 위의 Product를 의미
@@ -192,7 +197,7 @@ cheese; // Food{ name: 'ricotta', price: 5000, category: 'food' }
 
 #### .bind()를 사용해야 하는 예시
 
-```jsx
+```jsx{numberLines: true}
 // eventHandler 상황
 <div id="target">클릭하십쇼</div>;
 
@@ -213,13 +218,15 @@ function handleClick() {
 }
 ```
 
-```jsx
+```jsx{numberLines: true}
 // setTimeout 상황
 class Rectangle {
+  // highlight-start
   constructor(width, height) {
     this.width = width;
     this.height = height;
   }
+  // highlight-end
 
   getArea() {
     return this.width * this.height;

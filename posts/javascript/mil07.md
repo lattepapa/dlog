@@ -23,7 +23,7 @@ date: 2020-08-17 23:00:06
 
 #### reduce 메소드로 배열을 문자 또는 숫자로 전환하는 경우
 
-```jsx
+```jsx{numberLines: true}
 let arr = [
   { brand: "BMW", model: "mini cooper", nation: "Germany" },
   { brand: "Mercedes", model: "CLA 250", nation: "Germany" },
@@ -31,18 +31,20 @@ let arr = [
   { brand: "Mercedes", model: "C class", nation: "Germany" },
 ];
 
+// highlight-start
 function summaryByLine(list, car) {
   list = list + car.model + ". ";
   return list;
 }
 
 arr.reduce(summaryByLine, "");
+// highlight-end
 ```
 
 <br>
 위의 결과는 다음과 같이 나오게 된다.
 
-```jsx
+```jsx{numberLines: true}
 "mini cooper. CLA 250. Golf TDI. C class. ";
 
 ```
@@ -63,7 +65,7 @@ arr.reduce(summaryByLine, "");
 
 #### reduce 메소드로 배열을 객체로 전환하는 경우
 
-```jsx
+```jsx{numberLines: true}
 let arr = [
   { brand: "BMW", model: "mini cooper", nation: "Germany" },
   { brand: "Mercedes", model: "CLA 250", nation: "Germany" },
@@ -97,7 +99,7 @@ arr.reduce(sortByNation, {});
 <br>
 위의 결과는 다음과 같이 나오게 된다.
 
-```jsx
+```jsx{numberLines: true}
 {
   Germany: [
     { brand: 'BMW', nation: 'Germany' },
@@ -172,7 +174,7 @@ let studentList = [
 
 <br>
 
-```jsx
+```jsx{numberLines: true}
 function filterGirlsGrade(students) {
   // [더이상 쪼갤 수 없는 것] 여자
   let girls = students.filter((someone) => {
@@ -198,7 +200,7 @@ function filterGirlsGrade(students) {
 
 #### 2. 배열을 입력받아 배열에서 가장 짧은 길이를 가진 문자열 엘리먼트를 리턴하고자 한다.
 
-```jsx
+```jsx{numberLines: true}
 function whatIsTheShortestLetter(arr) {
   // [더이상 쪼갤 수 없는 것] 문자일 때
   let letterOnly = arr.filter((el) => typeof el === "string");
@@ -207,6 +209,7 @@ function whatIsTheShortestLetter(arr) {
   }
 
   // [로직1] letterOnly에 저장한 문자들의 길이를 reduce로 비교하여 줄여감
+  // highlight-start
   return letterOnly.reduce((acc, cur) => {
     if (acc.length <= cur.length) {
       return acc;
@@ -214,6 +217,7 @@ function whatIsTheShortestLetter(arr) {
       return cur;
     }
   }, 0);
+  // highlight-end
 }
 ```
 
@@ -223,7 +227,7 @@ function whatIsTheShortestLetter(arr) {
 
 #### 3. 어떤 형태의 배열이든, 배열들의 엘리먼트를 모두 담고 있는 단일 배열을 리턴하고자 한다.
 
-```jsx
+```jsx{numberLines: true}
 function arrayFlatten(arr) {
   // 결과값(accumulator) 엘리먼트에 계속 현재의 엘리먼트(cur)를 concat시키면 간단하다.
   let flattened = arr.reduce((acc, cur) => {

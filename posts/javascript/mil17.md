@@ -7,7 +7,7 @@ date: 2020-09-14 23:00:16
 
 ### esLint에서 검열규칙 완화하기
 
-```jsx
+```jsx{numberLines: true}
 // no-unused-var인 케이스를 검열하지 않기 위해
 // 설정 파일(.eslintrc.json)에서 `rules`에 속성을 추가
 {
@@ -18,9 +18,11 @@ date: 2020-09-14 23:00:16
     "mocha": true,
     "browser": true
   },
+  // highlight-start
   "rules": { // 검열 완화대상을 추가
     "no-unused-vars": "off"
   }
+  // highlight-end
 }
 ```
 
@@ -28,7 +30,7 @@ date: 2020-09-14 23:00:16
 
 ### ES6 instantiation pattern
 
-```jsx
+```jsx{numberLines: true}
 class Grub {
   constructor() {
     this.age = 0;
@@ -82,7 +84,7 @@ class ForagerBee extends Bee {
 
 ### Pseudoclassical instantiation pattern
 
-```jsx
+```jsx{numberLines: true}
 var Grub = function () {
   this.age = 0;
   this.color = "pink";

@@ -13,7 +13,7 @@ while이나 for 반복문 이외에도, **forEach 메소드**(method)를 통한 
 
 예를 들어 아래와 같은 for 반복문이 먼저 있다고 하자.
 
-```jsx
+```jsx{numberLines: true}
 let arr = [
   { brand: "BMW", model: "mini cooper" },
   { brand: "Mercedes", model: "CLA 250" },
@@ -34,18 +34,20 @@ for (let i = 0; i < arr.length; i++) {
 
 이것을 **forEach 메소드**를 활용하여 아래와 같이 바꿔서 표현할 수 있다. 이때, 위에서 **arr[i]**라고 썼던 엘리먼트들은 함수 printCarName에서 car라고 하는 **임의의 입력변수**로 대신 표현할 수 있게 된다.
 
-```jsx
+```jsx{numberLines: true}
 let arr = [
   { brand: "BMW", model: "mini cooper" },
   { brand: "Mercedes", model: "CLA 250" },
   { brand: "volkswagen", model: "Golf TDI" },
 ];
 
+// highlight-start
 function printCarName(car) {
   console.log(`Name: ${car.brand} ${car.model}`);
 }
 
 arr.forEach(printCarName);
+// highlight-end
 ```
 
 <table>
@@ -57,7 +59,7 @@ arr.forEach(printCarName);
 
 즉, **forEach 메소드**는 자신이 적용될 배열에 대해 '**주어진 함수**'(printCarName)를 그 배열의 엘리먼트들에 차례대로 적용해준다는 것을 알 수 있다. 그렇기 때문에 메소드에 대입될 **변수**로는 함수값이 아니라 **함수 자체**(printCarName)이어야 한다. 만약 함수값 printCarName(car)이 대입된다면 배열의 엘리먼트에 적용할 규칙이 없는 것이 되어버리기 때문이다. 이러한 사실을 활용하여 위의 구문을 다시 써보면 아래와 같이 할 수 있다.
 
-```jsx
+```jsx{numberLines: true}
 let arr = [
   { brand: "BMW", model: "mini cooper" },
   { brand: "Mercedes", model: "CLA 250" },
@@ -78,7 +80,7 @@ arr.forEach(function (car) {
 
 또는 아래와 같이도 바꿔서 쓸 수 있다.
 
-```jsx
+```jsx{numberLines: true}
 let arr = [
   { brand: "BMW", model: "mini cooper" },
   { brand: "Mercedes", model: "CLA 250" },
@@ -99,7 +101,7 @@ arr.forEach((car) => {
 
 이렇게 다양한 방식으로 작성할 수 있는데, 재차 반복해서 말하자면 **forEach**는 **Array.prototype의 메소드**이기 때문에 가능한 것이다. 한편, **forEach**는 이 포스팅의 가장 서두에서 MDN 레퍼런스로 인용하였듯이, 그 안에 **받을 수 있는 변수가 최대 3가지**(this 객체는 잠깐 잊어두자) 정도라고 생각할 수 있다. 조금 복잡하게 말하자면, **forEach**에 대입할 함수는 최대 3개의 **인자**(argument)를 받는다. 이때 인자의 첫번째는 배열의 요소, 두번째는 배열의 인덱스, 세번째는 배열 원본을 의미한다. 이는 아래와 같이 확인할 수 있다.
 
-```jsx
+```jsx{numberLines: true}
 let arr = [
   { brand: "BMW", model: "mini cooper" },
   { brand: "Mercedes", model: "CLA 250" },
@@ -120,7 +122,7 @@ arr.forEach(printCarName);
 </table>
 <br>
 
-```js
+```jsx{numberLines: true}
 let arr = ["mini", "CLA", "Golf"];
 
 function printCarName(car, idx, origin) {
@@ -141,7 +143,7 @@ arr.forEach(printCarName);
 
 #### 1. 너구리 라면을 먹고 싶은 Jason과, 아이스아메리카노를 마시고 싶은 Tony가 있다. PC방 주문기계를 통해 이 두명의 주문을 '비동기적(asynchronously)'으로 처리하고자 한다. 주문 후 5초만에 전달에 이르는 로직을 생각해보자.
 
-```jsx
+```jsx{numberLines: true}
 // [더이상 쪼갤 수 없는 것] 주문 후 5초에는 전달이 완료되어야 함
 function delivery(callback, ms) {
   setTimeout(callback, ms);
@@ -189,7 +191,7 @@ orders.forEach(function (orderUser) {
 </span>
 이때 **forEach 메소드** 부분은 아래와 같이도 쓸 수 있다.
 
-```jsx
+```jsx{numberLines: true}
 orders.forEach((orderUser) => {
   process(orderUser.buy, (snack) => {
     result(orderUser.name, snack);

@@ -32,7 +32,7 @@ date: 2020-09-24 22:42:22
 과거에 \<img> 태그로 다른 도메인의 이미지 파일을 가져오거나, \<link> 태그로 다른 도메인의 CSS를 가져오거나, \<script> 태그로 다른 도메인의 JavaScript 라이브러리를 가져오는 것이 모두 가능했었던 적이 있었다. 반면, \<script>\</script>로 둘러싸여 있는 스크립트에서 생성된 Cross-Site HTTP Requests는 **Same Origin Policy**를 적용 받기 때문에 Cross-Site HTTP Requests가 불가능 했었다.  
 그러나 **AJAX**가 널리 사용되면서, 또한, 웹 서비스 상호 간의 연결이 많아지면서(예를 들면 카카오톡 채팅창에 유튜브 링크를 올리거나, 유튜브 링크를 인스타그램에 다이렉트로 공유하는 경우 등), **\<script>\</script>**로 둘러싸여 있는 스크립트에서 생성되는 XMLHttpRequest에 대해서도 Cross-Site HTTP Requests가 가능해야 한다는 요구가 늘어났다. 이러한 분위기 속에 W3C에서 **교차출처공유**(Cross-Origin Resource Sharing; 즉, **CORS**)라는 이름의 권고안이 나오게 되었다. 바꿔말하면, **CORS**가 허용하는 **option**을 가진 클라이언트 요청헤더에 한하여 서버의 응답이 허용된다. 아래는 가장 기본적인 형태의 CORS 옵션 설정이다. 보통 **Node.js** 서버환경에서 이러한 CORS Header 설정을 영위하며, Node.js의 express 라이브러리를 사용할 경우 이마저도 cors 모듈의 호출로써 과감히 생략할 수 있다.
 
-```jsx
+```jsx{numberLines: true}
 const defaultCorsHeaders = {
   "access-control-allow-origin": "*",
   "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS",

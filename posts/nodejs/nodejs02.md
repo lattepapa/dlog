@@ -13,7 +13,7 @@ process 객체에는 기본적으로 node 프로그램 실행 프로세스와 �
 
 #### argv 속성의 모습
 
-```jsx
+```jsx{numberLines: true}
 console.log(process.argv.length);
 // 2
 
@@ -30,6 +30,8 @@ process.argv.forEach((item, index) => {
 // 1 : /Users/siwoobaek/nodedrill/nodedrill.js
 ```
 
+<br>
+
 ### Node.js 모듈 활용
 
 #### 모듈을 불러오는 전역객체
@@ -38,7 +40,7 @@ process.argv.forEach((item, index) => {
 
 #### module.exports 객체를 사용하는 경우
 
-```jsx
+```jsx{numberLines: true}
 // calculator.js(분리된 모듈)
 const calc = {};
 
@@ -47,10 +49,12 @@ calc.doSubtraction = (a, b) => console.log(a - b);
 calc.doMultiplication = (a, b) => console.log(a * b);
 calc.doDivision = (a, b) => console.log(a / b);
 
+// highlight-start
 module.exports = calc;
+// highlight-end
 ```
 
-```jsx
+```jsx{numberLines: true}
 // main.js(calculator.js를 불러와서 사용할 메인 파일)
 const calc = require("./calculator");
 calc.doAddition(3, 7);
@@ -61,9 +65,11 @@ $ node main.js
 10
 ```
 
+<br>
+
 #### exports 객체를 사용하는 경우
 
-```jsx
+```jsx{numberLines: true}
 // calculator.js(분리된 모듈)
 exports.doAddition = (a, b) => console.log(a + b);
 exports.doSubtraction = (a, b) => console.log(a - b);
@@ -71,7 +77,7 @@ exports.doMultiplication = (a, b) => console.log(a * b);
 exports.doDivision = (a, b) => console.log(a / b);
 ```
 
-```jsx
+```jsx{numberLines: true}
 // main.js(calculator.js를 불러와서 사용할 메인 파일)
 const calc = require("./nodedrill");
 calc.doAddition(3, 7);
@@ -81,6 +87,8 @@ calc.doAddition(3, 7);
 $ node main.js
 10
 ```
+
+<br>
 
 만약 모듈 파일 내에서 **module.exports 객체**를 통해 모듈 파일 전체를 규정했다면, **exports 객체**를 따로 규정할 필요가 없어진다.
 
@@ -135,7 +143,7 @@ About to write to /Users/siwoobaek/nodedrill/package.json:
 Is this OK? (yes)
 ```
 
-```jsx
+```jsx{numberLines: true}
 // package.json(위의 npm init 명령에서 단순히 엔터키만 계속 쳤을 때)
 {
   "name": "nodedrill",
@@ -150,6 +158,8 @@ Is this OK? (yes)
 }
 ```
 
+<br>
+
 만약 package.json 파일이 프로젝트 디렉터리에 존재하는 가운데, 모듈을 삭제 후 재설치하기 위해선 다음과 같이 명령 프롬프트에 입력한다. 그러면...
 
 ```
@@ -157,7 +167,7 @@ $ npm uninstall 패키지명
 $ npm install --save 패키지명
 ```
 
-```jsx
+```jsx{numberLines: true}
 // package.json
 {
   "name": "nodedrill",
@@ -169,11 +179,15 @@ $ npm install --save 패키지명
 }
 ```
 
+<br>
+
 만약 다른 개발자가 이 프로젝트를 그대로 받아서 작업하고자 한다면, 다음의 명령을 통해 모든 모듈 패키지들을 신속하게 설치할 수 있다. 아래의 명령은 **package.json**에 작성된 모든 **의존성 정보(dependencies)**를 찾아서 자동 설치해주는 고마운 명령어이다.
 
 ```
 $ npm install
 ```
+
+<br>
 
 ### 간단한 내장 모듈들
 
@@ -185,7 +199,7 @@ $ npm install
 [4] cpus() : CPU 정보  
 [5] networkInterfaces() : 네트워크 인터페이스 정보
 
-```jsx
+```jsx{numberLines: true}
 // myinfo.js
 const os = require("os");
 console.log(`호스트명: ${os.hostname()[0]}`);
@@ -212,6 +226,8 @@ $ node myinfo.js
 
 ```
 
+<br>
+
 #### 파일경로 관련
 
 [1] join() : 디렉터리 이름과 파일 이름을 합쳐서 하나의 경로로 만들어준다.  
@@ -219,7 +235,7 @@ $ node myinfo.js
 [3] basename() : 파일경로에서 확장자를 제외하여 파일 이름만 반환한다.  
 [4] extname() : 파일경로에서 파일의 확장자만 반환한다.
 
-```jsx
+```jsx{numberLines: true}
 // filePath.js
 const path = require("path");
 
@@ -245,7 +261,7 @@ $ node filePath.js
 
 <br>
 
-```jsx
+```jsx{numberLines: true}
 // directoryPath.js
 const path = require("path");
 

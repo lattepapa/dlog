@@ -42,13 +42,15 @@ FAT32 파일시스템, 지하철 운행(이번역은... 다음역은 ...), Ctrl+
 
 .addToTail(data), .remove(data), .indexOf(data), .contains(data), .getNodeAt(index) 등
 
-```jsx
+```jsx{numberLines: true}
 // Node 생성 클래스
 class Node {
+  // highlight-start
   constructor(data) {
     this.data = data;
     this.next = null;
   }
+  // highlight-end
 }
 
 // Linked List 생성 클래스
@@ -61,7 +63,7 @@ class LinkedList {
 }
 ```
 
-```jsx
+```jsx{numberLines: true}
 // AddtoTail 메소드
 LinkedList.prototype.addToTail = function (data) {
   let add = new Node(data);
@@ -80,7 +82,7 @@ LinkedList.prototype.addToTail = function (data) {
 };
 ```
 
-```jsx
+```jsx{numberLines: true}
 // Remove 메소드
 LinkedList.prototype.remove = function (data) {
   let current = this.head;
@@ -99,7 +101,7 @@ LinkedList.prototype.remove = function (data) {
 };
 ```
 
-```jsx
+```jsx{numberLines: true}
 // getNodeAt 메소드
 LinkedList.prototype.getNodeAt = function (index) {
   let current = this.head;
@@ -115,7 +117,7 @@ LinkedList.prototype.getNodeAt = function (index) {
 };
 ```
 
-```jsx
+```jsx{numberLines: true}
 // contains 메소드
 LinkedList.prototype.contains = function (data) {
   let current = this.head;
@@ -129,7 +131,7 @@ LinkedList.prototype.contains = function (data) {
 };
 ```
 
-```jsx
+```jsx{numberLines: true}
 // indexOf 메소드
 LinkedList.prototype.indexOf = function (data) {
   let current = this.head;
@@ -199,7 +201,7 @@ key("Adam Smith") → (hash function) → bucket([ { "Adam Smith" : 031-2134 }, 
 
 .insert(key, value), .retrieve(key), .remove(key), .resize(newLimit) 등
 
-```jsx
+```jsx{numberLines: true}
 // 해시값(hash value) 생성함수
 // 어떠한 key를, 그것을 표징하는 인덱스(해시값)로 변환하는 역할
 const hashFunction = function (str, max) {
@@ -213,7 +215,7 @@ const hashFunction = function (str, max) {
 };
 ```
 
-```jsx
+```jsx{numberLines: true}
 // 해시테이블에 값(tuple) 저장
 // 해시값 생성함수를 통해 생성된 인덱스에, key-value 튜플을 연관시켜 저장하는 역할
 const LimitedArray = function (limit) {
@@ -247,18 +249,20 @@ const LimitedArray = function (limit) {
 };
 ```
 
-```jsx
+```jsx{numberLines: true}
 // 해시테이블 생성 템플릿
 class HashTable {
+  // highlight-start
   constructor() {
     this._size = 0;
     this._limit = 8; // 정하기 나름
     this._storage = new LimitedArray(this._limit);
   }
+  // highlight-end
 }
 ```
 
-```jsx
+```jsx{numberLines: true}
 // 해시테이블에 key-value 튜플 추가하는 메소드
 HashTable.prototype.insert = function (key, value) {
   const index = hashFunction(key, this._limit);
@@ -281,7 +285,7 @@ HashTable.prototype.insert = function (key, value) {
 };
 ```
 
-```jsx
+```jsx{numberLines: true}
 // 해시테이블에서 주어진 key의 value를 조회하는 메소드
 HashTable.prototype.retrieve = function (key) {
   const index = hashFunction(key, this._limit);
@@ -292,7 +296,7 @@ HashTable.prototype.retrieve = function (key) {
 };
 ```
 
-```jsx
+```jsx{numberLines: true}
 // 해시테이블 내 튜플 삭제 메소드
 HashTable.prototype.remove = function (key) {
   const index = hashFunction(key, this._limit);
@@ -310,7 +314,7 @@ HashTable.prototype.remove = function (key) {
 };
 ```
 
-```jsx
+```jsx{numberLines: true}
 // 해시테이블에 대한 Re-Hashing 메소드
 HashTable.prototype._resize = function (newLimit) {
   // HashTable 클래스의 기존 storage 정보들을 일괄적으로 따로 빼놔야 한다.
@@ -341,7 +345,7 @@ HashTable.prototype._resize = function (newLimit) {
 
 #### (head) 1 → 2 → 3 → 4 → 5 → 6 (tail)과 같이 저장된 Linked List가 있다. 주어진 함수가 아래와 같을 때, `alternatePrint(head)`의 결과는?
 
-```jsx
+```jsx{numberLines: true}
 function alternatePrint(node) {
   if (node == null) {
     return;

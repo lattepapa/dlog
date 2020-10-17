@@ -9,21 +9,25 @@ date: 2020-09-14 23:30:17
 
 **constructor**란, 클래스가 자식(=인스턴스)에게 물려줄 유전형질(프로토타입)을 정의해주는 역할을 수행한다. 아래는 'Dance Party' 스프린트에서 발췌한 코드이다. 인스턴스가 사용할 수 있는 메소드를 constructor 함수에서 애초에 정의해줄 수도 있고, 클래스 수준에서 정의해줄 수도 있다는 내용이다.
 
-```jsx
+```jsx{numberLines: true}
 // constructor 함수 밖에 createDancerElement 함수를 선언할 경우
 class DancerClass {
   constructor(top, left, timeBetweenSteps) {
     this.timeBetweenSteps = timeBetweenSteps;
+    // highlight-start
     this.$node = this.createDancerElement();
+    // highlight-end
     this.step();
     this.setPosition(top, left);
   }
 
+  // highlight-start
   createDancerElement() {
     let elDancer = document.createElement("span");
     elDancer.className = "dancer";
     return elDancer;
   }
+  // highlight-end
 
   step() {
     setTimeout(this.step.bind(this), this.timeBetweenSteps);
@@ -38,17 +42,21 @@ class DancerClass {
 }
 ```
 
-```jsx
+```jsx{numberLines: true}
 // constructor 함수 안에 createDancerElement 함수를 선언할 경우
 class DancerClass {
   constructor(top, left, timeBetweenSteps) {
+    // highlight-start
 		createDancerElement() {
 	    let elDancer = document.createElement('span');
 	    elDancer.className = 'dancer';
 	    return elDancer;
-	  }
+    }
+    // highlight-end
     this.timeBetweenSteps = timeBetweenSteps;
+    // highlight-start
     this.$node = createDancerElement();
+    // highlight-end
     this.step();
     this.setPosition(top, left);
   }

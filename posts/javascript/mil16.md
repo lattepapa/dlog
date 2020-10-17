@@ -24,21 +24,25 @@ date: 2020-09-10 23:00:15
 
 클래스의 인스턴스이자, '객체다움'의 속성과 기능을 처음으로 가진 조상님을 의미하며, 속성(= property 또는 attribute)을 정하는 **constructor**와, 기능들을 정하는 메소드로 구성된다. 특히, **constructor**는 실행컨텍스트 **this**를 통해 보다 더 구체화된다.
 
-```jsx
+```jsx{numberLines: true}
 // Linked List와 Node, 그리고 이것들에 대한 methods를 정의하는 class 예시
 class Node {
+  // highlight-start
   constructor(data) {
     this.data = data;
     this.next = null;
   }
+  // highlight-end
 }
 
 class LinkedList {
+  // highlight-start
   constructor() {
     this.head = null;
     this.tail = null;
     this._size = 0;
   }
+  // highlight-end
 
   addToTail(data) {
     if (!this.head) {
@@ -80,7 +84,7 @@ class LinkedList {
 
 모든 인스턴스에 클래스의 메소드가 자동으로 할당되므로 메모리효율은 낮음
 
-```jsx
+```jsx{numberLines: true}
 let carClass = function (num) {
   let carInstance = {};
   carInstance.position = num; // 속성
@@ -101,7 +105,7 @@ let car2 = carClass(10);
 
 사용이 필요한 메소드만 인스턴스가 가져가므로 메모리효율이 좋음
 
-```jsx
+```jsx{numberLines: true}
 let pickMethod = function (toInstance, methods) {
   for (let key in methods) {
     toInstance[key] = methods[key];
@@ -131,7 +135,7 @@ let car2 = carClass(10);
 
 실행컨텍스트 this와 Object.create() 메소드 활용
 
-```jsx
+```jsx{numberLines: true}
 let carMethods = {};
 carMethods.move = function () {
   this.positoin++;
@@ -153,7 +157,7 @@ let car2 = carClass(10);
 
 가장 일반적인 인스턴스 생성 방법이(었)다. new 키워드를 활용한다.
 
-```jsx
+```jsx{numberLines: true}
 let carClass = function (num) {
   this.position = num;
 };
@@ -210,7 +214,7 @@ let car2 = new carClass(10);
 
 #### Pseudoclassical Legacy pattern과 ES6 pattern 사이에서
 
-```jsx
+```jsx{numberLines: true}
 // Human class와 method, instance 생성
 let Human = function (name) {
   this.name = name;
@@ -226,6 +230,7 @@ let Student = function (name) {
   Human.call(this, name);
 };
 
+// highlight-start
 // prototype 및 method 복사
 Student.prototype = Object.create(Human.prototype);
 
@@ -240,6 +245,7 @@ Student.prototype.sleep = function () {
   Human.prototype.sleep.apply(this);
   console.log("학생이 잠이나 자나?");
 };
+// highlight-end
 
 // 확인
 let john = new Student("john");
@@ -247,7 +253,7 @@ john.sleep(); // "학생이 잠이나 자나?"
 john.learn(); // "열공!"
 ```
 
-```jsx
+```jsx{numberLines: true}
 // Human class와 method, instance 생성
 class Human {
   constructor(name) {

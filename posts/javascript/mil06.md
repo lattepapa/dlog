@@ -11,7 +11,7 @@ date: 2020-08-14 23:00:05
 
 **map 메소드**는 이전 포스팅인 forEach 메소드와 동일한 논리구조를 갖는다. 즉, 원본배열의 엘리먼트들에 대해 **주어진 함수**를 적용시키는 구조이다. 여기서 중요한 것은 **map 메소드**는 **immutable**(원본불변)의 성질을 갖는다는 것이다. **map 메소드**에 의해서는 원본배열은 수정되지 않으며, 마치 **slice 메소드**와 같이 새로운 배열이 도출된다. 예를 들어 아래와 같은 for 반복문이 먼저 있다고 하자.
 
-```jsx
+```jsx{numberLines: true}
 let arr = [
   { brand: "BMW", model: "mini cooper" },
   { brand: "Mercedes", model: "CLA 250" },
@@ -32,18 +32,20 @@ for (let i = 0; i < arr.length; i++) {
 
 이것을 **map 메소드**를 활용하여 아래와 같이 바꿔서 표현할 수 있다. forEach 메소드에서의 경우와 마찬가지로, 위에서 arr[i]라고 썼던 arr의 엘리먼트들은 함수 printCarName에서 car라고 하는 임의의 **입력변수**로 대신 표현할 수 있게 된다.
 
-```jsx
+```jsx{numberLines: true}
 let arr = [
   { brand: "BMW", model: "mini cooper" },
   { brand: "Mercedes", model: "CLA 250" },
   { brand: "volkswagen", model: "Golf TDI" },
 ];
 
+// highlight-start
 function printCarName(car) {
   console.log(`Name: ${car.brand} ${car.model}`);
 }
 
 arr.map(printCarName);
+// highlight-end
 ```
 
 <table>
@@ -55,7 +57,7 @@ arr.map(printCarName);
 
 이처럼 **map 메소드**는 forEach 메소드와 동일한 결과물을 만들 수 있다. 한편, 위의 스크립트는 forEach처럼 반복나열 기능을 수행하도록 한 것이었는데 아래와 같이 **함수** 내용들을 바꾸면 다양한 변주가 가능하다.
 
-```jsx
+```jsx{numberLines: true}
 let arr = [
   { brand: "BMW", model: "mini cooper" },
   { brand: "Mercedes", model: "CLA 250" },
@@ -71,7 +73,7 @@ arr.map(function (car) {
 
 또는 다음과 같이 표현할 수도 있다.
 
-```jsx
+```jsx{numberLines: true}
 function nation(car) {
   return car.brand = 'Made in Germany, ' + car.brand;
 };
@@ -96,24 +98,26 @@ arr.map(nation);
 
 **filter 메소드**도 map 메소드와 forEach 메소드처럼 원본배열의 엘리먼트들에 대해 **주어진 함수**를 적용하는 구조이다. 또한 **filter 메소드**도 마찬가지로 **immutable**(원본불변) 하다. 아래의 예를 통해 확인하자.
 
-```jsx
+```jsx{numberLines: true}
 let arr = [
   { brand: "BMW", model: "mini cooper" },
   { brand: "Mercedes", model: "CLA 250" },
   { brand: "volkswagen", model: "Golf TDI" },
 ];
 
+// highlight-start
 function luxury(car) {
   return car.brand.indexOf("M") !== -1;
 }
 
 arr.filter(luxury);
+// highlight-end
 ```
 
 <br>
 마찬가지로 다음과 같이 표현할 수 있다.
 
-```jsx
+```jsx{numberLines: true}
 arr.filter(function(car) {
   return car.brand.indexOf('M') !== -1;
 });
@@ -151,7 +155,7 @@ let list = [
 
 <br>
 
-```jsx
+```jsx{numberLines: true}
 // [더이상 쪼갤 수 없는 것] 30대
 let temp = list.filter((man) => {
   return Math.floor(Number(man.a) / 10) === 3;

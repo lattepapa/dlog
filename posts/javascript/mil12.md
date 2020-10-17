@@ -27,13 +27,15 @@ Call-stack 환경 등 내부함수 실행 전반, 계산기 원리(후위계산 
 
 .push(element), .pop(), peak(), size() 등
 
-```jsx
+```jsx{numberLines: true}
 // 객체를 활용한 Stack 프로토타입
 class Stack {
+  // highlight-start
   constructor() {
     this.storage = {};
     this.top = 0;
   }
+  // highlight-end
 
   size() {
     return this.top;
@@ -56,13 +58,15 @@ class Stack {
 }
 ```
 
-```jsx
+```jsx{numberLines: true}
 // 배열 속성을 활용한 Stack 프로토타입
 class Stack {
+  // highlight-start
   constructor() {
     this.storage = {};
     this.top = 0;
   }
+  // highlight-end
 
   size() {
     if (this.top === 0) {
@@ -101,14 +105,16 @@ class Stack {
 
 .enqueue(element), .dequeue(), size() 등
 
-```jsx
+```jsx{numberLines: true}
 // 객체를 활용한 Queue 프로토타입
 class Queue {
+  // highlight-start
   constructor() {
     this.storage = {};
     this.rear = 0;
     this.front = 0;
   }
+  // highlight-end
 
   size() {
     return this.rear - this.front;
@@ -129,13 +135,15 @@ class Queue {
 }
 ```
 
-```jsx
+```jsx{numberLines: true}
 // 배열 속성을 활용한 Queue 프로토타입
 class Queue {
+  // highlight-start
   constructor() {
     this.storage = {};
     this.rear = 0;
   }
+  // highlight-end
 
   size() {
     if ((rear = 0)) {

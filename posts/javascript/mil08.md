@@ -11,7 +11,7 @@ date: 2020-08-19 23:00:07
 
 함수는 범위를 갖는다. 특히, MDN reference에서 확인할 수 있듯이, 함수 안에 함수가 존재할 경우, **내부함수는 그것을 포함하는 부모함수로의 접근이 가능**하지만, **부모함수는 자신의 내부에 있는 함수에는 접근할 수 없음**을 알 수 있다. 또한, **자바스크립트는 그 자체가 이미 함수**이기 때문에 자바스크립트 작성된 모든 함수들은 자바스크립트 자체의 내부함수가 된다. 이 말인즉슨, 우리가 어떤 함수를 선언했다면, 해당 함수는 바깥에 있는 변수들을 얼마든지 가져와서 활용할 수 있다는 의미이다. 즉,
 
-```jsx
+```jsx{numberLines: true}
 let str = "hello, world";
 function greeting(input) {
   console.log(input);
@@ -36,7 +36,7 @@ MDN reference를 통해 알 수 있는 것은, 자바스크립트에서는 **중
 
 이러한 규칙을 토대로 아래의 예제를 살펴보자. 첫번째 스크립트는 함수 seqLet 내부에 for문을 선언하되 인덱스 변수를 let으로 선언한 것이고, 두번째 스크립트는 함수 seqVar 내부에 마찬가지로 for문을 선언하되 인덱스 변수를 var로 선언한 것이다. 이것을 제외한 나머지 내용은 두 함수가 모두 동일하다.
 
-```jsx
+```jsx{numberLines: true}
 function seqLet() {
   for (let i = 0; i < 5; i++) {
     console.log(i);
@@ -53,7 +53,7 @@ function seqLet() {
 // Uncaught ReferenceError: i is not defined at seqLet ...
 ```
 
-```jsx
+```jsx{numberLines: true}
 function seqVar() {
   for (var i = 0; i < 5; i++) {
     console.log(i);
@@ -70,7 +70,7 @@ function seqVar() {
 // final i : 5
 ```
 
-```jsx
+```jsx{numberLines: true}
 function seqVar2() {
   for (var i = 0; i < 5; i++) {
     console.log(i);

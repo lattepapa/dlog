@@ -118,7 +118,7 @@ Content-Type: text/html
 [5] **5xx** : "I screwed up, sorry...."  
 [5-1] 500 : "서버가 처리할 수 없는 요청임"
 
-```jsx
+```jsx{numberLines: true}
 // XHR API를 활용한 서버와의 통신
 var xhr = new XMLHttpRequest();
 xhr.open('get', 'http://52.78.213.9:3000/messages');
@@ -136,7 +136,7 @@ xhr.send(); // 요청 전송
 
 보다시피 XHR은 간단한 구문도 조금 복잡해보이는 경향이 있다. 그렇기 때문에 이러한 메소드를 조금 더 간소화 시킨 라이브러리가 등장하게 되었다. 바로 **jQuery**이다.
 
-```jsx
+```jsx{numberLines: true}
 // jQuery 라이브러리를 활용한 서버와의 통신
 $.get("http://52.78.213.9:3000/messages", function (response) {
   // response: 서버로부터 온 응답
@@ -147,7 +147,7 @@ $.get("http://52.78.213.9:3000/messages", function (response) {
 
 그런데 이 jQuery도 인간의 관점에서 난해하다는 의견이 나오기 시작했다. 따라서 마치 javascript를 그대로 쓰는 것 같은 API가 나오게 되었다. 바로 **가독성**의 **fetch()** 구문이다.
 
-```jsx
+```jsx{numberLines: true}
 // fetch API를 활용한 서버와의 통신
 fetch('http://52.78.213.9:3000/messages')
 	.then(response => response.json());
@@ -161,7 +161,7 @@ fetch('http://52.78.213.9:3000/messages')
 
 **XHR**을 통해 서버와 자유롭게 통신할 수 있으면서, **DOM**을 활용하여 Seamless하게 페이지의 **일부 부분만 렌더링**이 가능하도록 Dynamic Web Page(App)를 구현하기 위한 비동기 객체이다. 사실상 jQuery를 위한 라이브러리 역할을 수행한다.
 
-```jsx
+```jsx{numberLines: true}
 // jQuery AJAX chaining
 $.ajax({
 	url: 'http://52.78.213.9:3000/messages',

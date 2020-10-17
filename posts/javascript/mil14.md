@@ -44,22 +44,25 @@ vertex(정점) 또는 node를 연결하는 edge(간선)으로 구성된 자료�
 
 .addNode(node), .contains(node), .removeNode(node), .hasEdge(fromNode, toNode), .addEdge(fromNode, toNode), .removeEdge(fromNode, toNode) 등
 
-```jsx
+```jsx{numberLines: true}
 // Graph 생성 클래스
 class Graph {
+  // highlight-start
   constructor() {
     this.nodes = {};
   }
+  // highlight-end
+}
 ```
 
-```jsx
+```jsx{numberLines: true}
 // Vertex(Node) 추가 메소드
 Graph.prototype.addNode = function (node) {
   this.nodes[node] = this.nodes[node] || [];
 };
 ```
 
-```jsx
+```jsx{numberLines: true}
 // Vertex(Node) 존재여부 확인 메소드
 Graph.prototype.contains = function (node) {
   if (this.nodes[node]) return true;
@@ -67,7 +70,7 @@ Graph.prototype.contains = function (node) {
 };
 ```
 
-```jsx
+```jsx{numberLines: true}
 // Vertex(Node) 삭제 메소드
 Graph.prototype.removeNode(node) {
 	if(this.nodes[node]) {
@@ -81,7 +84,7 @@ Graph.prototype.removeNode(node) {
 }
 ```
 
-```jsx
+```jsx{numberLines: true}
 // 두 Vertex(Node)가 연결되었는지 확인 메소드
 Graph.prototype.hasEdge = function(fromNode, toNode) {
 	for(let vtx of this.nodes[fromNode] {
@@ -91,7 +94,7 @@ Graph.prototype.hasEdge = function(fromNode, toNode) {
 }
 ```
 
-```jsx
+```jsx{numberLines: true}
 // 두 Vertex(Node) 연결 메소드
 Graph.prototype.addEdge = function (fromNode, toNode) {
   this.nodes[fromNode].push(toNode);
@@ -99,7 +102,7 @@ Graph.prototype.addEdge = function (fromNode, toNode) {
 };
 ```
 
-```jsx
+```jsx{numberLines: true}
 // 두 Vertex(Node) 연결 삭제 메소드
 Graph.prototype.removeEdge = function (fromNode, toNode) {
   this.node[fromNode].pop(toNode);
@@ -122,22 +125,24 @@ Node로 구성된 계층적 자료구조로, root를 만들고 child를 추가�
 
 #### 주요 메소드 : .insertNode(value), .contains(value) 등
 
-```jsx
+```jsx{numberLines: true}
 class TreeNode {
+  // highlight-start
   constructor(value) {
     this.value = value;
     this.children = [];
   }
+  // highlight-end
 }
 ```
 
-```jsx
+```jsx{numberLines: true}
 TreeNode.prototype.insertNode = function(value) {
 	this.children.push(new TreeNode(value);
 }
 ```
 
-```jsx
+```jsx{numberLines: true}
 TreeNode.prototype.contains = function (value) {
   if (this.value === value) return true;
   for (let child of this.children) {
@@ -171,17 +176,19 @@ Node가 최대 2개의 child를 가지며, node의 크기는 반드시 Left chil
 
 node 추가/삭제/탐색 모두에서 $O(h)$
 
-```jsx
+```jsx{numberLines: true}
 class BinarySearchTreeNode {
+  // highlight-start
   constructor(value) {
     this.value = value;
     this.left = null;
     this.right = null;
   }
+  // highlight-end
 }
 ```
 
-```jsx
+```jsx{numberLines: true}
 BinarySearchTreeNode.prototype.insert = function (value) {
   // value가 부모보다 작은 경우
   if (value < this.value) {
@@ -196,7 +203,7 @@ BinarySearchTreeNode.prototype.insert = function (value) {
 };
 ```
 
-```jsx
+```jsx{numberLines: true}
 BinarySearchTreeNode.prototype.contains = function (value) {
   // value가 부모에서 바로 일치하는 경우
   if (value === this.value) return true;
@@ -214,7 +221,7 @@ BinarySearchTreeNode.prototype.contains = function (value) {
 };
 ```
 
-```jsx
+```jsx{numberLines: true}
 BinarySearchTreeNode.prototype.inorder = function (callback) {
   // 항상 this.left -> 부모(this.value) -> this.right로 순회하는 함수 생성
   if (this.left) this.left.inorder(callback);

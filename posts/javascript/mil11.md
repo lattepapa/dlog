@@ -58,7 +58,7 @@ off(=0), warn(=1), error(=2)의 ruleID로써 검열 수준을 통제할 수 있�
 
 #### 재귀문제
 
-```jsx
+```jsx{numberLines: true}
 funtion test(arr, id) {
 	// 부모 검색
 	for(let el of arr) {
@@ -86,7 +86,7 @@ funtion test(arr, id) {
 
 #### 피보나치수열
 
-```jsx
+```jsx{numberLines: true}
 function test() {
   let acc = 0;
 
@@ -105,7 +105,7 @@ function test() {
 
 #### reduce와 map
 
-```jsx
+```jsx{numberLines: true}
 function test() {
 	let obj = arr.map(el => {
 		return el.reduce((acc, cur) => {

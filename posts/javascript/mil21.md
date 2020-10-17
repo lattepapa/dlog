@@ -13,7 +13,7 @@ setTimeout(), setInterval() 등의 메소드에 콜백을 담는 경우이다.
 
 #### 콜백을 대체하고자 할때
 
-```jsx
+```jsx{numberLines: true}
 // 1. 기존 콜백상황
 const getDataFromFile = function (filePath, callback) {
   fs.readFile(filePath, "utf8", (err, data) => {
@@ -27,7 +27,7 @@ const getDataFromFile = function (filePath, callback) {
 // getDataFromFile('README.md', (err, data) => console.log(data))
 ```
 
-```jsx
+```jsx{numberLines: true}
 // 2. 프로미스 객체(resolve, reject 속성)를 활용하는 경우
 const getDataFromFilePromise = (filePath) => {
   return new Promise((resolve, reject) => {
@@ -43,7 +43,7 @@ const getDataFromFilePromise = (filePath) => {
 // getDataFromFilePromise('README.md').then(data => console.log(data));
 ```
 
-```jsx
+```jsx{numberLines: true}
 // 3. 프로미스 객체들의 비동기처리 체이닝(then 키워드)을 활용하는 경우
 const user1Path = path.join(__dirname, "files/user1.json");
 const user2Path = path.join(__dirname, "files/user2.json");
@@ -69,7 +69,7 @@ const readAllUsersChaining = () => {
 // readAllUsersChaining();
 ```
 
-```jsx
+```jsx{numberLines: true}
 // 4. 프로미스 객체들의 일시 비동기처리(Promise All)을 활용하는 경우
 const user1Path = path.join(__dirname, "files/user1.json");
 const user2Path = path.join(__dirname, "files/user2.json");
@@ -90,7 +90,7 @@ const readAllUsers = () => {
 // readAllUsers()
 ```
 
-```jsx
+```jsx{numberLines: true}
 // 5. 프로미스 객체들을 async 함수로 받아서 await로 처리하는 경우
 const user1Path = path.join(__dirname, "files/user1.json");
 const user2Path = path.join(__dirname, "files/user2.json");
@@ -113,7 +113,7 @@ const readAllUsersAsyncAwait = async () => {
 
 #### 네트워크 처리(API)를 하고자 할때
 
-```jsx
+```jsx{numberLines: true}
 // 1. fetch를 활용하여 브라우저 정보를 프로미스 객체로 받는 경우
 var newsURL = "http://localhost:5000/data/latestNews";
 var weatherURL = "http://localhost:5000/data/weather";
@@ -145,7 +145,7 @@ function getNewsAndWeather() {
 }
 ```
 
-```jsx
+```jsx{numberLines: true}
 // 2. fetch로 받은 브라우저 정보의 프로미스 객체를 Promise.all로 처리하는 경우
 var newsURL = "http://localhost:5000/data/latestNews";
 var weatherURL = "http://localhost:5000/data/weather";
@@ -169,7 +169,7 @@ function getNewsAndWeatherAll() {
 }
 ```
 
-```jsx
+```jsx{numberLines: true}
 // 3. fetch로 받은 브라우저 정보를 async ~ await로 다룰 경우
 var newsURL = "http://localhost:5000/data/latestNews";
 var weatherURL = "http://localhost:5000/data/weather";

@@ -104,6 +104,10 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: { trackingId: 'UA-180817603-1' }
+    },
+    {
       resolve: `gatsby-plugin-generate-typings`,
       options: {
         dest: `./src/graphql-types.d.ts`,

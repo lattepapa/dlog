@@ -9,6 +9,7 @@ const Header = ({ siteTitle }) => (
       marginBottom: `1.45rem`,
     }}
   >
+    <meta name="google-site-verification" content="dHnLv_dlmLtNQi5ERmdIngqRHY_rj-81NJeTzzFd02U" />
     <div
       style={{
         margin: `0 auto`,

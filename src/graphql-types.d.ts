@@ -2508,6 +2508,7 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___prompt___user'
   | 'pluginCreator___pluginOptions___prompt___host'
   | 'pluginCreator___pluginOptions___prompt___global'
+  | 'pluginCreator___pluginOptions___trackingId'
   | 'pluginCreator___pluginOptions___dest'
   | 'pluginCreator___pluginOptions___short_name'
   | 'pluginCreator___pluginOptions___start_url'
@@ -2735,6 +2736,7 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___prompt___user'
   | 'pluginOptions___prompt___host'
   | 'pluginOptions___prompt___global'
+  | 'pluginOptions___trackingId'
   | 'pluginOptions___dest'
   | 'pluginOptions___short_name'
   | 'pluginOptions___start_url'
@@ -2878,6 +2880,7 @@ export type SitePluginPluginOptions = {
   noInlineHighlight?: Maybe<Scalars['Boolean']>;
   languageExtensions?: Maybe<Array<Maybe<SitePluginPluginOptionsLanguageExtensions>>>;
   prompt?: Maybe<SitePluginPluginOptionsPrompt>;
+  trackingId?: Maybe<Scalars['String']>;
   dest?: Maybe<Scalars['String']>;
   short_name?: Maybe<Scalars['String']>;
   start_url?: Maybe<Scalars['String']>;
@@ -2903,6 +2906,7 @@ export type SitePluginPluginOptionsFilterInput = {
   noInlineHighlight?: Maybe<BooleanQueryOperatorInput>;
   languageExtensions?: Maybe<SitePluginPluginOptionsLanguageExtensionsFilterListInput>;
   prompt?: Maybe<SitePluginPluginOptionsPromptFilterInput>;
+  trackingId?: Maybe<StringQueryOperatorInput>;
   dest?: Maybe<StringQueryOperatorInput>;
   short_name?: Maybe<StringQueryOperatorInput>;
   start_url?: Maybe<StringQueryOperatorInput>;

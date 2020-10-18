@@ -16,6 +16,7 @@ const LatestPostListQuery = graphql`
             title
             path
             date(formatString: "DD MMM, YYYY")
+            category
           }
           id
         }
@@ -36,17 +37,20 @@ const IndexPage: React.FC = () => {
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <li key={node.id}>
             <span>
-            <h3>
-              <Link
-                style={{
-                  color: `DarkSlateGray`,
-                  textDecoration: `none`,
-                }}
-                to={node.frontmatter.title}
-              >
-                {node.frontmatter.title}
-              </Link>
-            </h3>
+              <h3>
+                <Link 
+                  style={{color: `powderblue`, textDecoration: `none`, fontSize: `15pt`}}
+                  to={node.frontmatter.category}
+                >
+                  {node.frontmatter.category} {'> '}
+                </Link>
+                <Link
+                  style={{color: `DarkSlateGray`, textDecoration: `none`}}
+                  to={node.frontmatter.title}
+                >
+                  {node.frontmatter.title}
+                </Link>
+              </h3>
             </span>
             
             {/* <p

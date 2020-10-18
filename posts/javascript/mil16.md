@@ -1,5 +1,5 @@
 ---
-title: "[JS] Object Oriented Programming"
+title: "Object Oriented Programming"
 category: javascript
 path: /javascript/mil16
 date: 2020-09-10 23:00:15

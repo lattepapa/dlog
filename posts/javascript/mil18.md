@@ -1,5 +1,5 @@
 ---
-title: "[JS] constructor"
+title: "constructor"
 category: javascript
 path: /javascript/mil18
 date: 2020-09-14 23:30:17

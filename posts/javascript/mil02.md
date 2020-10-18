@@ -1,5 +1,5 @@
 ---
-title: "[JS] while 반복문"
+title: "while 반복문"
 category: javascript
 path: /javascript/mil02
 date: 2020-08-05 23:00:01

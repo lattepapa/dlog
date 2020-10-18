@@ -1,5 +1,5 @@
 ---
-title: "[JS] scope와 block"
+title: "scope와 block"
 category: javascript
 path: /javascript/mil08
 date: 2020-08-19 23:00:07

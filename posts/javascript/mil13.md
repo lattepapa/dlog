@@ -1,5 +1,5 @@
 ---
-title: "[JS] Linked List와 Hash Table"
+title: "Linked List와 Hash Table"
 category: javascript
 path: /javascript/mil13
 date: 2020-09-07 23:00:12

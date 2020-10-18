@@ -1,5 +1,5 @@
 ---
-title: "[JS] Asynchronous"
+title: "Asynchronous"
 category: javascript
 path: /javascript/mil21
 date: 2020-09-22 23:02:20

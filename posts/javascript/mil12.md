@@ -1,5 +1,5 @@
 ---
-title: "[JS] Stack과 Queue"
+title: "Stack과 Queue"
 category: javascript
 path: /javascript/mil12
 date: 2020-09-04 23:00:11

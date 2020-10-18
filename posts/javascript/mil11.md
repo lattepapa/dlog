@@ -1,5 +1,5 @@
 ---
-title: "[JS] esLint"
+title: "esLint"
 category: javascript
 path: /javascript/mil11
 date: 2020-09-03 23:00:10

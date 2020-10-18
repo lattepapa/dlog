@@ -1,5 +1,5 @@
 ---
-title: "[JS] promise"
+title: "promise"
 category: javascript
 path: /javascript/mil20
 date: 2020-09-21 23:04:19

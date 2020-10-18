@@ -1,5 +1,5 @@
 ---
-title: "[JS] this, apply, call 그리고 bind"
+title: "this, apply, call 그리고 bind"
 category: javascript
 path: /javascript/mil10
 date: 2020-09-02 23:00:09

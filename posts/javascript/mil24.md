@@ -1,5 +1,5 @@
 ---
-title: "[JS] RESTful API"
+title: "RESTful API"
 category: javascript
 path: /javascript/mil24
 date: 2020-09-24 22:56:23

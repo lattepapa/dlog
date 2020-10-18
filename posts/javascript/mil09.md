@@ -1,5 +1,5 @@
 ---
-title: "[JS] Git"
+title: "Git"
 category: javascript
 path: /javascript/mil09
 date: 2020-08-31 23:00:08

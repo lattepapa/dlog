@@ -1,5 +1,5 @@
 ---
-title: "[JS] 알고리즘 기본전략"
+title: "알고리즘 기본전략"
 category: javascript
 path: /javascript/mil19
 date: 2020-09-15 23:10:18

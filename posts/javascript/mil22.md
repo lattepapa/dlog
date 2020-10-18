@@ -1,5 +1,5 @@
 ---
-title: "[JS] HTTP"
+title: "HTTP"
 category: javascript
 path: /javascript/mil22
 date: 2020-09-23 23:14:21

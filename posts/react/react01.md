@@ -1,5 +1,5 @@
 ---
-title: "[React] React란"
+title: "React란"
 category: react
 path: /react/react01
 date: 2020-09-27 23:45:00

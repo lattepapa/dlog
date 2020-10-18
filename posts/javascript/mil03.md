@@ -1,5 +1,5 @@
 ---
-title: "[JS] for 반복문(1)"
+title: "for 반복문(1)"
 category: javascript
 path: /javascript/mil03
 date: 2020-08-07 23:00:02

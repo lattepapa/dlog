@@ -1,5 +1,5 @@
 ---
-title: "[JS] 브라우저 보안과 CORS"
+title: "브라우저 보안과 CORS"
 category: javascript
 path: /javascript/mil23
 date: 2020-09-24 22:42:22

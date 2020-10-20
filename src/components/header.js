@@ -27,7 +27,7 @@ const blogCategoryStyle = {
 const Header = ({ siteTitle, siteCategory }) => (
   <header style={headerBackgroundStyle}>
     <h1><Link to="/" style={blogTitleStyle}>{siteTitle}</Link></h1>
-    <h4><Link to="/category" style={blogCategoryStyle}>{siteCategory}</Link></h4>
+    <h1><Link to="/category" style={blogCategoryStyle}>{siteCategory}</Link></h1>
   </header>
 );
 

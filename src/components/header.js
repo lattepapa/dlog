@@ -2,42 +2,43 @@ import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `DarkSlateGray`, //`rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <meta name="google-site-verification" content="dHnLv_dlmLtNQi5ERmdIngqRHY_rj-81NJeTzzFd02U" />
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
+const headerBackgroundStyle = {
+  background: `DarkSlateGray`,
+  marginBottom: `0.45rem`,
+  margin: `0 auto`,
+  padding: `0.45rem 0.1rem`,
+  height: `8rem`
+}
+
+const blogTitleStyle = {
+  color: `white`,
+  textDecoration: `none`,
+  paddingLeft: `25%`,
+  float: `left`
+}
+
+const blogCategoryStyle = {
+  color: `white`,
+  textDecoration: `none`,
+  paddingRight: `60%`,
+  float: `right`
+}
+
+const Header = ({ siteTitle, siteCategory }) => (
+  <header style={headerBackgroundStyle}>
+    <h1><Link to="/" style={blogTitleStyle}>{siteTitle}</Link></h1>
+    <h4><Link to="/category" style={blogCategoryStyle}>{siteCategory}</Link></h4>
   </header>
 );
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
+  siteCategory: PropTypes.string
 };
 
 Header.defaultProps = {
   siteTitle: ``,
+  siteCategory: ``
 };
 
 export default Header;

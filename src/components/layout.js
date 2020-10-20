@@ -10,7 +10,16 @@ import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
 
 import Header from "./header";
+import Footer from "./footer";
 import "./layout.css";
+
+const frameStyle = {
+  color: `DarkSlateGray`,
+  textDecoration: `none`,
+  margin: `0 auto`,
+  maxWidth: 800,
+  padding: `0 1.0875rem 1.45rem`,
+}
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -23,64 +32,14 @@ const Layout = ({ children }) => {
     }
   `);
 
+  // header.js로 넘겨줄 props는 siteTitle과 siteCategory이다.
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          color: `DarkSlateGray`,
-          textDecoration: `none`,
-          margin: `0 auto`,
-          maxWidth: 800,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main
-          style={{
-            color: `Black`,
-            textDecoration: `none`,
-          }}
-        >
-          {children}
-        </main>
-        <footer
-          style={{
-            marginTop: `5rem`,
-          }}
-        >
-          {/* <hr /> */}
-          <div
-            style={{
-              color: `LightGray`,
-              textDecoration: `bold`,
-            }}
-          >
-            Спасибо. Хорошего дня!
-          </div>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a
-            style={{
-              color: `Coral`,
-              textDecoration: `none`,
-            }}
-            href="https://www.gatsbyjs.com"
-          >
-            Gatsby
-          </a>
-          ,{` `} Posted by
-          {` `}
-          <a
-            style={{
-              color: `Coral`,
-              textDecoration: `none`,
-            }}
-            href="https://github.com/lattepapa"
-          >
-            lattepapa
-          </a>
-        </footer>
+      <Header siteTitle={data.site.siteMetadata?.title || `Title`} siteCategory={`Category`} />
+      <div style={frameStyle}>
+        <main >{children}</main>        
       </div>
+      <Footer />
     </>
   );
 };

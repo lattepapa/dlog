@@ -4,38 +4,40 @@ import { ITemplateProps } from "../interface"; // src/interface.ts 에서 props 
 import "../../node_modules/katex/dist/katex.min.css"; // katex 수식입력 플러그인 로드
 
 type IPostTemplateProps = ITemplateProps<{
-  // src/interface.ts 연계 => html, title 내용은 문자열로 받도록 설정
+  // src/interface.ts 연계 => html, title, category 내용은 문자열로 받도록 설정
   html: string;
   title: string;
+  category: string;
 }>;
 
+const postTitleStyle = {
+  color: `DarkSlateGray`,
+  textDecoration: `none`,
+  textAlign: `center`,
+  marginTop: `4rem`,
+};
+
+const postCategoryStyle = {
+  color: `LightBlue`,
+  textDecoration: `none`,
+  textAlign: `center`,
+  marginBottom: `-1.5rem`,
+};
+
+const postSubTitleStyle = {
+  color: `LightGray`,
+  textDecoration: `overline`,
+  textAlign: `center`,
+  marginBottom: `8rem`,
+};
+
 const PostTemplate: React.FC<IPostTemplateProps> = React.memo((props) => {
-  const { title, date, html } = props.pageContext;
+  const { title, category, date, html } = props.pageContext;
   return (
     <Layout>
-      <h1
-        style={{
-          color: `DarkSlateGray`,
-          textDecoration: `none`,
-          textAlign: `center`,
-          marginTop: `4rem`,
-          marginBottom: `0.5rem`,
-        }}
-      >
-        {title}
-      </h1>
-      <p
-        style={{
-          color: `LightGray`,
-          textDecoration: `none`,
-          textAlign: `center`,
-          marginBottom: `3.5rem`,
-        }}
-      >
-        posted by lattepapa
-      </p>
-      {/* <h4>{date}</h4> */}
-
+      <div style={postTitleStyle}><h1>{title}</h1></div>
+      <div style={postCategoryStyle}><p>"{category}"</p></div>
+      <div style={postSubTitleStyle}><p>posted by lattepapa</p></div>
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
   );

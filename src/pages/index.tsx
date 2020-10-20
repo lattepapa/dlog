@@ -25,51 +25,46 @@ const LatestPostListQuery = graphql`
   }
 `;
 
+const categoryStyle = {
+  color: `powderblue`, 
+  textDecoration: `none`, 
+  fontSize: `15pt`
+};
+
+const titleStyle = {
+  color: `DarkSlateGray`, 
+  textDecoration: `none`
+};
+
+const dateStyle = {
+  color: `LightGray`,
+  fontSize: `small`
+};
+
 const IndexPage: React.FC = () => {
   const data = useStaticQuery<Query>(LatestPostListQuery);
 
   return (
     <Layout>
       <SEO title="Home" />
-      {/* <h1>최근 게시글</h1>
-      <br /> */}
       <ul>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <li key={node.id}>
             <span>
               <h3>
-                <Link 
-                  style={{color: `powderblue`, textDecoration: `none`, fontSize: `15pt`}}
-                  to={node.frontmatter.category}
-                >
+                <Link style={categoryStyle} to={node.frontmatter.category}>
                   {node.frontmatter.category} {'> '}
                 </Link>
-                <Link
-                  style={{color: `DarkSlateGray`, textDecoration: `none`}}
-                  to={node.frontmatter.title}
-                >
+                <Link style={titleStyle} to={node.frontmatter.title}>
                   {node.frontmatter.title}
                 </Link>
               </h3>
             </span>
             
-            {/* <p
-              style={{
-                color: `Gray`,
-                fontSize: `small`,
-              }}
-            >
-              {node.excerpt}
-            </p> */}
+            {/* <p>{node.excerpt}</p> */}
             
-            <span
-              style={{
-                color: `LightGray`,
-                fontSize: `small`
-              }}
-            >
-              posted on{` `}
-              {node.frontmatter.date}
+            <span style={dateStyle}>
+              posted on {` `} {node.frontmatter.date}
             </span>
             <br />
             <br />

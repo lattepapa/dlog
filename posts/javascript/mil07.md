@@ -17,9 +17,9 @@ date: 2020-08-17 23:00:06
 
 #### reduce 메소드에 필요한 입력변수
 
-[1] **accumulator**: reducer에 의해 배열의 엘리먼트들이 연산되어진 결과값  
-[2] **current value**: reducer에 의해 accumulator와 연산될 현재순번의 엘리먼트  
-[3] **inital value**: reducer 연산의 최초 수행을 위해 accumulator에 지정될 초기값
+1\) **accumulator**: reducer에 의해 배열의 엘리먼트들이 연산되어진 결과값  
+2\) **current value**: reducer에 의해 accumulator와 연산될 현재순번의 엘리먼트  
+3\) **inital value**: reducer 연산의 최초 수행을 위해 accumulator에 지정될 초기값
 
 #### reduce 메소드로 배열을 문자 또는 숫자로 전환하는 경우
 
@@ -135,7 +135,11 @@ arr.reduce(sortByNation, {});
 <br>
 <br>
 
-#### 1. 학생의 정보가 담긴 객체를 엘리먼트로 갖는 배열을 입력받아 여학생들의 경우에만 평균 점수(정수)를 계산하여 해당 결과를 배열로 리턴하고자 한다.
+<hr />
+
+#### 연습문제1
+
+학생의 정보가 담긴 객체를 엘리먼트로 갖는 배열을 입력받아 여학생들의 경우에만 평균 점수(정수)를 계산하여 해당 결과를 배열로 리턴하고자 한다.
 
 <span style="color:#088A68">**힌트**</span>
 
@@ -174,6 +178,8 @@ let studentList = [
 
 <br>
 
+#### Reference Code
+
 ```jsx{numberLines: true}
 function filterGirlsGrade(students) {
   // [더이상 쪼갤 수 없는 것] 여자
@@ -198,7 +204,11 @@ function filterGirlsGrade(students) {
 <br>
 <br>
 
-#### 2. 배열을 입력받아 배열에서 가장 짧은 길이를 가진 문자열 엘리먼트를 리턴하고자 한다.
+#### 연습문제2
+
+배열을 입력받아 배열에서 가장 짧은 길이를 가진 문자열 엘리먼트를 리턴하고자 한다.
+
+#### Reference Code
 
 ```jsx{numberLines: true}
 function whatIsTheShortestLetter(arr) {
@@ -225,7 +235,11 @@ function whatIsTheShortestLetter(arr) {
 <br>
 <br>
 
-#### 3. 어떤 형태의 배열이든, 배열들의 엘리먼트를 모두 담고 있는 단일 배열을 리턴하고자 한다.
+#### 연습문제3
+
+어떤 형태의 배열이든, 배열들의 엘리먼트를 모두 담고 있는 단일 배열을 리턴하고자 한다.
+
+#### Reference Code
 
 ```jsx{numberLines: true}
 function arrayFlatten(arr) {

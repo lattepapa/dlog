@@ -36,11 +36,11 @@ adder(5)(7); // 12
 #### this Object argument
 
 함수 실행 시, 그 **맥락**(context, 즉, this가 무엇을 가리키는지)을 어떻게 호출(invocation)하는가에 따라 **this에 바인딩될 객체**가 결정된다.  
-[1] **Global**에서 this를 호출 : 브라우저라면 window가 바인딩되고, node.js라면 module.exports가 바인딩  
-[2] **함수**에서 this를 호출 : 브라우저라면 window, node.js라면 global이 바인딩  
-[3] **메소드**에서 this를 호출 : 메소드의 대상인 부모객체가 this에 바인딩  
-[4] **new 키워드**에서 this를 호출 : 클래스의 인스턴스 객체가 this에 바인딩  
-[5] **.call(this, args1, ...), .apply(this, args1, ...)**에서 this를 호출 : 첫번째 argument로 전달된 객체가 this에 바인딩
+1\) **Global**에서 this를 호출 : 브라우저라면 window가 바인딩되고, node.js라면 module.exports가 바인딩  
+2\) **함수**에서 this를 호출 : 브라우저라면 window, node.js라면 global이 바인딩  
+3\) **메소드**에서 this를 호출 : 메소드의 대상인 부모객체가 this에 바인딩  
+4\) **new 키워드**에서 this를 호출 : 클래스의 인스턴스 객체가 this에 바인딩  
+5\) **.call(this, args1, ...), .apply(this, args1, ...)**에서 this를 호출 : 첫번째 argument로 전달된 객체가 this에 바인딩
 
 #### 메소드에서 this 호출 상세
 

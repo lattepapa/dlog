@@ -35,7 +35,7 @@ const Layout = ({ children }) => {
   // header.js로 넘겨줄 props는 siteTitle과 siteCategory이다.
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} siteCategory={`Category`} />
+      <Header siteTitle={data.site.siteMetadata?.title || `Title`} siteCategory={`카테고리`} />
       <div style={frameStyle}>
         <main >{children}</main>        
       </div>

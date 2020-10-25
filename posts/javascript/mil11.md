@@ -8,25 +8,25 @@ date: 2020-09-03 23:00:10
 ### esLint 설치
 
 공홈에서 알려주는데로 차근차근 설치하면 된다.  
-[1] `npm install eslint --save-dev` (devDependencies에 추가하는 설치)  
-[2] `npx eslint --init` (검열 기초설정: CommonJS를 주로 볼 것인가, node 환경인가 등등)  
-[3] 생성된 eslintrc.js 파일에서 "env"와 "rules" 객체에다가 필요한 환경이나 검열규칙 추가하면 됨  
-[4] package.json 파일에서 "scripts" 객체에다가 검열 대상을 추가할 수도 있음
+1\) `npm install eslint --save-dev` (devDependencies에 추가하는 설치)  
+2\) `npx eslint --init` (검열 기초설정: CommonJS를 주로 볼 것인가, node 환경인가 등등)  
+3\) 생성된 eslintrc.js 파일에서 "env"와 "rules" 객체에다가 필요한 환경이나 검열규칙 추가하면 됨  
+4\) package.json 파일에서 "scripts" 객체에다가 검열 대상을 추가할 수도 있음
 
 #### npm 관련 몇가지 유용한 옵션
 
-[1] `npm ls --depth=0` (현재 프로젝트에 설치된 모든 dependency 조회)  
-[2] `npm ls -g --depth=0` (현재 전역에 설치된 모든 dependency 조회)  
-[3] `npm run {모듈명}` (package.json의 "scripts" 객체 내 해당 모듈명 key value 내용을 실행)  
-[4] `npm install {모듈명}` (package.json의 "dependency" 객체 내 해당 모듈명 속성을 생성)  
-[5] `npm install {모듈명} --save-dev` (package.json의 "devDependency" 객체 내 해당 모듈명 속성을 생성)
+1\) `npm ls --depth=0` (현재 프로젝트에 설치된 모든 dependency 조회)  
+2\) `npm ls -g --depth=0` (현재 전역에 설치된 모든 dependency 조회)  
+3\) `npm run {모듈명}` (package.json의 "scripts" 객체 내 해당 모듈명 key value 내용을 실행)  
+4\) `npm install {모듈명}` (package.json의 "dependency" 객체 내 해당 모듈명 속성을 생성)  
+5\) `npm install {모듈명} --save-dev` (package.json의 "devDependency" 객체 내 해당 모듈명 속성을 생성)
 
 ### esLint 검열
 
 문서 내에서 검열 스킵이 필요할 경우  
-[1] `/*eslint-env node, mocha*/` 와 같은 주석을 하단에 추가하거나,  
-[2] eslintrc.js 파일에서 "env"에 node, mocha에 대한 'true' 속성 추가  
-[3] 일부 변수에 검열 스킵이 필요할 경우 : 윗줄에 `/*eslint-disable*/`, 아랫줄에 `/*eslint-enable*/` 주석 입력
+1\) `/*eslint-env node, mocha*/` 와 같은 주석을 하단에 추가하거나,  
+2\) eslintrc.js 파일에서 "env"에 node, mocha에 대한 'true' 속성 추가  
+3\) 일부 변수에 검열 스킵이 필요할 경우 : 윗줄에 `/*eslint-disable*/`, 아랫줄에 `/*eslint-enable*/` 주석 입력
 
 ### 생각해보기
 

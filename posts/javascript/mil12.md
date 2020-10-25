@@ -7,9 +7,9 @@ date: 2020-09-04 23:00:11
 
 ### Data의 의미
 
-[1] data : 문자, 숫자, 소리, 그림, 영상, 단어 등의 형태로 된 의미단위  
-[2] data type : Primitive type(Numeric, String, Boolean 등), Custom type(Class, Struct;구조체 등)  
-[3] data structure : 여러 data들을 어떻게 핸들링 할 것인지에 대한 방법론
+1\) data : 문자, 숫자, 소리, 그림, 영상, 단어 등의 형태로 된 의미단위  
+2\) data type : Primitive type(Numeric, String, Boolean 등), Custom type(Class, Struct;구조체 등)  
+3\) data structure : 여러 data들을 어떻게 핸들링 할 것인지에 대한 방법론
 
 ### Stack
 

@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import { useStaticQuery, graphql } from "gatsby"; // useStaticQuery 훅 설정(LatestPostListQuery 불러오기)
 
 import Layout from "../components/layout";
-import Image from "../components/image";
+// import Image from "../components/image";
 import SEO from "../components/seo";
 
 const LatestPostListQuery = graphql`
@@ -38,7 +38,7 @@ const titleStyle = {
 
 const dateStyle = {
   color: `LightGray`,
-  fontSize: `small`
+  textDecoration: `none`
 };
 
 const IndexPage: React.FC = () => {
@@ -52,7 +52,7 @@ const IndexPage: React.FC = () => {
           <li key={node.id}>
             <span>
               <h3>
-                <Link style={categoryStyle} to={node.frontmatter.category}>
+                <Link style={categoryStyle} to={node.frontmatter.title}>
                   {node.frontmatter.category} {'> '}
                 </Link>
                 <Link style={titleStyle} to={node.frontmatter.title}>
@@ -63,9 +63,9 @@ const IndexPage: React.FC = () => {
             
             {/* <p>{node.excerpt}</p> */}
             
-            <span style={dateStyle}>
+            <Link style={dateStyle} to={node.frontmatter.title}>
               posted on {` `} {node.frontmatter.date}
-            </span>
+            </Link>
             <br />
             <br />
             <hr />

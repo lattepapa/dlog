@@ -137,7 +137,11 @@ arr.filter(function(car) {
 <br>
 <br>
 
-#### 1. 아래 힌트와 같이 Netfix 시청 현황정보가 주어졌다. 주어진 정보를 토대로 30대 남성이 가장 좋아하는 장르를 알고자 한다.
+<hr />
+
+#### 연습문제
+
+아래 힌트와 같이 Netfix 시청 현황정보가 주어졌다. 주어진 정보를 토대로 30대 남성이 가장 좋아하는 장르를 알고자 한다.
 
 <span style="color:#088A68">**힌트** </span>
 
@@ -154,6 +158,8 @@ let list = [
 ```
 
 <br>
+
+#### Reference Code
 
 ```jsx{numberLines: true}
 // [더이상 쪼갤 수 없는 것] 30대

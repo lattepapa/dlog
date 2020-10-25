@@ -18,16 +18,18 @@ const blogTitleStyle = {
 }
 
 const blogCategoryStyle = {
-  color: `white`,
+  color: `CadetBlue`,
   textDecoration: `none`,
-  paddingRight: `60%`,
+  paddingRight: `25%`,
   float: `right`
 }
 
 const Header = ({ siteTitle, siteCategory }) => (
   <header style={headerBackgroundStyle}>
-    <h1><Link to="/" style={blogTitleStyle}>{siteTitle}</Link></h1>
-    <h1><Link to="/category" style={blogCategoryStyle}>{siteCategory}</Link></h1>
+    {/* [Header1] dlog 클릭 시 index.tsx */}
+    <h3><Link to="/" style={blogTitleStyle}>{siteTitle}</Link></h3>
+    {/* [Header2] category 클릭 시 category.tsx */}
+    <h3><Link to="/category" style={blogCategoryStyle}>{siteCategory}</Link></h3>
   </header>
 );
 

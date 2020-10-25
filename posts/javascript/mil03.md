@@ -39,7 +39,13 @@ for(let keyName in objectName) {
 <br>
 <br>
 
-#### 1. 어떤 문장이든 제목칸에 입력하면 무조건 문장 내 단어의 맨 첫 글자는 대문자로 변환하여 제목으로 보여주고자 한다.
+<hr />
+
+#### 연습문제1
+
+어떤 문장이든 제목칸에 입력하면 무조건 문장 내 단어의 맨 첫 글자는 대문자로 변환하여 제목으로 보여주고자 한다.
+
+#### Reference Code
 
 ```jsx{numberLines: true}
 function convertToTitle(str) {
@@ -65,7 +71,11 @@ function convertToTitle(str) {
 <br>
 <br>
 
-#### 2. 어떤 상품의 QR코드를 찍으면 이것으로부터 2차원 배열을 입력받아 각 배열을 이용해 만든 객체를 출력하려고 한다. 만들어진 객체를 DOM CRUD로 다듬어서 HTML 문서로까지 보여줄 것이다.
+#### 연습문제2
+
+어떤 상품의 QR코드를 찍으면 이것으로부터 2차원 배열을 입력받아 각 배열을 이용해 만든 객체를 출력하려고 한다. 만들어진 객체를 DOM CRUD로 다듬어서 HTML 문서로까지 보여줄 것이다.
+
+#### Reference Code
 
 ```jsx{numberLines: true}
 function convertToObject(arr) {
@@ -89,7 +99,11 @@ function convertToObject(arr) {
 <br>
 <br>
 
-#### 3. 문자열을 요소로 갖는 배열을 입력받아 가장 짧은 문자열과 가장 긴 문자열을 제거한 배열을 출력하려고 한다. 단, 모든 요소의 길이가 같은 경우는 배제하기로 하며, 길이가 동일한 요소들이 여러 개 있을 경우, 가장 마지막 요소는 제거한다.
+#### 연습문제3
+
+문자열을 요소로 갖는 배열을 입력받아 가장 짧은 문자열과 가장 긴 문자열을 제거한 배열을 출력하려고 한다. 단, 모든 요소의 길이가 같은 경우는 배제하기로 하며, 길이가 동일한 요소들이 여러 개 있을 경우, 가장 마지막 요소는 제거한다.
+
+#### Reference Code
 
 ```jsx{numberLines: true}
 function eleminateExtremeElement(arr) {

@@ -15,20 +15,14 @@ const postTitleStyle = {
   textDecoration: `none`,
   textAlign: `center`,
   marginTop: `4rem`,
+  marginBottom: `-2rem`
 };
 
 const postCategoryStyle = {
   color: `LightBlue`,
   textDecoration: `none`,
   textAlign: `center`,
-  marginBottom: `-1.5rem`,
-};
-
-const postSubTitleStyle = {
-  color: `LightGray`,
-  textDecoration: `overline`,
-  textAlign: `center`,
-  marginBottom: `8rem`,
+  marginBottom: `5rem`,
 };
 
 const PostTemplate: React.FC<IPostTemplateProps> = React.memo((props) => {
@@ -36,8 +30,7 @@ const PostTemplate: React.FC<IPostTemplateProps> = React.memo((props) => {
   return (
     <Layout>
       <div style={postTitleStyle}><h1>{title}</h1></div>
-      <div style={postCategoryStyle}><p>"{category}"</p></div>
-      <div style={postSubTitleStyle}><p>posted by lattepapa</p></div>
+      <div style={postCategoryStyle}><p>"{category}" posting by lattepapa</p></div>
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
   );

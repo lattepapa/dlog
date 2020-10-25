@@ -197,15 +197,15 @@ export default function MovieListEntry(props) => {
 
 MovieList.js 컴포넌트로부터 내려받은 props.eachMovie 속성은, 사실 개별 영화들에게 보유된 여러 속성들(id, title, runtime, description 등) 중 하나를 가지고 있다. 이때, 또다른 물려받은 속성인 props.clickHandler 메소드가 정확하게 영화 제목에 대한 클릭이벤트 객체가 될 수 있도록 MovieListEntry.js 컴포넌트에서 영화 제목과 관련된 div 태그를 찾아냈다. 그리고 해당 태그에서 onClick 속성을 익명함수의 실행 형식, 즉, **콜백**의 형식으로 값을 정의하면서 이 콜백이 props.clickHandler 메소드가 되도록 선언한 것이다. 그리고 props.clickHandler가 콜백함수이므로 그의 파라미터 정의가 필요하게 되었으며, 자연스럽게 props.eachMovie 속성을 그 자리에 넣게 되었다. 이를 정리하자면,
 
-> [1] 영화 제목과 관련된 div 태그에 대해 클릭이벤트를 설정하였으며,  
-> [2] 해당 이벤트, 즉, 제목을 클릭하는 이벤트가 발생하면  
-> [3] 이벤트핸들러(props.clickHandler)에게 그 영화(props.eachMovie)가 넘겨지도록 한 것이다.
+> 1\. 영화 제목과 관련된 div 태그에 대해 클릭이벤트를 설정하였으며,  
+> 2\. 해당 이벤트, 즉, 제목을 클릭하는 이벤트가 발생하면  
+> 3\. 이벤트핸들러(props.clickHandler)에게 그 영화(props.eachMovie)가 넘겨지도록 한 것이다.
 
 클릭이벤트에 의해 이제 MovieListEntry.js 컴포넌트에서의 클릭이벤트(clickHander)의 대상(eachMovie)이 데이터플로우의 방향을 거꾸로 거슬러 올라가게 된다.
 
-> [4] 이 정보는 MovieList.js에서 props.clickMovieTitle로 끌어올려질 것이며,  
-> [5] 이는 App.js에서 this.clickMovieTitle() 메소드의 파라미터로 넘겨지게 될 것이고,  
-> [6] 그 내부의 this.setState() 콜백에 의해 this.state.currentMovie 속성의 변화로 이어지게 된다.
+> 4\. 이 정보는 MovieList.js에서 props.clickMovieTitle로 끌어올려질 것이며,  
+> 5\. 이는 App.js에서 this.clickMovieTitle() 메소드의 파라미터로 넘겨지게 될 것이고,  
+> 6\. 그 내부의 this.setState() 콜백에 의해 this.state.currentMovie 속성의 변화로 이어지게 된다.
 
 <br>
 <br>

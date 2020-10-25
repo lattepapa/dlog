@@ -193,11 +193,11 @@ $ npm install
 
 #### 시스템 정보관련
 
-[1] hostname() : 호스트 이름  
-[2] totalmem() : 전체 메모리 정보  
-[3] freemem() : 사용 가능한 메모리 정보  
-[4] cpus() : CPU 정보  
-[5] networkInterfaces() : 네트워크 인터페이스 정보
+1\) hostname() : 호스트 이름  
+2\) totalmem() : 전체 메모리 정보  
+3\) freemem() : 사용 가능한 메모리 정보  
+4\) cpus() : CPU 정보  
+5\) networkInterfaces() : 네트워크 인터페이스 정보
 
 ```jsx{numberLines: true}
 // myinfo.js
@@ -230,10 +230,10 @@ $ node myinfo.js
 
 #### 파일경로 관련
 
-[1] join() : 디렉터리 이름과 파일 이름을 합쳐서 하나의 경로로 만들어준다.  
-[2] dirname() : 파일경로에서 디렉터리 이름만 반환한다.  
-[3] basename() : 파일경로에서 확장자를 제외하여 파일 이름만 반환한다.  
-[4] extname() : 파일경로에서 파일의 확장자만 반환한다.
+1\) join() : 디렉터리 이름과 파일 이름을 합쳐서 하나의 경로로 만들어준다.  
+2\) dirname() : 파일경로에서 디렉터리 이름만 반환한다.  
+3\) basename() : 파일경로에서 확장자를 제외하여 파일 이름만 반환한다.  
+4\) extname() : 파일경로에서 파일의 확장자만 반환한다.
 
 ```jsx{numberLines: true}
 // filePath.js

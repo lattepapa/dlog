@@ -16,7 +16,13 @@ date: 2020-08-10 23:00:03
 <br>
 <br>
 
-#### 1. 일정 위치의 경도와 위도 범위를 정한 것을 토대로 2차원 배열(배열을 요소로 갖는 배열)에 반영하였다. 사용자가 클릭 또는 터치 등의 이벤트를 입력한 지점의 위치 정보를 요소로 갖는 배열을 하고자 한다. 이 배열 정보를 다시 지도에 핀 형식으로 보여줄 것이다.
+<hr />
+
+#### 연습문제1
+
+일정 위치의 경도와 위도 범위를 정한 것을 토대로 2차원 배열(배열을 요소로 갖는 배열)에 반영하였다. 사용자가 클릭 또는 터치 등의 이벤트를 입력한 지점의 위치 정보를 요소로 갖는 배열을 하고자 한다. 이 배열 정보를 다시 지도에 핀 형식으로 보여줄 것이다.
+
+#### Reference Code
 
 ```jsx{numberLines: true}
 function pickedMapPosition(arr) {
@@ -36,7 +42,11 @@ function pickedMapPosition(arr) {
 <br>
 <br>
 
-#### 2. 문자열을 요소로 갖는 배열을 입력받아 문자열을 세로로 읽었을 때의 문자열을 리턴하고자 한다.
+#### 연습문제2
+
+문자열을 요소로 갖는 배열을 입력받아 문자열을 세로로 읽었을 때의 문자열을 리턴하고자 한다.
+
+#### Reference Code
 
 ```jsx{numberLines: true}
 function mergeLettersByIndex(arr) {
@@ -70,7 +80,11 @@ function mergeLettersByIndex(arr) {
 <br>
 <br>
 
-#### 3. 수를 요소로 갖는 배열을 입력받아 각 요소들이 그 이전의 요소들의 합보다 큰지 여부를 알고자 한다.
+#### 연습문제3
+
+수를 요소로 갖는 배열을 입력받아 각 요소들이 그 이전의 요소들의 합보다 큰지 여부를 알고자 한다.
+
+#### Reference Code
 
 ```jsx{numberLines: true}
 function comparisonAccSum(arr) {
@@ -93,7 +107,11 @@ function comparisonAccSum(arr) {
 <br>
 <br>
 
-#### 4. 두 수를 입력받아, 하나를 다른 하나로 나눈 나머지를 리턴하고자 한다.
+#### 연습문제4
+
+두 수를 입력받아, 하나를 다른 하나로 나눈 나머지를 리턴하고자 한다.
+
+#### Reference Code
 
 ```jsx{numberLines: true}
 function getRemainder(num1, num2) {
@@ -131,7 +149,11 @@ function getRemainder(num1, num2) {
 <br>
 <br>
 
-#### 5. 입력받은 정수의 제곱근을 구하고자 한다. 단, `Math.sqrt()` 함수는 사용할 수 없으며 소숫점 둘때자리까지 구해야 한다.
+#### 연습문제5
+
+입력받은 정수의 제곱근을 구하고자 한다. 단, `Math.sqrt()` 함수는 사용할 수 없으며 소숫점 둘때자리까지 구해야 한다.
+
+#### Reference Code
 
 ```jsx{numberLines: true}
 function getSquarRoot(num) {
@@ -167,7 +189,11 @@ function getSquarRoot(num) {
 <br>
 <br>
 
-#### 6. 카이사르 암호법(Caesar cipher)으로 만들어진 암호를, 그것의 복호화 숫자를 입력받아 복호화하고자 한다.
+#### 연습문제6
+
+카이사르 암호법(Caesar cipher)으로 만들어진 암호를, 그것의 복호화 숫자를 입력받아 복호화하고자 한다.
+
+#### Reference Code
 
 ```jsx{numberLines: true}
 function goDecrypt(pw, num) {
@@ -199,7 +225,11 @@ function goDecrypt(pw, num) {
 <br>
 <br>
   
-#### 7. 문자열을 입력받아 연속되는 문자가 있을 경우, 연속 구간을 반복되는 수와 문자로 조합한 형태로 압축한 문자열을 리턴하고자 한다.
+#### 연습문제7
+
+문자열을 입력받아 연속되는 문자가 있을 경우, 연속 구간을 반복되는 수와 문자로 조합한 형태로 압축한 문자열을 리턴하고자 한다.
+
+#### Reference Code
 
 ```jsx{numberLines: true}
 function countLettersOver3Times(str) {

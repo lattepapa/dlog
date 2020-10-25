@@ -28,15 +28,15 @@ FAT32 파일시스템, 지하철 운행(이번역은... 다음역은 ...), Ctrl+
 #### 주요 구조
 
 (head) → (node) → (node) → ... → (node) → (tail) → Null  
-[1] head : 첫번째 node를 가리키는 순수 pointer이다. 빈 List라면 head가 바로 Null을 가리키게 된다.  
-[2] node : data를 갖으면서 다음 node를 가리키는 pointer도 함께 갖는다.  
-[3] tail : Time Complex를 줄여서 node별 data들을 잘 CRUD하기 위한 일종의 편의개념이다.
+1\) head : 첫번째 node를 가리키는 순수 pointer이다. 빈 List라면 head가 바로 Null을 가리키게 된다.  
+2\) node : data를 갖으면서 다음 node를 가리키는 pointer도 함께 갖는다.  
+3\) tail : Time Complex를 줄여서 node별 data들을 잘 CRUD하기 위한 일종의 편의개념이다.
 
 #### 종류
 
-[1] Singly Linked List : 각 node에 pointer가 1개 → previous node 확인 불가  
-[2] Doubly Linked List : 각 node에 pointer가 2개 → next, previous node 모두 확인 가능  
-[3] Circular Linked List : 마지막 node가 Null이 아니라 첫번째 node를 가리키도록 하여 Loop 형성
+1\) Singly Linked List : 각 node에 pointer가 1개 → previous node 확인 불가  
+2\) Doubly Linked List : 각 node에 pointer가 2개 → next, previous node 모두 확인 가능  
+3\) Circular Linked List : 마지막 node가 Null이 아니라 첫번째 node를 가리키도록 하여 Loop 형성
 
 #### 주요 메소드
 
@@ -183,12 +183,12 @@ hashing된 키를 바탕으로 인덱스를 검색하기 때문에 data의 추�
 
 #### 충돌(Collision)을 극복하는 방법:
 
-[1] Open Addressing : { key: value }를 넣고자 하는 인덱스에 이미 값이 있다면 회피하는 방법
+1\) Open Addressing : { key: value }를 넣고자 하는 인덱스에 이미 값이 있다면 회피하는 방법
 
 - 선형탐사 : n번 인덱스에 넣어야 하는데 이미 값이 있다면 n+1번 인덱스가 비었는지 확인
 - 이중해시 : 해시함수를 2개 만들어놓고 평소에는 한개만 사용하다가, 충돌 시 남은 한개로 새 인덱스 도출
 
-[2] Close Addressing : 인덱스에 이미 값이 있더라도 해당 인덱스에 저장하는 방법
+2\) Close Addressing : 인덱스에 이미 값이 있더라도 해당 인덱스에 저장하는 방법
 
 - Bucket : 해당 인덱스가 다시 여러 인덱스를 갖는 배열이 되어(Matrix), 충돌된 것을 거기에 쌓는다.
 - Chaining : 해당 인덱스에 충돌된 것들을 Linked List로 연결하여 구현한다.
@@ -341,9 +341,13 @@ HashTable.prototype._resize = function (newLimit) {
 <br>
 <br>
 
-### Stack과 Linked List가 섞인 문제
+<hr />
 
-#### (head) 1 → 2 → 3 → 4 → 5 → 6 (tail)과 같이 저장된 Linked List가 있다. 주어진 함수가 아래와 같을 때, `alternatePrint(head)`의 결과는?
+#### Stack과 Linked List가 섞인 문제
+
+(head) 1 → 2 → 3 → 4 → 5 → 6 (tail)과 같이 저장된 Linked List가 있다. 주어진 함수가 아래와 같을 때, **alternatePrint(head)**의 결과는?
+
+#### Reference Code
 
 ```jsx{numberLines: true}
 function alternatePrint(node) {

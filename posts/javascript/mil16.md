@@ -8,13 +8,14 @@ date: 2020-09-10 23:00:15
 ### 객체지향 프로그래밍
 
 사람이 세계를 보고 이해한 것을 컴퓨터 프로그래밍으로 흉내낸 것을 의미한다.  
-[1] _Machinery Language_ : 0과 1로만 조합  
-[2] _Assembly Language_ : 만들어진 변수(r1 ~ r10), 정해진 규칙(swperm, xor, sieve 등)으로만 조합  
-[3] _High-level Language_ : 인간의 의사표현과 거의 유사  
-[3-1] _Procedural Language_(절차지향언어) : C, COBOL, Fortran, LISP, Perl, HTML, VBScript 등  
-[3-2] _Object Oriented Language_(객체지향언어)  
-[3-2-1] class 지향언어 : JAVA, C++, C#, Python, (Perl,) PHP 등  
-[3-2-2] prototype 지향언어 : javascript 등
+1\) _Machinery Language_ : 0과 1로만 조합  
+2\) _Assembly Language_ : 만들어진 변수(r1 ~ r10), 정해진 규칙(swperm, xor, sieve 등)으로만 조합  
+3\) _High-level Language_ : 인간의 의사표현과 거의 유사
+
+- \* _Procedural Language_(절차지향언어) : C, COBOL, Fortran, LISP, Perl, HTML, VBScript 등
+- \* _Object Oriented Language_(객체지향언어)
+- - \- class 지향언어 : JAVA, C++, C#, Python, (Perl,) PHP 등
+- - \- prototype 지향언어 : javascript 등
 
 ### Class
 
@@ -190,27 +191,27 @@ let car2 = new carClass(10);
 
 #### Prototype Object(원본속성 그자체)
 
-[1] 객체는 언제나 함수에 의해 생성된다.(엄밀히는, 'Object'는 자바스크립트가 제공하는 고유함수이다.)  
-[2] 모든 함수는 **constructor** 자격을 갖는다. 그렇기 때문에 함수는 new 키워드의 활용대상이 된다.  
-[3] 'Human'이라는 클래스를 만들어보자. 그러면... 'Human.prototype'이라고 하는 자동 생성된 속성에서 constructor 정보와 \_\_proto\_\_(\_Prototype Link\_) 정보를 확인할 수 있게된다. 이것이 바로 Prototype Object 인 것이다.  
-[4] 여기서 'Human.prototype.eyes'라는 메소드를 만들자. 이 메소드는 항상 2를 리턴한다. 그러면 이 { eyes: 2 }라는 key-value 속성이 Prototype Object의 속성 중 하나로 삽입된다.
+1\) 객체는 언제나 함수에 의해 생성된다.(엄밀히는, 'Object'는 자바스크립트가 제공하는 고유함수이다.)  
+2\) 모든 함수는 **constructor** 자격을 갖는다. 그렇기 때문에 함수는 new 키워드의 활용대상이 된다.  
+3\) 'Human'이라는 클래스를 만들어보자. 그러면... 'Human.prototype'이라고 하는 자동 생성된 속성에서 constructor 정보와 \_\_proto\_\_(\_Prototype Link\_) 정보를 확인할 수 있게된다. 이것이 바로 Prototype Object 인 것이다.  
+4\) 여기서 'Human.prototype.eyes'라는 메소드를 만들자. 이 메소드는 항상 2를 리턴한다. 그러면 이 { eyes: 2 }라는 key-value 속성이 Prototype Object의 속성 중 하나로 삽입된다.
 
 #### Prototype Link(물려받은 원본속성)
 
-[5] 계속 이어서 생각해보자. 저 'Human' 클래스로부터 'smith'라는 인스턴스를 만든다.  
-[6] 당연히 'smith'는 프로토타입이 아니기 때문에 _Prototype Object_ 정보가 존재하지 않는다. 그런데 'smith.eyes'로 메소드를 실행할 수도 있고, 결과값 2도 확인할 수 있다.  
-[7] 왜냐하면 이 'smith' 인스턴스의 \_\_proto\_\_(\_Prototype Link\_)에 자신의 Prototype Object가 명시(link)되어 있기 때문이다.  
-[8] 이와 같이, 모든 객체는 반드시 \_\_proto\_\_(\_Prototype Link\_)를 가지며, 이는 자신의 prototype 정보, 즉, **상속(유전)된 속성들을 항상 내장**하기 위함이다. 이를 **Prototype Chain**(또는 **\[\[Prototype\]\]**)이라고 부른다.
+5\) 계속 이어서 생각해보자. 저 'Human' 클래스로부터 'smith'라는 인스턴스를 만든다.  
+6\) 당연히 'smith'는 프로토타입이 아니기 때문에 _Prototype Object_ 정보가 존재하지 않는다. 그런데 'smith.eyes'로 메소드를 실행할 수도 있고, 결과값 2도 확인할 수 있다.  
+7\) 왜냐하면 이 'smith' 인스턴스의 \_\_proto\_\_(\_Prototype Link\_)에 자신의 Prototype Object가 명시(link)되어 있기 때문이다.  
+8\) 이와 같이, 모든 객체는 반드시 \_\_proto\_\_(\_Prototype Link\_)를 가지며, 이는 자신의 prototype 정보, 즉, **상속(유전)된 속성들을 항상 내장**하기 위함이다. 이를 **Prototype Chain**(또는 **\[\[Prototype\]\]**)이라고 부른다.
 
 ### 간단한 Prototype 탐구
 
 #### HTML 환경에서
 
-[1] EventTarget은 모든 HTML element들의 시조 클래스인 객체이다. 따라서 .toString() 메소드를 쓸 수 있다.  
-[2] Node는 EventTarget를 통해 만들어진 인스턴스이다. 따라서 .toString() *method*를 쓸 수 있다. 여기서 새롭게 .append() 메소드를 만들었다.  
-[3] Element는 Node를 통해 만들어진 인스턴스이다. 따라서 .toString(), .append() 메소드를 쓸 수 있다.  
-[4] HTMLElement는 Element를 통해 만들어진 인스턴스이다. 따라서 .toString(), .append() 메소드를 쓸 수 있다.  
-[5] div는 HTMLElement를 통해 만들어진 인스턴스이다. 따라서 ....
+1\) EventTarget은 모든 HTML element들의 시조 클래스인 객체이다. 따라서 .toString() 메소드를 쓸 수 있다.  
+2\) Node는 EventTarget를 통해 만들어진 인스턴스이다. 따라서 .toString() *method*를 쓸 수 있다. 여기서 새롭게 .append() 메소드를 만들었다.  
+3\) Element는 Node를 통해 만들어진 인스턴스이다. 따라서 .toString(), .append() 메소드를 쓸 수 있다.  
+4\) HTMLElement는 Element를 통해 만들어진 인스턴스이다. 따라서 .toString(), .append() 메소드를 쓸 수 있다.  
+5\) div는 HTMLElement를 통해 만들어진 인스턴스이다. 따라서 ....
 
 #### Pseudoclassical Legacy pattern과 ES6 pattern 사이에서
 

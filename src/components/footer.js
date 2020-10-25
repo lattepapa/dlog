@@ -6,7 +6,7 @@ const linkStyle = {
 };
 
 const Footer = () => (
-    <footer style={{ marginTop: `5rem`,}}>
+    <footer style={{ marginTop: `5rem`, textAlign: `center`}}>
         <p style={{ color: `LightGray`,}}>Спасибо. Хорошего дня!</p>
         <div>
             © {new Date().getFullYear()}, Built with {` `}

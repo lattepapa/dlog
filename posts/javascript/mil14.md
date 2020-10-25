@@ -123,7 +123,9 @@ Node로 구성된 계층적 자료구조로, root를 만들고 child를 추가�
 [1] height : tree의 전체 depth의 개수  
 [2] depth : root까지의 depth의 개수
 
-#### 주요 메소드 : .insertNode(value), .contains(value) 등
+#### 주요 메소드
+
+.insertNode(value), .contains(value) 등
 
 ```jsx{numberLines: true}
 class TreeNode {

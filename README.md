@@ -5,7 +5,6 @@
   </a>
 </p>
 
-
 ## 🚀 이곳은 lattepapa의 개인 블로그 레포지토리입니다.
 
 1.  **[Gatsby's default starter](https://www.gatsbyjs.com/docs/gatsby-starters/)**
@@ -22,8 +21,8 @@
 
     GraphQL의 매우 기본 Syntax로 데이터를 불러옵니다.
 
-
 ## 🧐 What's inside?
+
     .
     ├── node_modules
     ├── src
@@ -45,7 +44,7 @@
 
 1.  **`/node_modules`**: 여러 npm 모듈들이 담겨있습니다. 흔히 GatsbyJS의 SPA 런치를 위해 설치하는 기본 모듈들은 모두 설치되었습니다. 또한 추가적으로 수학공식과 기호를 활용하기 위해 Katex 모듈을 설치하였고 인라인 코드 스니펫을 사용하기 위해 PrismJS 모듈을 설치하였습니다.
 
-2.  **`/src`**: 먼저 components 디렉터리는 컴포넌트(header, footer, layout, seo) JS 파일들과 CSS(단촐하게 1개의 파일입니다. layout.css) 파일로 구성되어있습니다. lib 디렉터리에는 createPages.ts 파일이 저장되어 있어서 포스팅 글 작성 시 활용됩니다. pages 디렉터리는 index 페이지, category 페이지 등의 블로그 랜딩 페이지 TS 파일들이 저장되어있습니다. templates 디렉터리에는 postTemplate.tsx 파일이 저장되어 있어서 블로그 화면의 전체적인 프레임 구조를 규정합니다. 
+2.  **`/src`**: 먼저 components 디렉터리는 컴포넌트(header, footer, layout, seo) JS 파일들과 CSS(단촐하게 1개의 파일입니다. layout.css) 파일로 구성되어있습니다. lib 디렉터리에는 createPages.ts 파일이 저장되어 있어서 포스팅 글 작성 시 활용됩니다. pages 디렉터리는 index 페이지, category 페이지 등의 블로그 랜딩 페이지 TS 파일들이 저장되어있습니다. templates 디렉터리에는 postTemplate.tsx 파일이 저장되어 있어서 블로그 화면의 전체적인 프레임 구조를 규정합니다.
 
 3.  **`.gitignore`**: -
 
@@ -65,7 +64,6 @@
 
 11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
 
-
 ## 🎓 Learning Gatsby
 
 Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.com/). Here are some places to start:
@@ -73,7 +71,6 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 - **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.com/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
 
 - **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.com/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
 
 ## 💫 Deploy
 

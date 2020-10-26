@@ -25,25 +25,11 @@ const LatestPostListQuery = graphql`
   }
 `;
 
-const cardStyle = {
-  textDecoration: `none`,
-};
-const categoryStyle = {
-  color: `powderblue`,
-  float: `left`,
-  width: `20%`
-};
-const titleStyle = {
-  color: `DarkSlateGray`,
-  float: `Left`,
-  paddingLeft: `2%`,
-  width: `80%`
-};
-const dateStyle = {
-  color: `LightGray`,
-  paddingTop: `4rem`,
-  marginBottom: `-1rem`,
-};
+const liStyle = { paddingTop: `1rem`, }
+const cardStyle = { textDecoration: `none`, };
+const categoryStyle = { color: `powderblue`, };
+const titleStyle = { color: `DarkSlateGray`, };
+const dateStyle = { color: `LightGray`, };
 
 const IndexPage: React.FC = () => {
   const data = useStaticQuery<Query>(LatestPostListQuery);
@@ -53,22 +39,16 @@ const IndexPage: React.FC = () => {
       <SEO title="Home" />
       <ul>
         {data.allMarkdownRemark.edges.map(({ node }) => (
-          <li key={node.id}>
+          <li key={node.id} style={liStyle}>
             <Link to={node.frontmatter.title} style={cardStyle}>
-              <div>
-                <h4 style={categoryStyle}>
-                  {node.frontmatter.category} {'> '}
-                </h4>
-                <h4 style={titleStyle}>
-                  {node.frontmatter.title}
-                </h4>
-              </div>
+              <h4>
+                <span style={categoryStyle}>{node.frontmatter.category} {'> '}</span>
+                <span style={titleStyle}>{node.frontmatter.title}</span>
+              </h4>
 
               {/* <p>{node.excerpt}</p> */}
               
-              <div style={dateStyle}>
-                posted on {` `} {node.frontmatter.date}
-              </div>
+              <div style={dateStyle}>posted on {` `} {node.frontmatter.date}</div>
             </Link>
             <br />
             <br />

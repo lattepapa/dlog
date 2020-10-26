@@ -7,7 +7,7 @@ const headerBackgroundStyle = {
   marginBottom: `0.45rem`,
   margin: `0 auto`,
   padding: `0.45rem 0.1rem`,
-  height: `8rem`
+  height: `6rem`
 }
 
 const blogTitleStyle = {
@@ -27,9 +27,9 @@ const blogCategoryStyle = {
 const Header = ({ siteTitle, siteCategory }) => (
   <header style={headerBackgroundStyle}>
     {/* [Header1] dlog 클릭 시 index.tsx */}
-    <h3><Link to="/" style={blogTitleStyle}>{siteTitle}</Link></h3>
+    <h4><Link to="/" style={blogTitleStyle}>{siteTitle}</Link></h4>
     {/* [Header2] category 클릭 시 category.tsx */}
-    <h3><Link to="/category" style={blogCategoryStyle}>{siteCategory}</Link></h3>
+    <h4><Link to="/category" style={blogCategoryStyle}>{siteCategory}</Link></h4>
   </header>
 );
 

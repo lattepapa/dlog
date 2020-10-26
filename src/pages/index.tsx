@@ -25,20 +25,24 @@ const LatestPostListQuery = graphql`
   }
 `;
 
+const cardStyle = {
+  textDecoration: `none`,
+};
 const categoryStyle = {
-  color: `powderblue`, 
-  textDecoration: `none`, 
-  fontSize: `15pt`
+  color: `powderblue`,
+  float: `left`,
+  width: `20%`
 };
-
 const titleStyle = {
-  color: `DarkSlateGray`, 
-  textDecoration: `none`
+  color: `DarkSlateGray`,
+  float: `Left`,
+  paddingLeft: `2%`,
+  width: `80%`
 };
-
 const dateStyle = {
   color: `LightGray`,
-  textDecoration: `none`
+  paddingTop: `4rem`,
+  marginBottom: `-1rem`,
 };
 
 const IndexPage: React.FC = () => {
@@ -50,21 +54,21 @@ const IndexPage: React.FC = () => {
       <ul>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <li key={node.id}>
-            <span>
-              <h3>
-                <Link style={categoryStyle} to={node.frontmatter.title}>
+            <Link to={node.frontmatter.title} style={cardStyle}>
+              <div>
+                <h4 style={categoryStyle}>
                   {node.frontmatter.category} {'> '}
-                </Link>
-                <Link style={titleStyle} to={node.frontmatter.title}>
+                </h4>
+                <h4 style={titleStyle}>
                   {node.frontmatter.title}
-                </Link>
-              </h3>
-            </span>
-            
-            {/* <p>{node.excerpt}</p> */}
-            
-            <Link style={dateStyle} to={node.frontmatter.title}>
-              posted on {` `} {node.frontmatter.date}
+                </h4>
+              </div>
+
+              {/* <p>{node.excerpt}</p> */}
+              
+              <div style={dateStyle}>
+                posted on {` `} {node.frontmatter.date}
+              </div>
             </Link>
             <br />
             <br />

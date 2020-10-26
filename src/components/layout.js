@@ -19,6 +19,8 @@ const frameStyle = {
   margin: `0 auto`,
   maxWidth: 800,
   padding: `0 1.0875rem 1.45rem`,
+  paddingTop: `2rem`,
+  paddingBottom: `1rem`
 }
 
 const Layout = ({ children }) => {

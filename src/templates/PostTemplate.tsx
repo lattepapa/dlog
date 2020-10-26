@@ -22,7 +22,8 @@ const postCategoryStyle = {
   color: `LightBlue`,
   textDecoration: `none`,
   textAlign: `center`,
-  marginBottom: `5rem`,
+  paddingTop: `0.5rem`,
+  marginBottom: `3rem`,
 };
 
 const PostTemplate: React.FC<IPostTemplateProps> = React.memo((props) => {

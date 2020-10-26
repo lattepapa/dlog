@@ -24,12 +24,12 @@ const CategoryListQuery = graphql`
   }
 `;
 
+const cardStyle = { textDecoration: `none`};
 const categoryStyle = {
   color: `Black`, 
   textDecoration: `none`, 
   fontSize: `15pt`
 };
-
 const titleStyle = {
   color: `LightGray`, 
   textDecoration: `none`
@@ -46,11 +46,9 @@ const CategoryPage: React.FC = () => {
           <li key={node.id}>
             <span>
               <h4>
-                <Link style={categoryStyle} to={'/' + node.frontmatter.title}>
-                  {node.frontmatter.category} {' _ '}
-                </Link>
-                <Link style={titleStyle} to={'/' + node.frontmatter.title}>
-                  {node.frontmatter.title}
+                <Link to={'/' + node.frontmatter.title} style={cardStyle}>
+                  <span style={categoryStyle}>{node.frontmatter.category} {' _ '}</span>
+                  <span style={titleStyle} >{node.frontmatter.title}</span>
                 </Link>
               </h4>
             </span>

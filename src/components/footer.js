@@ -14,6 +14,7 @@ const Footer = () => (
             , {` `} Posted by {` `}
             <a style={linkStyle} href="https://github.com/lattepapa" target="_blank" rel="noreferrer">lattepapa</a>
         </div>
+        <br />
     </footer>
 )
 

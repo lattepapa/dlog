@@ -31,7 +31,8 @@ const PostTemplate: React.FC<IPostTemplateProps> = React.memo((props) => {
   return (
     <Layout>
       <div style={postTitleStyle}><h1>{title}</h1></div>
-      <div style={postCategoryStyle}><p>"{category}" posting by lattepapa</p></div>
+      <div style={postCategoryStyle}><p>{category}</p></div>
+      <div style={postCategoryStyle}><p>posting by lattepapa, {date}</p></div>
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
   );

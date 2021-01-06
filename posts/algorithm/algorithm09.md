@@ -109,3 +109,38 @@ function case(n) {
   return count;
 }
 ```
+
+<br />
+
+### 로그 시간복잡도
+
+다음의 예시들은 공통적으로 **로그**($log$) 시간복잡도를 갖는 것들이다. 모두 $O(log{_2}N)$의 시간복잡도를 만족한다.
+
+```jsx
+function aCase(n) {
+  let count = 0;
+  // highlight-start
+  for (let i = 0; i < n; i = i * 2) {
+    // highlight-end
+    count = count + 1;
+  }
+  return count;
+}
+```
+
+```jsx
+function bCase(n, 2) {
+  // highlight-start
+  while (n % 2 === 0) {
+    // highlight-end
+    n = n / 2;
+  }
+  return n;
+}
+```
+
+<br>
+<br>
+<br>
+
+<text style="color:gray">_\*참고: "자바스크립트로 하는 자료 구조와 알고리즘"(배세민님, 에이콘)_</text>

@@ -9,7 +9,7 @@ const Footer = () => (
   <footer
     style={{ marginTop: `5rem`, marginBottom: `5rem`, textAlign: `center` }}
   >
-    <p style={{ color: `LightGray` }}>Спасибо. Хорошего дня!</p>
+    <p style={{ color: `LightGray` }}>- &#128293; -</p>
     <div>
       © {new Date().getFullYear()}, Built with {` `}
       <a

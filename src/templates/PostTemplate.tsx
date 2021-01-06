@@ -8,22 +8,21 @@ type IPostTemplateProps = ITemplateProps<{
   html: string;
   title: string;
   category: string;
+  date: string;
 }>;
 
 const postTitleStyle = {
   color: `DarkSlateGray`,
   textDecoration: `none`,
   textAlign: `center`,
-  marginTop: `4rem`,
-  marginBottom: `-2rem`
+  marginTop: `1rem`,
 };
 
 const postCategoryStyle = {
-  color: `LightBlue`,
+  color: `LightCoral`,
   textDecoration: `none`,
   textAlign: `center`,
-  paddingTop: `0.5rem`,
-  marginBottom: `3rem`,
+  marginBottom: `2rem`
 };
 
 const PostTemplate: React.FC<IPostTemplateProps> = React.memo((props) => {
@@ -31,8 +30,7 @@ const PostTemplate: React.FC<IPostTemplateProps> = React.memo((props) => {
   return (
     <Layout>
       <div style={postTitleStyle}><h1>{title}</h1></div>
-      <div style={postCategoryStyle}><p>{category}</p></div>
-      <div style={postCategoryStyle}><p>posting by lattepapa, {date}</p></div>
+      <div style={postCategoryStyle}><p>{category} &#11088; {date}</p></div>
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
   );

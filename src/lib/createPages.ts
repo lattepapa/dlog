@@ -14,6 +14,7 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
                             frontmatter {
                                 title
                                 category
+                                date(formatString: "DD MMM, YYYY")
                             }
                         }
                     }
@@ -32,6 +33,7 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
                 html: node.html,
                 title: String(node.frontmatter.title),
                 category: String(node.frontmatter.category),
+                date: String(node.frontmatter.date),
             },
             component: path.resolve(__dirname, '../templates/PostTemplate.tsx'),
         });

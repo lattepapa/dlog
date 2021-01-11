@@ -76,6 +76,3 @@ function solution(bridge_length, weight, truck_weights) {
   return answer;
 }
 ```
-
-<br />
-<img width="796" alt="kakao result" src="https://user-images.githubusercontent.com/67884699/104095592-147d3f00-52db-11eb-8854-30a77cc8928e.png">

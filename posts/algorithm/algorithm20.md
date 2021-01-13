@@ -1,5 +1,5 @@
 ---
-title: "동적 프로그래밍"
+title: "동적 프로그래밍(1)"
 category: algorithm
 path: /algorithm/algorithm20
 date: 2021-01-11 13:54:00

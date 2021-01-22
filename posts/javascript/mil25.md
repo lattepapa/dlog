@@ -29,8 +29,8 @@ function combination(arr, m) {
   let result = [];
 
   // (2) 기저조건 :
-  // 1개 고를 차례라면,
-  // 고른 1개 항목만을 그대로 배열로 배출한다
+  // 반복되는 재귀 호출로 m이 점점 줄어들어 1이 되면
+  // 반복되는 재귀 호출로 남은 arr의 각 항목들이 각각 단일 배열로 되도록 배출한다.
   // highlight-start
   if (m === 1) return arr.map((el) => [el]);
   // highlight-end

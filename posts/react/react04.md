@@ -35,5 +35,4 @@ date: 2020-12-27 22:32:00
 
 ### <u>일러스트레이션이 아까워서 지우지 못한 필기들</u>
 
-![1 리덕스설계](https://user-images.githubusercontent.com/67884699/103172033-e2f48480-4893-11eb-9d80-3ddc6b021431.jpg)
 ![5 인피니티스크롤습작](https://user-images.githubusercontent.com/67884699/103172034-e556de80-4893-11eb-8dbd-349caddf194f.jpg)

@@ -74,6 +74,12 @@ function SEO({ description, lang, meta, title }) {
         name="google-site-verification"
         content="dHnLv_dlmLtNQi5ERmdIngqRHY_rj-81NJeTzzFd02U"
       />
+      <script
+        data-ad-client="pub-2374275335393357"
+        async
+        src="https://pagead2.googlesyndication.com/
+pagead/js/adsbygoogle.js"
+      ></script>
     </Helmet>
   );
 }

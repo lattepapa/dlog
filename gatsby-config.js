@@ -4,6 +4,10 @@ module.exports = {
     title: `dlog`,
     description: `hope for the best, prepare for the worst`,
     author: `@lattepapa`,
+    adsense: {
+      adClient: "ca-pub-2374275335393357",
+      adSlot: "1951566259",
+    },
   },
   plugins: [
     `gatsby-plugin-typescript`, // 추가!
@@ -104,8 +108,8 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: { trackingId: 'UA-180817603-1' }
+      resolve: "gatsby-plugin-google-analytics",
+      options: { trackingId: "UA-180817603-1" },
     },
     {
       resolve: `gatsby-plugin-generate-typings`,
